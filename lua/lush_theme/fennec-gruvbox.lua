@@ -308,7 +308,7 @@ local theme = lush(function()
     WhichKeySeperator { fg = colors.yellow },
     WhichKeyGroup { fg = colors.orange },
     WhichKeyDesc { fg = colors.aqua },
-    WhichKeyFloat = { bg = colors.bg },
+    WhichKeyFloat = { guibg = colors.bg },
     WhichKeySeparator = { fg = colors.fg },
     -- END which-key --
     
