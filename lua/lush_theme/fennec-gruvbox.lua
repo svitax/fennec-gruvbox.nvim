@@ -84,7 +84,8 @@ local colors = {
   gitSigns = { delete = "#ae5858", add = "#6f8352", change = "#a96b2c" },
 }
 
--- TODO go back and add bold, underline where needed
+vim.cmd("highlight WhichKeyFloat guibg=" .. colors.bg)
+
 local theme = lush(function()
   return {
     -- The following are all the Neovim default highlight groups from the docs
