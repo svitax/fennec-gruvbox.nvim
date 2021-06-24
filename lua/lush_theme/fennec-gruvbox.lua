@@ -84,8 +84,6 @@ local colors = {
   gitSigns = { delete = "#ae5858", add = "#6f8352", change = "#a96b2c" },
 }
 
-vim.cmd("highlight WhichKeyFloat guibg=" .. colors.bg)
-
 local theme = lush(function()
   return {
     -- The following are all the Neovim default highlight groups from the docs
@@ -305,27 +303,27 @@ local theme = lush(function()
     TSURI                { fg = colors.yellow };    -- Any URI like a link or email.
 
     -- START which-key --
-    WhichKey { fg = colors.purple },
-    WhichKeySeperator { fg = colors.yellow },
-    WhichKeyGroup { fg = colors.orange },
-    WhichKeyDesc { fg = colors.aqua },
-    WhichKeyFloat = { guibg = colors.bg },
-    WhichKeySeparator = { fg = colors.fg },
+    WhichKey { fg = colors.yellow },
+    WhichKeySeperator { fg = colors.fg },
+    WhichKeyGroup { fg = colors.blue },
+    WhichKeyDesc { fg = colors.orange },
+    WhichKeyFloat { bg = colors.bg },
+    WhichKeyValue {fg = colors.bg2 },
     -- END which-key --
     
     -- START nvimtree --
-    NvimTreeNormal { fg = colors.fg4 },
-    NvimTreeRootFolder { fg = colors.fg, style = "bold" },
-    NvimTreeFolderName { fg = colors.aqua },
-    NvimTreeFolderIcon { fg = colors.aqua },
-    NvimTreeEmptyFolderName { fg = colors.aqua },
-    NvimTreeOpenedFolderName { fg = colors.aqua },
+    NvimTreeNormal { fg = colors.fg },
+    NvimTreeRootFolder { fg = colors.green, style = "bold" },
+    NvimTreeFolderName { fg = colors.blue_2},
+    NvimTreeFolderIcon { fg = colors.blue_2 },
+    NvimTreeEmptyFolderName { fg = colors.blue_2},
+    NvimTreeOpenedFolderName { fg = colors.blue_2},
     NvimTreeImageFile { fg = colors.purple },
     NvimTreeExecFile { fg = colors.green },
     NvimTreeSpecialFile { fg = colors.yellow, style = "underline" },
     NvimTreeSymlink { fg = colors.blue },
     NvimTreeGitNew { fg = colors.git.add },
-    NvimTreeGitDirty { fg = colors.yellow_2 },
+    NvimTreeGitDirty { fg = colors.git.change },
     NvimTreeGitDeleted { fg = colors.git.delete },
 
     NvimTreeGitStaged { fg = colors.green },
