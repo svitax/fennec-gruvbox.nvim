@@ -1,0 +1,1 @@
+# fennec-gruvbox.nvim
