@@ -193,7 +193,7 @@ local theme = lush(function()
     Structure      { fg = colors.yellow }, --  struct, union, enum, etc.
     Typedef        { fg = colors.yellow }, --  A typedef
 
-    Special        { fg = colors.blue_2, gui = "italic"}, -- (preferred) any special symbol
+    Special        { fg = colors.blue_2, style = "italic"}, -- (preferred) any special symbol
     -- SpecialChar    { }, --  special character in a constant
     -- Tag            { }, --    you can use CTRL-] on this
     -- Delimiter      { }, --  character that needs attention
