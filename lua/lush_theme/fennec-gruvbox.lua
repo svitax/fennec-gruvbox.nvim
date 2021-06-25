@@ -367,6 +367,16 @@ local theme = lush(function()
     GitGutterChange { fg = colors.gitSigns.change }, -- diff mode: Changed line |diff.txt|
     GitGutterDelete { fg = colors.gitSigns.delete }, -- diff mode: Deleted line |diff.txt|
     -- END gitgutter
+
+    --  START neogit
+    NeogitBranch { fg = colors.purple },
+    NeogitRemote { fg = colors.purple },
+    NeogitHunkHeader { bg = colors.bg2, fg = colors.fg },
+    NeogitHunkHeaderHighlight { bg = colors.bg3, fg = colors.blue },
+    NeogitDiffContextHighlight { bg = colors.bg3, fg = colors.fg },
+    NeogitDiffDeleteHighlight { fg = colors.git.delete },
+    NeogitDiffAddHighlight { fg = colors.git.add },
+    --  END neogit
   }
 end)
 
