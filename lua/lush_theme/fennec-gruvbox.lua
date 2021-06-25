@@ -98,7 +98,7 @@ local theme = lush(function()
     -- styling for that group (meaning they mostly get styled as Normal)
     -- or leave them commented to apply vims default colouring or linking.
 
-    Comment      { fg = colors.bg3, style = "italic" }, -- any comment
+    Comment      { fg = colors.bg3, gui = "italic" }, -- any comment
     ColorColumn  { bg = colors.bg2 }, -- used for the columns set with 'colorcolumn'
     Conceal      { fg = colors.bg3 }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     -- Cursor       { }, -- character under the cursor
@@ -123,8 +123,8 @@ local theme = lush(function()
     Substitute   { fg = colors.bh0_h, bg = colors.red }, -- |:substitute| replacement text highlighting
     LineNr       { fg = colors.bg2 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     CursorLineNr { fg = colors.bg4 }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-    MatchParen   { fg = colors.blue, style = "underline" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
-    ModeMsg      { fg = colors.fg, style = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
+    MatchParen   { fg = colors.blue, gui = "underline" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+    ModeMsg      { fg = colors.fg, gui = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
     MsgArea      { fg = colors.fg }, -- Area for messages and cmdline
     -- MsgSeparator { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     MoreMsg      { fg = colors.fg }, -- |more-prompt|
@@ -156,7 +156,7 @@ local theme = lush(function()
     VisualNOS    { bg = colors.bg2 }, -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg   { fg = colors.yellow }, -- warning messages
     -- Whitespace   { }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
-    WildMenu     { fg = colors.bg, bg = colors.blue }, -- current match in 'wildmenu' completion
+    WildMenu     { fg = colors.bg, bg = colors.blue }, -- current added nvim-comment configmatch in 'wildmenu' completion
 
     -- These groups are not listed as default vim groups,
     -- but they are defacto standard group names for syntax highlighting.
@@ -193,23 +193,23 @@ local theme = lush(function()
     Structure      { fg = colors.yellow }, --  struct, union, enum, etc.
     Typedef        { fg = colors.yellow }, --  A typedef
 
-    Special        { fg = colors.blue_2, style = "italic"}, -- (preferred) any special symbol
+    Special        { fg = colors.blue_2, gui = "italic"}, -- (preferred) any special symbol
     -- SpecialChar    { }, --  special character in a constant
     -- Tag            { }, --    you can use CTRL-] on this
     -- Delimiter      { }, --  character that needs attention
     SpecialComment { fg = colors.bg3 }, -- special things inside a comment
     -- Debug          { }, --    debugging statements
 
-    Underlined { style = "underline" }, -- (preferred) text that stands out, HTML links
-    Bold       { style = "bold" },
-    Italic     { style = "italic" },
+    Underlined { gui = "underline" }, -- (preferred) text that stands out, HTML links
+    Bold       { gui = "bold" },
+    Italic     { gui = "italic" },
 
     -- ("Ignore", below, may be invisible...)
     -- Ignore         { }, -- (preferred) left blank, hidden  |hl-Ignore|
 
     Error          { fg = colors.red_2 }, -- (preferred) any erroneous construct
 
-    Todo           { fg = colors.purple, style = "italic" }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+    Todo           { fg = colors.purple, gui = "italic" }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
     -- These groups are for the native LSP client. Some other LSP clients may
     -- use these groups, or use their own. Consult your LSP client's
@@ -229,10 +229,10 @@ local theme = lush(function()
     LspDiagnosticsVirtualTextInformation { fg = colors.blue }, -- Used for "Information" diagnostic virtual text
     LspDiagnosticsVirtualTextHint        { fg = colors.aqua }, -- Used for "Hint" diagnostic virtual text
 
-    LspDiagnosticsUnderlineError         { style = "undercurl", sp = colors.red }, -- Used to underline "Error" diagnostics
-    LspDiagnosticsUnderlineWarning       { style = "undercurl", sp = colors.yellow }, -- Used to underline "Warning" diagnostics
-    LspDiagnosticsUnderlineInformation   { style = "undercurl", sp = colors.blue }, -- Used to underline "Information" diagnostics
-    LspDiagnosticsUnderlineHint          { style = "undercurl", sp = colors.aqua }, -- Used to underline "Hint" diagnostics
+    LspDiagnosticsUnderlineError         { gui = "undercurl", sp = colors.red }, -- Used to underline "Error" diagnostics
+    LspDiagnosticsUnderlineWarning       { gui = "undercurl", sp = colors.yellow }, -- Used to underline "Warning" diagnostics
+    LspDiagnosticsUnderlineInformation   { gui = "undercurl", sp = colors.blue }, -- Used to underline "Information" diagnostics
+    LspDiagnosticsUnderlineHint          { gui = "undercurl", sp = colors.aqua }, -- Used to underline "Hint" diagnostics
 
     -- LspDiagnosticsFloatingError          { }, -- Used to color "Error" diagnostic messages in diagnostics float
     -- LspDiagnosticsFloatingWarning        { }, -- Used to color "Warning" diagnostic messages in diagnostics float
@@ -313,14 +313,14 @@ local theme = lush(function()
     
     -- START nvimtree --
     NvimTreeNormal { fg = colors.fg },
-    NvimTreeRootFolder { fg = colors.green, style = "bold" },
+    NvimTreeRootFolder { fg = colors.green, gui = "bold" },
     NvimTreeFolderName { fg = colors.blue_2},
     NvimTreeFolderIcon { fg = colors.blue_2 },
     NvimTreeEmptyFolderName { fg = colors.blue_2},
     NvimTreeOpenedFolderName { fg = colors.blue_2},
     NvimTreeImageFile { fg = colors.purple },
     NvimTreeExecFile { fg = colors.green },
-    NvimTreeSpecialFile { fg = colors.yellow, style = "underline" },
+    NvimTreeSpecialFile { fg = colors.yellow, gui = "underline" },
     NvimTreeSymlink { fg = colors.blue },
     NvimTreeGitNew { fg = colors.git.add },
     NvimTreeGitDirty { fg = colors.git.change },
@@ -341,18 +341,18 @@ local theme = lush(function()
     DashboardShortCut { fg = colors.purple },
     DashboardHeader { fg = colors.red },
     DashboardCenter { fg = colors.blue },
-    DashboardFooter { fg = colors.yellow, style = "italic" },
+    DashboardFooter { fg = colors.yellow, gui = "italic" },
     -- END dashboard
 
     -- START hop
-    HopNextKey { fg = colors.red_2, style = "bold" },
+    HopNextKey { fg = colors.red_2, gui = "bold" },
     HopUnmatched { fg = colors.bg3 },
     -- END hop
 
     -- START easymotion
-    EasyMotionTarget { fg = colors.red_2, style = "bold" },
-    EasyMotionTarget2First { fg = colors.red_2, style = "bold" },
-    EasyMotionTarget2Second { fg = colors.red_2, style = "bold" },
+    EasyMotionTarget { fg = colors.red_2, gui = "bold" },
+    EasyMotionTarget2First { fg = colors.red_2, gui = "bold" },
+    EasyMotionTarget2Second { fg = colors.red_2, gui = "bold" },
     EasyMotionShade { fg = colors.bg3 },
     -- END easymotion
 
