@@ -107,9 +107,9 @@ local theme = lush(function()
     CursorColumn { bg = colors.bg0 }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
     CursorLine   { bg = colors.bg0_s }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
     Directory    { colors.blue2 }, -- directory names (and other special names in listings)
-    DiffAdd      { fg = colors.bg, bg = colors.yellow }, -- diff mode: Added line |diff.txt|
-    DiffChange   { fg = colors.yellow }, -- diff mode: Changed line |diff.txt|
-    DiffDelete   { fg = colors.bg, bg = colors.red }, -- diff mode: Deleted line |diff.txt|
+    DiffAdd      { fg = colors.git.add, bg = colors.bg }, -- diff mode: Added line |diff.txt|
+    DiffChange   { fg = colors.git.change }, -- diff mode: Changed line |diff.txt|
+    DiffDelete   { fg = colors.git.delete , bg = colors.bg }, -- diff mode: Deleted line |diff.txt|
     DiffText     { fg = colors.bg, bg = colors.yellow }, -- diff mode: Changed text within a changed line |diff.txt|
     EndOfBuffer  { fg = colors.bg }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     -- TermCursor   { }, -- cursor in a focused terminal
@@ -369,13 +369,13 @@ local theme = lush(function()
     -- END gitgutter
 
     --  START neogit
-    NeogitBranch { fg = colors.purple },
-    NeogitRemote { fg = colors.purple },
-    NeogitHunkHeader { bg = colors.bg2, fg = colors.fg },
-    NeogitHunkHeaderHighlight { bg = colors.bg3, fg = colors.blue },
-    NeogitDiffContextHighlight { bg = colors.bg3, fg = colors.fg },
-    NeogitDiffDeleteHighlight { fg = colors.git.delete },
-    NeogitDiffAddHighlight { fg = colors.git.add },
+    NeogitBranch { fg = colors.blue },
+    NeogitRemote { fg = colors.blue },
+    NeogitHunkHeader { bg = colors.bg1, fg = colors.fg2 },
+    NeogitHunkHeaderHighlight { bg = colors.bg1, fg = colors.purple },
+    NeogitDiffContextHighlight { bg = colors.bg1, fg = colors.fg },
+    NeogitDiffDeleteHighlight { fg = colors.git.delete, bg = colors.bg1 },
+    NeogitDiffAddHighlight { fg = colors.git.add, bg = colors.bg1 },
     --  END neogit
   }
 end)
