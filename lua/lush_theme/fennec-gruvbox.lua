@@ -371,9 +371,9 @@ local theme = lush(function()
     --  START neogit
     NeogitBranch { fg = colors.blue },
     NeogitRemote { fg = colors.blue },
-    NeogitHunkHeader { bg = colors.bg1, fg = colors.fg2 },
-    NeogitHunkHeaderHighlight { bg = colors.bg1, fg = colors.purple },
-    NeogitDiffContextHighlight { bg = colors.bg1, fg = colors.fg },
+    NeogitHunkHeader { bg = colors.bg1, fg = colors.fg },
+    NeogitHunkHeaderHighlight { bg = colors.bg2, fg = colors.purple },
+    NeogitDiffContextHighlight { bg = colors.bg1 },
     NeogitDiffDeleteHighlight { fg = colors.git.delete, bg = colors.bg1 },
     NeogitDiffAddHighlight { fg = colors.git.add, bg = colors.bg1 },
     --  END neogit
