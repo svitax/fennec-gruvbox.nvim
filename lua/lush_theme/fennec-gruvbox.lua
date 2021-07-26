@@ -158,31 +158,31 @@ local theme = lush(function()
         -- commented out groups should chain up to their "preferred" group by
         -- default,
         -- Uncomment and edit if you want more specific syntax highlighting.
-        Constant {fg = colors.yellow}, -- (preferred) any constant
+        Constant {fg = colors.orange}, -- (preferred) any constant
         String {fg = colors.green}, --   a string constant: "this is a string"
-        Character {fg = colors.yellow}, --  a character constant: 'c', '\n'
-        Number {fg = colors.yellow_2}, --   a number constant: 234, 0xff
-        Boolean {fg = colors.orange}, --  a boolean constant: TRUE, false
-        Float {fg = colors.yellow_2}, --    a floating point constant: 2.3e10
-        Identifier {fg = colors.yellow}, -- (preferred) any variable name
-        Function {fg = colors.yellow}, -- function name (also: methods for classes)
+        Character {fg = colors.green}, --  a character constant: 'c', '\n'
+        -- Number {fg = colors.yellow_2}, --   a number constant: 234, 0xff
+        -- Boolean {fg = colors.orange}, --  a boolean constant: TRUE, false
+        -- Float {fg = colors.yellow_2}, --    a floating point constant: 2.3e10
+        Identifier {fg = colors.red}, -- (preferred) any variable name
+        Function {fg = colors.blue}, -- function name (also: methods for classes)
         Statement {fg = colors.purple}, -- (preferred) any statement
-        Conditional {fg = colors.fg}, --  if, then, else, endif, switch, etc.
-        Repeat {fg = colors.purple}, --   for, do, while, etc.
-        Label {fg = colors.blue_2}, --    case, default, etc.
-        Operator {fg = colors.fg}, -- "sizeof", "+", "*", etc.
-        Keyword {fg = colors.red_2}, --  any other keyword
-        Exception {fg = colors.purple}, --  try, catch, throw
-        PreProc {fg = colors.yellow}, -- (preferred) generic Preprocessor
-        Include {fg = colors.blue}, --  preprocessor #include
-        Define {fg = colors.purple}, --   preprocessor #define
-        Macro {fg = colors.purple}, --    same as Define
-        PreCondit {fg = colors.purple}, --  preprocessor #if, #else, #endif, etc.
+        -- Conditional {fg = colors.fg}, --  if, then, else, endif, switch, etc.
+        -- Repeat {fg = colors.purple}, --   for, do, while, etc.
+        -- Label {fg = colors.blue_2}, --    case, default, etc.
+        Operator {fg = colors.red}, -- "sizeof", "+", "*", etc.
+        Keyword {fg = colors.aqua}, --  any other keyword
+        -- Exception {fg = colors.purple}, --  try, catch, throw
+        PreProc {fg = colors.aqua}, -- (preferred) generic Preprocessor
+        -- Include {fg = colors.blue}, --  preprocessor #include
+        -- Define {fg = colors.purple}, --   preprocessor #define
+        -- Macro {fg = colors.purple}, --    same as Define
+        -- PreCondit {fg = colors.purple}, --  preprocessor #if, #else, #endif, etc.
         Type {fg = colors.yellow}, -- (preferred) int, long, char, etc.
-        StorageClass {fg = colors.blue}, -- static, register, volatile, etc.
-        Structure {fg = colors.yellow}, --  struct, union, enum, etc.
-        Typedef {fg = colors.yellow}, --  A typedef
-        Special {fg = colors.blue_2, style = "italic"}, -- (preferred) any special symbol
+        -- StorageClass {fg = colors.blue}, -- static, register, volatile, etc.
+        -- Structure {fg = colors.yellow}, --  struct, union, enum, etc.
+        -- Typedef {fg = colors.yellow}, --  A typedef
+        Special {fg = colors.red, style = "italic"}, -- (preferred) any special symbol
         -- SpecialChar    { }, --  special character in a constant
         -- Tag            { }, --    you can use CTRL-] on this
         -- Delimiter      { }, --  character that needs attention
@@ -239,26 +239,27 @@ local theme = lush(function()
         -- TSConstMacro         { colors.orange };    -- For constants that are defined by macros: `NULL` in C.
         TSError {fg = colors.red_2}, -- For syntax/parser errors.
         TSException {fg = colors.purple}, -- For exception related keywords.
-        TSField {fg = colors.purple}, -- For fields.
+        TSField {fg = colors.aqua}, -- For fields.
         -- TSFloat              { colors.yellow };    -- For floats.
         TSFunction {fg = colors.yellow}, -- For function (calls and definitions).
         TSFuncBuiltin {fg = colors.yellow}, -- For builtin functions: `table.insert` in Lua.
         TSFuncMacro {fg = colors.yellow}, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
         TSInclude {fg = colors.blue}, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-        TSKeyword {fg = colors.blue_2}, -- For keywords that don't fall in previous categories.
-        TSKeywordFunction {fg = colors.blue}, -- For keywords used to define a fuction.
+        TSKeyword {fg = colors.purple}, -- For keywords that don't fall in previous categories.
+        TSKeywordFunction {fg = colors.purple}, -- For keywords used to define a fuction.
         TSLabel {fg = colors.blue}, -- For labels: `label:` in C and `:label:` in Lua.
         TSMethod {fg = colors.yellow}, -- For method calls and definitions.
-        -- TSNamespace          { colors.blue_2 };    -- For identifiers referring to modules and namespaces.
+        TSNamespace { fg = colors.red };    -- For identifiers referring to modules and namespaces.
         -- TSNone               { };    -- TODO: docs
+        -- TSNote = {}
         TSNumber {fg = colors.purple}, -- For all numbers
         TSOperator {fg = colors.fg}, -- For any operator: `+`, but also `->` and `*` in C.
-        TSParameter {fg = colors.blue}, -- For parameters of a function.
-        TSParameterReference {fg = colors.blue_2}, -- For references to parameters of a function.
-        TSProperty {fg = colors.blue}, -- Same as `TSField`.
-        TSPunctDelimiter {fg = colors.fg}, -- For delimiters ie: `.`
-        TSPunctBracket {fg = colors.fg}, -- For brackets and parens.
-        TSPunctSpecial {fg = colors.fg}, -- For special punctutation that does not fall in the catagories before.
+        TSParameter {fg = colors.red}, -- For parameters of a function.
+        -- TSParameterReference {fg = colors.blue_2}, -- For references to parameters of a function.
+        TSProperty {fg = colors.red}, -- Same as `TSField`.
+        TSPunctDelimiter {fg = colors.red}, -- For delimiters ie: `.`
+        TSPunctBracket {fg = colors.orange}, -- For brackets and parens.
+        TSPunctSpecial {fg = colors.orange}, -- For special punctutation that does not fall in the catagories before.
         TSRepeat {fg = colors.purple}, -- For keywords related to loops.
         TSString {fg = colors.green}, -- For strings.
         -- TSStringRegex        { colors.orange };    -- For regexes.
