@@ -279,9 +279,14 @@ local theme = lush(function()
         TSTitle {fg = colors.yellow}, -- Text that is part of a title.
         TSLiteral {fg = colors.yellow}, -- Literal text.
         TSURI {fg = colors.yellow}, -- Any URI like a link or email.
+
         -- START which-key --
-        WhichKey {fg = colors.yellow}, WhichKeySeperator {fg = colors.fg}, WhichKeyGroup {fg = colors.blue},
-        WhichKeyDesc {fg = colors.orange}, WhichKeyFloat {bg = colors.bg}, WhichKeyValue {fg = colors.bg2},
+        WhichKey {fg = colors.yellow}, --
+        WhichKeySeperator {fg = colors.fg}, --
+        WhichKeyGroup {fg = colors.blue},--
+        WhichKeyDesc {fg = colors.red}, --
+        WhichKeyFloat {bg = colors.bg}, --
+        WhichKeyValue {fg = colors.bg2},--
         -- END which-key --
 
         -- START nvimtree --
@@ -368,7 +373,7 @@ local theme = lush(function()
 
         --  START telescope
         TelescopeBorder { fg = colors.bg2 },
-        TelescopePromptBorder { fg = "#ddc7a1"},
+        TelescopePromptBorder { fg = colors.fg4 },
         TelescopeResultsBorder { fg = colors.bg2},
         TelescopeSelectionCaret { fg = colors.purple },
         TelescopeSelection { fg = colors.purple, bg = colors.bg2},
