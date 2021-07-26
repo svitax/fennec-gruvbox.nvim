@@ -102,7 +102,7 @@ local theme = lush(function()
         -- CursorIM     { }, -- like Cursor, but used when in IME mode |CursorIM|
         CursorColumn {bg = colors.bg0}, -- Screen-column at the cursor, when 'cursorcolumn' is set.
         CursorLine {bg = colors.bg0_s}, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
-        Directory {colors.blue2}, -- directory names (and other special names in listings)
+        Directory {fg = colors.blue_2}, -- directory names (and other special names in listings)
         DiffAdd {fg = colors.git.add, bg = colors.bg}, -- diff mode: Added line |diff.txt|
         DiffChange {fg = colors.git.change}, -- diff mode: Changed line |diff.txt|
         DiffDelete {fg = colors.git.delete, bg = colors.bg}, -- diff mode: Deleted line |diff.txt|
@@ -136,12 +136,12 @@ local theme = lush(function()
         PmenuThumb {bg = colors.fg}, -- Popup menu: Thumb of the scrollbar.
         Question {fg = colors.purple}, -- |hit-enter| prompt and yes/no questions
         QuickFixLine {fg = colors.bg, bg = colors.yellow}, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-        Search {fg = colors.bg, bg = colors.fg}, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+        Search {fg = colors.fg, bg = colors.bg2}, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
         SpecialKey {fg = colors.bg3}, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
-        SpellBad {fg = colors.red_2, style = "underline"}, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise. 
-        SpellCap {fg = colors.yellow_2}, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
-        SpellLocal {fg = colors.yellow_2}, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
-        SpellRare {fg = colors.yellow_2}, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
+        SpellBad {fg = colors.fg, style = "underline"}, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise. 
+        -- SpellCap {fg = colors.fg}, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
+        SpellLocal {fg = colors.fg}, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
+        SpellRare {fg = colors.fg}, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
         StatusLine {fg = colors.fg, bg = colors.bg2}, -- status line of current window
         StatusLineNC {fg = colors.bg3}, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
         TabLine {fg = colors.bg3}, -- tab pages line, not active tab page label
@@ -347,7 +347,7 @@ local theme = lush(function()
         NeogitHunkHeaderHighlight {bg = colors.bg2, fg = colors.purple}, --
         NeogitDiffContextHighlight {bg = colors.bg1},--
         NeogitDiffDeleteHighlight {fg = colors.git.delete, bg = colors.bg1},--
-        NeogitDiffAddHighlight {fg = colors.git.add, bg = colors.bg1}--
+        NeogitDiffAddHighlight {fg = colors.git.add, bg = colors.bg1}, --
         --  END neogit
 
         --  START lightspeed.nvim
@@ -365,6 +365,16 @@ local theme = lush(function()
         --  LightspeedPendingOpArea
         --  LightspeedPendingChangeOpArea
         --  END lightspeed.nvim
+
+        --  START telescope
+        TelescopeBorder { fg = colors.bg2 },
+        TelescopePromptBorder { fg = "#ddc7a1"},
+        TelescopeResultsBorder { fg = colors.bg2},
+        TelescopeSelectionCaret { fg = colors.purple },
+        TelescopeSelection { fg = colors.purple, bg = colors.bg2},
+        TelescopeMatching { fg = colors.blue },
+        --  END telescope
+
 
     }
 end)
