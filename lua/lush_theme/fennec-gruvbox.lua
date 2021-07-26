@@ -285,15 +285,24 @@ local theme = lush(function()
         -- END which-key --
 
         -- START nvimtree --
-        NvimTreeNormal {fg = colors.fg}, NvimTreeRootFolder {fg = colors.green, gui = "bold"},
-        NvimTreeFolderName {fg = colors.blue_2}, NvimTreeFolderIcon {fg = colors.blue_2},
-        NvimTreeEmptyFolderName {fg = colors.blue_2}, NvimTreeOpenedFolderName {fg = colors.blue_2},
-        NvimTreeImageFile {fg = colors.purple}, NvimTreeExecFile {fg = colors.green},
-        NvimTreeSpecialFile {fg = colors.yellow, gui = "underline"}, NvimTreeSymlink {fg = colors.blue},
-        NvimTreeGitNew {fg = colors.git.add}, NvimTreeGitDirty {fg = colors.git.change},
-        NvimTreeGitDeleted {fg = colors.git.delete}, NvimTreeGitStaged {fg = colors.green},
-        NvimTreeGitMerge {fg = colors.green}, NvimTreeGitRenamed {fg = colors.green},
-        NvimTreeIndentMarker {fg = colors.gray}, NvimTreeLspDiagnostics {fg = colors.orange},
+        NvimTreeNormal {fg = colors.fg}, --
+        NvimTreeRootFolder {fg = colors.green, gui = "bold"}, --
+        NvimTreeFolderName {fg = colors.blue_2}, --
+        NvimTreeFolderIcon {fg = colors.blue_2},--
+        NvimTreeEmptyFolderName {fg = colors.blue_2}, --
+        NvimTreeOpenedFolderName {fg = colors.blue_2},--
+        NvimTreeImageFile {fg = colors.purple}, --
+        NvimTreeExecFile {fg = colors.green},--
+        NvimTreeSpecialFile {fg = colors.yellow, gui = "underline"}, --
+        NvimTreeSymlink {fg = colors.blue},--
+        NvimTreeGitNew {fg = colors.git.add}, --
+        NvimTreeGitDirty {fg = colors.git.change},--
+        NvimTreeGitDeleted {fg = colors.git.delete}, --
+        NvimTreeGitStaged {fg = colors.green},--
+        NvimTreeGitMerge {fg = colors.green}, --
+        NvimTreeGitRenamed {fg = colors.green},--
+        NvimTreeIndentMarker {fg = colors.gray}, --
+        NvimTreeLspDiagnostics {fg = colors.orange},--
         -- LspDiagnosticsError = { fg = c.error },
         -- LspDiagnosticsWarning = { fg = c.warning },
         -- LspDiagnosticsInformation = { fg = c.info },
@@ -301,29 +310,44 @@ local theme = lush(function()
         -- END nvimtree --
 
         -- START dashboard
-        DashboardShortCut {fg = colors.purple}, DashboardHeader {fg = colors.red}, DashboardCenter {fg = colors.blue},
-        DashboardFooter {fg = colors.yellow, gui = "italic"}, -- END dashboard
+        DashboardShortCut {fg = colors.purple}, --
+        DashboardHeader {fg = colors.red}, --
+        DashboardCenter {fg = colors.blue},--
+        DashboardFooter {fg = colors.yellow, gui = "italic"}, --
+        -- END dashboard
+
         -- START hop
-        HopNextKey {fg = colors.red_2, gui = "bold"}, HopUnmatched {fg = colors.bg3}, -- END hop
+        HopNextKey {fg = colors.red_2, gui = "bold"}, --
+        HopUnmatched {fg = colors.bg3},--
+        -- END hop
+
         -- START easymotion
-        EasyMotionTarget {fg = colors.red_2, gui = "bold"}, EasyMotionTarget2First {fg = colors.red_2, gui = "bold"},
-        EasyMotionTarget2Second {fg = colors.red_2, gui = "bold"}, EasyMotionShade {fg = colors.bg3}, -- END easymotion
+        EasyMotionTarget {fg = colors.red_2, gui = "bold"}, --
+        EasyMotionTarget2First {fg = colors.red_2, gui = "bold"},--
+        EasyMotionTarget2Second {fg = colors.red_2, gui = "bold"}, --
+        EasyMotionShade {fg = colors.bg3}, --
+        -- END easymotion
+
         -- START gitsigns
         GitSignsAdd {fg = colors.gitSigns.add}, -- diff mode: Added line |diff.txt|
         GitSignsChange {fg = colors.gitSigns.change}, -- diff mode: Changed line |diff.txt|
         GitSignsDelete {fg = colors.gitSigns.delete}, -- diff mode: Deleted line |diff.txt|
         -- END gitsigns
+
         -- START gitgutter
         GitGutterAdd {fg = colors.gitSigns.add}, -- diff mode: Added line |diff.txt|
         GitGutterChange {fg = colors.gitSigns.change}, -- diff mode: Changed line |diff.txt|
         GitGutterDelete {fg = colors.gitSigns.delete}, -- diff mode: Deleted line |diff.txt|
         -- END gitgutter
+
         --  START neogit
-        NeogitBranch {fg = colors.blue}, NeogitRemote {fg = colors.blue},
-        NeogitHunkHeader {bg = colors.bg1, fg = colors.fg},
-        NeogitHunkHeaderHighlight {bg = colors.bg2, fg = colors.purple}, NeogitDiffContextHighlight {bg = colors.bg1},
-        NeogitDiffDeleteHighlight {fg = colors.git.delete, bg = colors.bg1},
-        NeogitDiffAddHighlight {fg = colors.git.add, bg = colors.bg1}
+        NeogitBranch {fg = colors.blue}, --
+        NeogitRemote {fg = colors.blue},--
+        NeogitHunkHeader {bg = colors.bg1, fg = colors.fg},--
+        NeogitHunkHeaderHighlight {bg = colors.bg2, fg = colors.purple}, --
+        NeogitDiffContextHighlight {bg = colors.bg1},--
+        NeogitDiffDeleteHighlight {fg = colors.git.delete, bg = colors.bg1},--
+        NeogitDiffAddHighlight {fg = colors.git.add, bg = colors.bg1}--
         --  END neogit
 
         --  START lightspeed.nvim
