@@ -139,7 +139,7 @@ local theme = lush(function()
         QuickFixLine {fg = colors.bg, bg = colors.yellow}, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
         Search {fg = colors.fg, bg = colors.bg2}, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
         SpecialKey {fg = colors.bg3}, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
-        SpellBad {fg = colors.fg, style = "underline"}, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise. 
+        SpellBad {fg = colors.fg, gui = "underline"}, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise. 
         -- SpellCap {fg = colors.fg}, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
         SpellLocal {fg = colors.fg}, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
         SpellRare {fg = colors.fg}, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
@@ -183,7 +183,7 @@ local theme = lush(function()
         -- StorageClass {fg = colors.blue}, -- static, register, volatile, etc.
         -- Structure {fg = colors.yellow}, --  struct, union, enum, etc.
         -- Typedef {fg = colors.yellow}, --  A typedef
-        Special {fg = colors.red, style = "italic"}, -- (preferred) any special symbol
+        Special {fg = colors.red, gui = "italic"}, -- (preferred) any special symbol
         -- SpecialChar    { }, --  special character in a constant
         -- Tag            { }, --    you can use CTRL-] on this
         -- Delimiter      { }, --  character that needs attention
@@ -404,10 +404,38 @@ local theme = lush(function()
         BufferInactiveMod {fg = colors.gray_2, bg = colors.bg1},
         BufferInactiveSign {fg = colors.gray_2, bg = colors.bg1},
         BufferInactiveTarget {fg = colors.red, bg = colors.bg_inactive, gui = "bold"}, --
-        
         -- BufferTabpages: "blue bg_inactive b",
         -- BufferTabpageFill: "gutter_fg_grey bg_inactive",
         --  END buffer
+
+        -- START markdown
+        -- mkdHeading = { fg = c.orange, style = "bold" },
+        -- mkdCode = { bg = c.bg2, fg = c.fg },
+        mkdCodeDelimiter { bg = colors.bg2, fg = colors.fg },
+        mkdCodeStart { fg = colors.yellow, gui = "bold" },
+        mkdCodeEnd { fg = colors.yellow, gui = "bold" },
+        -- mkdLink = { fg = c.blue, style = "underline" },
+
+        markdownHeadingDelimiter { fg = colors.orange, gui = "bold" },
+        markdownCode { fg = colors.yellow },
+        markdownCodeBlock { fg = colors.yellow },
+        markdownH1 { fg = colors.red, gui = "bold" },
+        markdownH2 { fg = colors.blue, gui = "bold" },
+        markdownLinkText { fg = colors.blue, gui = "underline" },
+
+        -- VimwikiHeader1 {fg = colors.orange, gui = "bold"},
+        -- VimwikiHeader2 {fg = colors.green, gui = "bold"},
+        -- VimwikiHeader3 {fg = colors.blue, gui = "bold"},
+        -- VimwikiHeader4 {fg = colors.aqua, gui = "bold"},
+        -- VimwikiHeader5 {fg = colors.red, gui = "bold"},
+        -- VimwikiHeader6 {fg = colors.purple, gui = "bold"},
+        -- VimwikiLink {fg = colors.aqua},
+        -- VimwikiHeaderChar {fg = colors.bg2},
+        -- VimwikiHR {fg = colors.yellow},
+        -- VimwikiList {fg = colors.orange},
+        -- VimwikiTag {fg = colors.orange},
+        -- VimwikiMarkers {fg = colors.bg2},
+        -- END markdown
 
     }
 end)
