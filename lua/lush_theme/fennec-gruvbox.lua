@@ -420,22 +420,24 @@ local theme = lush(function()
         markdownCode { fg = colors.yellow },
         markdownCodeBlock { fg = colors.yellow },
         markdownH1 { fg = colors.red, gui = "bold" },
-        markdownH2 { fg = colors.blue, gui = "bold" },
+        markdownH2 { fg = colors.orange, gui = "bold" },
         markdownLinkText { fg = colors.blue, gui = "underline" },
-
-        VimwikiHeader1 {fg = colors.red, gui = "bold"},
-        VimwikiHeader2 {fg = colors.blue, gui = "bold"},
-        VimwikiHeader3 {fg = colors.orange, gui = "bold"},
-        VimwikiHeader4 {fg = colors.green, gui = "bold"},
-        VimwikiHeader5 {fg = colors.purple, gui = "bold"},
-        VimwikiHeader6 {fg = colors.aqua, gui = "bold"},
-        VimwikiLink {fg = colors.orange_2},
-        VimwikiHeaderChar {fg = colors.bg2},
-        VimwikiHR {fg = colors.yellow},
-        VimwikiList {fg = colors.aqua},
-        VimwikiTag {fg = colors.aqua},
-        VimwikiMarkers {fg = colors.bg2},
         -- END markdown
+
+        -- START vimwiki
+        VimwikiHeader1 {fg = colors.red, gui = "bold"},
+        VimwikiHeader2 {fg = colors.orange, gui = "bold"},
+        VimwikiHeader3 {fg = colors.yellow, gui = "bold"},
+        VimwikiHeader4 {fg = colors.green, gui = "bold"},
+        VimwikiHeader5 {fg = colors.aqua, gui = "bold"},
+        VimwikiHeader6 {fg = colors.blue, gui = "bold"},
+        VimwikiLink {fg = colors.orange},
+        VimwikiHeaderChar {fg = colors.bg2},
+        VimwikiHR {fg = colors.blue},
+        VimwikiList {fg = colors.purple},
+        VimwikiTag {fg = colors.purple},
+        VimwikiMarkers {fg = colors.bg2},
+        -- END vimwiki
 
     }
 end)
