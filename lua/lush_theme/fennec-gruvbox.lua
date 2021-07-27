@@ -386,6 +386,28 @@ local theme = lush(function()
         TelescopeMatching { fg = colors.blue },
         --  END telescope
 
+        --  START buffer
+        BufferCurrent {fg = colors.fg, bg = colors.bg},
+        BufferCurrentIndex {fg = colors.blue, bg = colors.bg},
+        BufferCurrentMod {fg = colors.fg, bg = colors.bg},
+        BufferCurrentSign {fg = colors.blue, bg = colors.bg},
+        BufferCurrentTarget {fg = colors.red, bg = colors.bg, gui = "bold"},
+
+        BufferVisible {fg = colors.fg, bg = colors.bg},
+        BufferVisibleIndex {fg = colors.fg, bg = colors.bg},
+        BufferVisibleMod {fg = colors.fg, bg = colors.bg},
+        BufferVisibleSign {fg = colors.fg, bg = colors.bg},
+        BufferVisibleTarget {fg = colors.red, bg = colors.bg, gui = "bold"},
+
+        BufferInactive {fg = colors.gray_2, bg = colors.bg1},
+        BufferInactiveIndex {fg = colors.gray_2, bg = colors.bg1},
+        BufferInactiveMod {fg = colors.gray_2, bg = colors.bg1},
+        BufferInactiveSign {fg = colors.gray_2, bg = colors.bg1},
+        BufferInactiveTarget {fg = colors.red, bg = colors.bg_inactive, gui = "bold"}, --
+        
+        -- BufferTabpages: "blue bg_inactive b",
+        -- BufferTabpageFill: "gutter_fg_grey bg_inactive",
+        --  END buffer
 
     }
 end)
