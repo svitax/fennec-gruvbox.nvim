@@ -77,7 +77,8 @@ local colors = {
     fg1 = "#ebdbb2",
 
     git = {delete = "#c14a4a", add = "#6f8352", change = "#b47109", bg_red = "#ae5858"},
-    gitSigns = {delete = "#ae5858", add = "#6f8352", change = "#a96b2c"}
+    gitSigns = {delete = "#ae5858", add = "#6f8352", change = "#a96b2c"},
+    lightspeed = {secondary = "#9ADDFF", primary = "#F00077"}
 }
 
 local theme = lush(function()
@@ -126,7 +127,7 @@ local theme = lush(function()
         MoreMsg {fg = colors.fg}, -- |more-prompt|
         NonText {fg = colors.bg3}, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
         Normal {fg = colors.fg, bg = colors.bg}, -- normal text
-        NormalFloat {fg = colors.fg, bg = colors.bg2}, -- Normal text in floating windows.
+        NormalFloat {fg = colors.fg, bg = colors.bg0}, -- Normal text in floating windows.
         FloatBorder {fg = colors.bg2}, --
         -- NormalNC     { }, -- normal text in non-current windows
         -- NormalSB =   { }, -- normal text in non-current windows
@@ -356,19 +357,24 @@ local theme = lush(function()
         --  END neogit
 
         --  START lightspeed.nvim
-        --  LightspeedLabel
-        --  LightspeedLabelOverlapped
-        --  LightspeedLabelDistant
-        --  LightspeedLabelDistantOverlapped
-        --  LightspeedShortcut
-        --  LightspeedShortcutOverlapped
-        --  LightspeedMaskedChar
-        --  LightspeedGreyWash
-        --  LightspeedUnlabeledMatch
-        --  LightspeedOneCharMatch
-        --  LightspeedUniqueChar
-        --  LightspeedPendingOpArea
-        --  LightspeedPendingChangeOpArea
+        -- LightspeedCursor {fg = c.black, bg = c.yellow},
+        LightspeedLabel {fg = colors.lightspeed.primary, gui = "bold, underline"},
+        LightspeedLabelOverlapped {fg = colors.lightspeed.primary, gui = "underline"},
+        LightspeedLabelDistant {fg = colors.lightspeed.secondary, gui = "bold, underline"},
+        LightspeedLabelDistantOverlapped {fg = colors.lightspeed.secondary, gui = "underline"},
+        LightspeedShortcut {
+            fg = colors.white,
+            bg = colors.lightspeed.primary,
+            gui = "bold, underline"
+        },
+        LightspeedShortcutOverlapped {fg = colors.white, bg = colors.lightspeed.primary, gui = "bold, underline"},
+        LightspeedMaskedChar {fg = colors.red},
+        LightspeedGreyWash {fg = colors.gray_2},
+        LightspeedUnlabeledMatch {fg = colors.white, gui = "bold"},
+        LightspeedOneCharMatch {fg = colors.white, bg = colors.lightspeed.primary, gui = "bold"},
+        LightspeedUniqueChar {fg = colors.white, gui = "bold"},
+        LightspeedPendingOpArea {fg = colors.white, bg = colors.lightspeed.primary},
+        LightspeedPendingChangeOpArea {fg = colors.lightspeed.primary, gui = "italic, strikethrough"},
         --  END lightspeed.nvim
 
         --  START telescope
