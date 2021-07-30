@@ -431,11 +431,11 @@ local theme = lush(function()
         VimwikiHeader4 {fg = colors.green, gui = "bold"},
         VimwikiHeader5 {fg = colors.aqua, gui = "bold"},
         VimwikiHeader6 {fg = colors.blue, gui = "bold"},
-        VimwikiLink {fg = colors.orange},
+        VimwikiLink {fg = colors.purple},
         VimwikiHeaderChar {fg = colors.bg2},
         VimwikiHR {fg = colors.blue},
-        VimwikiList {fg = colors.purple},
-        VimwikiTag {fg = colors.purple},
+        VimwikiList {fg = colors.purple, gui = "bold"},
+        VimwikiTag {fg = colors.purple, gui = "bold"},
         VimwikiMarkers {fg = colors.bg2},
         -- END vimwiki
 
