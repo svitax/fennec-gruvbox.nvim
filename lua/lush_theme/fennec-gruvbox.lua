@@ -409,19 +409,53 @@ local theme = lush(function()
         --  END buffer
 
         -- START markdown
-        -- mkdHeading = { fg = c.orange, style = "bold" },
-        -- mkdCode = { bg = c.bg2, fg = c.fg },
-        mkdCodeDelimiter { bg = colors.bg2, fg = colors.fg },
-        mkdCodeStart { fg = colors.yellow, gui = "bold" },
-        mkdCodeEnd { fg = colors.yellow, gui = "bold" },
-        -- mkdLink = { fg = c.blue, style = "underline" },
+  -- markdownBlockquote: "bg3"
+  -- markdownBold: "yellow_2 - b"
+  -- markdownCode: "yellow"
+  -- markdownCodeBlock: "bg3"
+  -- markdownCodeDelimiter: "bg3"
+  -- markdownH1: "fg"
+  -- markdownH2: "fg"
+  -- markdownH3: "fg"
+  -- markdownH4: "fg"
+  -- markdownH5: "fg"
+  -- markdownH6: "fg"
+  -- markdownHeadingDelimiter: "orange"
+  -- markdownHeadingRule: "bg3"
+  -- markdownId: "purple"
+  -- markdownIdDeclaration: "blue"
+  -- markdownIdDelimiter: "purple"
+  -- markdownItalic: "purple - i"
+  -- markdownLinkDelimiter: "purple"
+  -- markdownLinkText: "blue"
+  -- markdownListMarker: "orange"
+  -- markdownOrderedListMarker: "orange"
+  -- markdownRule: "bg3"
+  -- markdownUrl: "green - u"
 
-        markdownHeadingDelimiter { fg = colors.orange, gui = "bold" },
+        markdownBlockQuote { bg = colors.bg2, fg = colors.fg},
+        markdownBold{ fg = colors.yellow_2, gui = "bold"},
         markdownCode { fg = colors.yellow },
-        markdownCodeBlock { fg = colors.yellow },
+        markdownCodeBlock { bg = colors.bg2, fg = colors.fg },
+        markdownCodeDelimiter { bg = colors.bg2, fg = colors.fg },
         markdownH1 { fg = colors.red, gui = "bold" },
         markdownH2 { fg = colors.orange, gui = "bold" },
-        markdownLinkText { fg = colors.blue, gui = "underline" },
+        markdownH3 {fg = colors.yellow, gui = "bold"},
+        markdownH4 {fg = colors.green, gui = "bold"},
+        markdownH5 {fg = colors.aqua, gui = "bold"},
+        markdownH6 {fg = colors.blue, gui = "bold"},
+        markdownHeadingDelimiter { fg = colors.orange },
+        markdownHeadingRule {fg = colors.fg, bg = colors.bg2 },
+        markdownID {fg = colors.purple},
+        markdownIDDeclaration {fg = colors.blue },
+        markdownIDDelimiter {fg = colors.purple},
+        markdownIDItalic {fg = colors.purple, gui = "italic"},
+        markdownLinkDelimiter {fg = colors.purple},
+        markdownLinkText {fg = colors.blue},
+        markdownListMarker {fg = colors.orange},
+        markdownOrderedListMarker {fg = colors.orange},
+        markdownRule {fg = colors.fg, bg = colors.bg3},
+        markdownUrl {fg = colors.green, gui = "underline"},
         -- END markdown
 
         -- START vimwiki
