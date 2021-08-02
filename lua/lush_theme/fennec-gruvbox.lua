@@ -409,35 +409,11 @@ local theme = lush(function()
         --  END buffer
 
         -- START markdown
-  -- markdownBlockquote: "bg3"
-  -- markdownBold: "yellow_2 - b"
-  -- markdownCode: "yellow"
-  -- markdownCodeBlock: "bg3"
-  -- markdownCodeDelimiter: "bg3"
-  -- markdownH1: "fg"
-  -- markdownH2: "fg"
-  -- markdownH3: "fg"
-  -- markdownH4: "fg"
-  -- markdownH5: "fg"
-  -- markdownH6: "fg"
-  -- markdownHeadingDelimiter: "orange"
-  -- markdownHeadingRule: "bg3"
-  -- markdownId: "purple"
-  -- markdownIdDeclaration: "blue"
-  -- markdownIdDelimiter: "purple"
-  -- markdownItalic: "purple - i"
-  -- markdownLinkDelimiter: "purple"
-  -- markdownLinkText: "blue"
-  -- markdownListMarker: "orange"
-  -- markdownOrderedListMarker: "orange"
-  -- markdownRule: "bg3"
-  -- markdownUrl: "green - u"
-
-        markdownBlockQuote { bg = colors.bg2, fg = colors.fg},
+        markdownBlockQuote { fg = colors.bg3},
         markdownBold{ fg = colors.yellow_2, gui = "bold"},
         markdownCode { fg = colors.yellow },
-        markdownCodeBlock { bg = colors.bg2, fg = colors.fg },
-        markdownCodeDelimiter { bg = colors.bg2, fg = colors.fg },
+        markdownCodeBlock { fg = colors.bg3 },
+        markdownCodeDelimiter { fg = colors.bg3 },
         markdownH1 { fg = colors.red, gui = "bold" },
         markdownH2 { fg = colors.orange, gui = "bold" },
         markdownH3 {fg = colors.yellow, gui = "bold"},
@@ -445,7 +421,7 @@ local theme = lush(function()
         markdownH5 {fg = colors.aqua, gui = "bold"},
         markdownH6 {fg = colors.blue, gui = "bold"},
         markdownHeadingDelimiter { fg = colors.orange },
-        markdownHeadingRule {fg = colors.fg, bg = colors.bg2 },
+        markdownHeadingRule { fg = colors.bg3 },
         markdownID {fg = colors.purple},
         markdownIDDeclaration {fg = colors.blue },
         markdownIDDelimiter {fg = colors.purple},
@@ -454,7 +430,7 @@ local theme = lush(function()
         markdownLinkText {fg = colors.blue},
         markdownListMarker {fg = colors.orange},
         markdownOrderedListMarker {fg = colors.orange},
-        markdownRule {fg = colors.fg, bg = colors.bg3},
+        markdownRule { fg = colors.bg3 },
         markdownUrl {fg = colors.green, gui = "underline"},
         -- END markdown
 
