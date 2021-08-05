@@ -378,9 +378,9 @@ local theme = lush(function()
         --  END lightspeed.nvim
 
         --  START telescope
-        TelescopeBorder { fg = colors.bg2 },
-        TelescopePromptBorder { fg = colors.fg4 },
-        TelescopeResultsBorder { fg = colors.bg2},
+        TelescopeBorder { fg = colors.bg3 },
+        TelescopePromptBorder { fg = colors.bg3 },
+        TelescopeResultsBorder { fg = colors.bg3},
         TelescopeSelectionCaret { fg = colors.purple },
         TelescopeSelection { fg = colors.purple, bg = colors.bg2},
         TelescopeMatching { fg = colors.blue },
