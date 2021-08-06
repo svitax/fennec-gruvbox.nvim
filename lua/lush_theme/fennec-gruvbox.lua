@@ -444,6 +444,16 @@ local theme = lush(function()
         markdownH6 {fg = colors.blue, gui = "bold"},
         markdownHeadingDelimiter { fg = colors.bg3 },
         markdownHeadingRule { fg = colors.bg3 },
+        markdownBold{ fg = colors.orange, gui = "bold"},
+        markdownBoldDelimiter{ fg = colors.bg3},
+        markdownItalic {fg = colors.yellow, gui = "italic" },
+        markdownItalicDelimiter {fg = colors.bg3 },
+        markdownBoldItalic {fg = colors.red, gui = "bold, italic" },
+        markdownBoldItalicDelimiter {fg = colors.bg3 },
+        markdownCode { fg = colors.green},
+        markdownCodeDelimiter { fg = colors.bg3},
+        markdownCodeBlock { fg = colors.bg3},
+        markdownBlockQuote { fg = colors.bg3},
         -- not sure what the markdownID stuff does
         markdownID {fg = colors.red},
         markdownIDDeclaration {fg = colors.red },
@@ -452,13 +462,12 @@ local theme = lush(function()
         -- not sure what the markdownID stuff does
         markdownLinkDelimiter {fg = colors.bg3},
         markdownLinkText {fg = colors.green},
-        markdownListMarker {fg = colors.orange},
-        markdownOrderedListMarker {fg = colors.orange},
+        markdownListMarker {fg = colors.orange, gui = "bold"},
+        markdownOrderedListMarker {fg = colors.orange, gui = "bold"},
         markdownRule { fg = colors.bg3 },
-        markdownUrl {fg = colors.purple},
-        -- markdownUrlTitle {fg = colors.blue },
-        markdownItalic {fg = colors.yellow, gui = "italic" },
-        markdownItalicDelimiter {fg = colors.bg3 },
+        markdownURL {fg = colors.purple},
+        markdownInlineURL {fg = colors.blue},
+        markdownUrlTitle {fg = colors.blue },
         -- END markdown
 
         -- START vimwiki
