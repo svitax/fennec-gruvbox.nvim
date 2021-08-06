@@ -431,11 +431,6 @@ local theme = lush(function()
         --  END buffer
 
         -- START markdown
-        markdownBlockQuote { fg = colors.bg3},
-        markdownBold{ fg = colors.orange, gui = "bold"},
-        markdownCode { fg = colors.green},
-        markdownCodeBlock { fg = colors.bg3},
-        markdownCodeDelimiter { fg = colors.bg3},
         markdownH1 { fg = colors.red, gui = "bold" },
         markdownH2 { fg = colors.orange, gui = "bold" },
         markdownH3 {fg = colors.yellow, gui = "bold"},
@@ -478,11 +473,15 @@ local theme = lush(function()
         VimwikiHeader5 {fg = colors.aqua, gui = "bold"},
         VimwikiHeader6 {fg = colors.blue, gui = "bold"},
         VimwikiLink {fg = colors.purple},
-        VimwikiHeaderChar {fg = colors.bg2},
+        VimwikiHeaderChar {fg = colors.bg3},
         VimwikiHR {fg = colors.blue},
         VimwikiList {fg = colors.purple, gui = "bold"},
         VimwikiTag {fg = colors.purple, gui = "bold"},
-        VimwikiMarkers {fg = colors.bg2},
+        VimwikiMarkers {fg = colors.bg3},
+        VimwikiBold {fg = colors.orange, gui = "bold"},
+        VimwikiItalic {fg = colors.yellow, gui = "italic"},
+        VimwikiBoldItalic {fg = colors.red, gui = "bold, italic"},
+        VimwikiUnderline {gui = "underline"},
         -- END vimwiki
 
     }
