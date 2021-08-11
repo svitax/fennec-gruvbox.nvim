@@ -492,7 +492,6 @@ local theme = lush(function()
         -- END vimwiki
 
         -- START vim-visual-multi
-
         VM_Mono {fg = colors.bg, bg = colors.yellow_2},
         VM_Extend {fg = colors.bg, bg = colors.blue },
         VM_Cursor {fg = colors.bg, bg = colors.yellow_2},
