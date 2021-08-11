@@ -491,12 +491,12 @@ local theme = lush(function()
         -- VimwikiHR {fg = colors.yellow},
         -- END vimwiki
 
-        -- -- START vim-visual-multi
-        -- VM_Mono {fg = colors.bg, bg = colors.yellow_2},
-        -- VM_Extend {fg = colors.bg, bg = colors.blue },
-        -- VM_Cursor {fg = colors.bg, bg = colors.yellow_2},
-        -- VM_Insert {fg = colors.fg, bg = colors.red},
-        -- -- END vim-visual-multi
+        -- START vim-visual-multi
+        VM_Mono {fg = colors.bg, bg = colors.yellow_2},
+        VM_Extend {fg = colors.bg, bg = colors.blue },
+        VM_Cursor {fg = colors.bg, bg = colors.yellow_2},
+        VM_Insert {fg = colors.fg, bg = colors.red},
+        -- END vim-visual-multi
 
     }
 end)
