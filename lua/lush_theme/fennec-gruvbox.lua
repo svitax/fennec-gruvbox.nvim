@@ -99,7 +99,7 @@ local theme = lush(function()
         Comment {fg = colors.bg3, gui = "italic"}, -- any comment
         ColorColumn {bg = colors.bg2}, -- used for the columns set with 'colorcolumn'
         Conceal {fg = colors.bg3}, -- placeholder characters substituted for concealed text (see 'conceallevel')
-        -- Cursor       { }, -- character under the cursor
+        -- Cursor       {bg = colors.gray }, -- character under the cursor
         -- lCursor      { }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
         -- CursorIM     { }, -- like Cursor, but used when in IME mode |CursorIM|
         CursorColumn {bg = colors.bg0}, -- Screen-column at the cursor, when 'cursorcolumn' is set.
@@ -379,7 +379,7 @@ local theme = lush(function()
         --  END default lightspeed.nvim
 
         --  START fennec lightspeed.nvim
-        -- LightspeedCursor {fg = colors.bg, bg = colors.red, gui = "bold"},
+        LightspeedCursor {fg = colors.bg, bg = colors.red, gui = "bold"},
         LightspeedLabel {fg = colors.red, gui = "bold, underline"},
         -- LightspeedLabelOverlapped {fg = colors.green_2, gui = "bold"},
         LightspeedLabelDistant {fg = colors.orange, gui = "bold, underline"},
@@ -490,6 +490,14 @@ local theme = lush(function()
         VimwikiUnderline {gui = "underline"},
         -- VimwikiHR {fg = colors.yellow},
         -- END vimwiki
+
+        -- START vim-visual-multi
+
+        VM_Mono {fg = colors.bg, bg = colors.yellow_2},
+        VM_Extend {fg = colors.bg, bg = colors.blue },
+        VM_Cursor {fg = colors.bg, bg = colors.yellow_2},
+        VM_Insert {fg = colors.fg, bg = colors.red},
+        -- END vim-visual-multi
 
     }
 end)
