@@ -140,8 +140,8 @@ local theme = lush(function()
         QuickFixLine {fg = colors.bg, bg = colors.yellow}, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
         Search {fg = colors.fg, bg = colors.bg2}, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
         SpecialKey {fg = colors.bg3}, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
-        SpellBad {fg = colors.fg, gui = "underline"}, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise. 
-        -- SpellCap {fg = colors.fg}, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
+        SpellBad { gui = "underline"}, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise. 
+        SpellCap { gui = "underline"}, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
         SpellLocal {fg = colors.fg}, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
         SpellRare {fg = colors.fg}, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
         StatusLine {fg = colors.fg, bg = colors.bg2}, -- status line of current window
