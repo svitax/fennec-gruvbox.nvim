@@ -379,7 +379,7 @@ local theme = lush(function()
         --  END default lightspeed.nvim
 
         --  START fennec lightspeed.nvim
-        LightspeedCursor {fg = colors.bg, bg = colors.red, gui = "bold"},
+        LightspeedCursor {fg = colors.bg, bg = colors.blue, gui = "bold, underline"},
         LightspeedLabel {fg = colors.red, gui = "bold, underline"},
         -- LightspeedLabelOverlapped {fg = colors.green_2, gui = "bold"},
         LightspeedLabelDistant {fg = colors.orange, gui = "bold, underline"},
