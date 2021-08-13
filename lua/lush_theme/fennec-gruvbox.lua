@@ -532,7 +532,6 @@ local theme = lush(function()
         -- VimwikiHR {fg = colors.yellow},
         -- END vimwiki
 
-
         -- START orgmode.nvim
         org_bold_delimiter {fg = colors.bg3},
         org_bold {fg = colors.orange, gui = "bold"},
@@ -584,12 +583,20 @@ local theme = lush(function()
         -- OrgHeadlineStar2
         -- OrgHeadlineStar3
         -- OrgHeadlineStar4
-        OrgHeadlineLevel1 {fg = colors.red},
-        OrgHeadlineLevel2 {fg = colors.orange},
-        OrgHeadlineLevel3 {fg = colors.yellow},
-        OrgHeadlineLevel4 {fg = colors.green},
+        -- OrgHeadlineLevel1 {fg = colors.red},
+        -- OrgHeadlineLevel2 {fg = colors.orange},
+        -- OrgHeadlineLevel3 {fg = colors.yellow},
+        -- OrgHeadlineLevel4 {fg = colors.green},
         -- END orgmode.nvim
 
+        -- "START" vim-sandwich
+        -- OperatorSandwichBuns {fg = colors.bg, bg = colors.yellow_2},
+        OperatorSandwichChange {bg = colors.bg2},
+        OperatorSandwichDelete {fg = colors.bg, bg = colors.yellow_2},
+        -- OperatorSandwichAdd {},
+        -- END vim-sandwich
+
+        -- TODO: fix vim-visual-multi highlighting (https://github.com/mg979/vim-visual-multi)
         -- START vim-visual-multi
         VM_Mono {fg = colors.bg, bg = colors.yellow_2},
         VM_Extend {fg = colors.bg, bg = colors.blue },
