@@ -596,12 +596,12 @@ local theme = lush(function()
         -- OperatorSandwichAdd {},
         -- END vim-sandwich
 
-        -- TODO: fix vim-visual-multi highlighting (https://github.com/mg979/vim-visual-multi)
         -- START vim-visual-multi
-        VM_Mono {fg = colors.bg, bg = colors.yellow_2},
-        VM_Extend {fg = colors.bg, bg = colors.blue },
-        VM_Cursor {fg = colors.bg, bg = colors.yellow_2},
-        VM_Insert {fg = colors.fg, bg = colors.red},
+        -- needs "vim.g.VM_theme_set_by_colorscheme = true" for it to work
+        VM_Mono {fg = colors.bg, bg = colors.green},
+        VM_Extend {bg = colors.bg2},
+        VM_Cursor { fg = colors.bg, bg = colors.yellow_2, gui = "underline" },
+        VM_Insert {gui = "underline", sp = colors.red},
         -- END vim-visual-multi
 
     }
