@@ -76,8 +76,16 @@ local colors = {
     fg2 = "#d5c4a1",
     fg1 = "#ebdbb2",
 
-    git = {delete = "#c14a4a", add = "#6f8352", change = "#b47109", bg_red = "#ae5858"},
-    gitSigns = {delete = "#ae5858", add = "#6f8352", change = "#a96b2c"},
+    git = {
+      delete = "#c14a4a",
+      bg_delete = '#3c1f1e',
+      add = "#6f8352",
+      bg_add = "#32361a",
+      change = '#45707a',
+      bg_change = "#0d3138"
+    },
+    -- gitSigns = {delete = "#ea4a5a", add = "#28a745", change = "#2188ff"},
+    gitSigns = {delete = "#c14a4a", add = "#6c782e", change = "#45707a"},
     -- lightspeed = {primary = "#fabd2f", secondary = "#EBDBB2" },
     lightspeed = {secondary = "#9ADDFF", primary = "#F00077"},
 }
@@ -105,9 +113,9 @@ local theme = lush(function()
         CursorColumn {bg = colors.bg0}, -- Screen-column at the cursor, when 'cursorcolumn' is set.
         CursorLine {bg = colors.bg0_s}, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
         Directory {fg = colors.blue_2}, -- directory names (and other special names in listings)
-        DiffAdd {fg = colors.git.add, bg = colors.bg}, -- diff mode: Added line |diff.txt|
-        DiffChange {fg = colors.git.change}, -- diff mode: Changed line |diff.txt|
-        DiffDelete {fg = colors.git.delete, bg = colors.bg}, -- diff mode: Deleted line |diff.txt|
+        DiffAdd {fg = colors.git.add, bg = colors.git.bg_add}, -- diff mode: Added line |diff.txt|
+        DiffChange {fg = colors.git.change, bg = colors.git.bg_change}, -- diff mode: Changed line |diff.txt|
+        DiffDelete {fg = colors.git.delete, bg = colors.git.bg_delete}, -- diff mode: Deleted line |diff.txt|
         DiffText {fg = colors.bg, bg = colors.yellow}, -- diff mode: Changed text within a changed line |diff.txt|
         EndOfBuffer {fg = colors.bg}, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
         -- TermCursor   { }, -- cursor in a focused terminal
