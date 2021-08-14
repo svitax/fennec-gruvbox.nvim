@@ -81,11 +81,14 @@ local colors = {
       bg_delete = '#3c1f1e',
       add = "#6f8352",
       bg_add = "#32361a",
-      change = '#45707a',
-      bg_change = "#0d3138"
+      -- change = '#45707a',
+      -- bg_change = "#0d3138"
+      change = '#b47109',
+      bg_change = "#482D03"
     },
-    -- gitSigns = {delete = "#ea4a5a", add = "#28a745", change = "#2188ff"},
-    gitSigns = {delete = "#c14a4a", add = "#6c782e", change = "#45707a"},
+    -- gitSigns = {delete = "#ea4a5a", add = "#28a745", change = "#2188ff"}, -- github dark
+    -- gitSigns = {delete = "#c14a4a", add = "#6c782e", change = "#45707a"}, -- gruvbox-material
+    gitSigns = {delete = "#c14a4a", add = "#6c782e", change = "#b47109"}, -- gruvbox-flat
     -- lightspeed = {primary = "#fabd2f", secondary = "#EBDBB2" },
     lightspeed = {secondary = "#9ADDFF", primary = "#F00077"},
 }
