@@ -357,27 +357,6 @@ local theme = lush(function()
         NeogitDiffAddHighlight {fg = colors.git.add, bg = colors.bg1}, --
         --  END neogit
 
-        --  START default lightspeed.nvim
-        -- -- LightspeedCursor {fg = c.black, bg = c.yellow},
-        -- LightspeedLabel {fg = colors.lightspeed.primary, gui = "bold, underline"},
-        -- LightspeedLabelOverlapped {fg = colors.lightspeed.primary, gui = "underline"},
-        -- LightspeedLabelDistant {fg = colors.lightspeed.secondary, gui = "bold, underline"},
-        -- LightspeedLabelDistantOverlapped {fg = colors.lightspeed.secondary, gui = "underline"},
-        -- LightspeedShortcut {
-        --     fg = colors.fg,
-        --     bg = colors.lightspeed.primary,
-        --     gui = "bold, underline"
-        -- },
-        -- LightspeedShortcutOverlapped {fg = colors.fg, bg = colors.lightspeed.primary, gui = "bold, underline"},
-        -- LightspeedMaskedChar {fg = colors.red},
-        -- LightspeedGreyWash {fg = colors.gray_2},
-        -- LightspeedUnlabeledMatch {fg = colors.white, gui = "bold"},
-        -- LightspeedOneCharMatch {fg = colors.fg, bg = colors.lightspeed.primary, gui = "bold"},
-        -- LightspeedUniqueChar {fg = colors.white, gui = "bold"},
-        -- LightspeedPendingOpArea {fg = colors.fg, bg = colors.lightspeed.primary},
-        -- LightspeedPendingChangeOpArea {fg = colors.lightspeed.primary, gui = "italic, strikethrough"},
-        --  END default lightspeed.nvim
-
         --  START fennec lightspeed.nvim
         LightspeedCursor {fg = colors.bg, bg = colors.blue, gui = "bold, underline"},
         LightspeedLabel {fg = colors.red, gui = "bold, underline"},
