@@ -259,6 +259,7 @@ local theme = lush(function()
         TSFuncMacro {fg = colors.yellow}, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
         TSInclude {fg = colors.blue}, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
         TSKeyword {fg = colors.purple}, -- For keywords that don't fall in previous categories.
+        TSKeywordOperator {fg = colors.purple}, -- 
         TSKeywordFunction {fg = colors.purple}, -- For keywords used to define a fuction.
         TSLabel {fg = colors.blue}, -- For labels: `label:` in C and `:label:` in Lua.
         TSMethod {fg = colors.yellow}, -- For method calls and definitions.
