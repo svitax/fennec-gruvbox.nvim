@@ -273,6 +273,7 @@ local theme = lush(function()
         TSRepeat {fg = colors.purple}, -- For keywords related to loops.
         TSString {fg = colors.green}, -- For strings.
         -- TSStringRegex        { colors.orange };    -- For regexes.
+        -- TSStructure {},
         -- TSStringEscape       { colors.yellow_2 };    -- For escape characters within a string.
         -- TSSymbol             { };    -- For identifiers referring to symbols or atoms.
         TSType {fg = colors.yellow}, -- For types.
@@ -288,7 +289,7 @@ local theme = lush(function()
         TSStrike {fg = colors.yellow}, -- For strikethrough text.
         TSTitle {fg = colors.yellow}, -- Text that is part of a title.
         TSLiteral {fg = colors.yellow}, -- Literal text.
-        TSURI {fg = colors.yellow}, -- Any URI like a link or email.
+        TSURI {fg = colors.purple }, -- Any URI like a link or email.
 
         -- START which-key --
         WhichKey {fg = colors.yellow}, --
