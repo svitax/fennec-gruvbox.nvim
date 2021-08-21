@@ -90,7 +90,11 @@ local colors = {
     -- gitSigns = {delete = "#c14a4a", add = "#6c782e", change = "#45707a"}, -- gruvbox-material
     gitSigns = {delete = "#c14a4a", add = "#6c782e", change = "#b47109"}, -- gruvbox-flat
 
-    search = "#4e635b",
+    visual_red = "#442e2d",
+    visual_green = "#333e34",
+    visual_blue = "#2e3b3b",
+    visual_yellow = "#473c29",
+
     -- lightspeed = {primary = "#fabd2f", secondary = "#EBDBB2" },
     lightspeed = {secondary = "#9ADDFF", primary = "#F00077"},
 }
@@ -130,13 +134,13 @@ local theme = lush(function()
         Folded {fg = colors.bg3}, -- line used for closed folds
         -- FoldColumn   { }, -- 'foldcolumn'
         SignColumn {bg = colors.bg}, -- column where |signs| are displayed
-        IncSearch {fg = colors.aqua, bg = colors.bg3}, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+        IncSearch {fg = colors.fg, bg = colors.visual_yellow}, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
         Substitute {fg = colors.bh0_h, bg = colors.red}, -- |:substitute| replacement text highlighting
         LineNr {fg = colors.bg2}, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
         CursorLineNr {fg = colors.bg4}, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
         MatchParen {fg = colors.blue, gui = "underline", gui = "bold"}, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
         ModeMsg {fg = colors.fg, gui = "bold"}, -- 'showmode' message (e.g., "-- INSERT -- ")
-        MsgArea {fg = colors.fg}, -- Area for messages and cmdline
+        MsgArea {fg = colors.fg}, -- Area for messages and cmdlin,
         -- MsgSeparator { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
         MoreMsg {fg = colors.fg}, -- |more-prompt|
         NonText {fg = colors.bg3}, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
@@ -151,8 +155,7 @@ local theme = lush(function()
         PmenuThumb {bg = colors.fg}, -- Popup menu: Thumb of the scrollbar.
         Question {fg = colors.purple}, -- |hit-enter| prompt and yes/no questions
         QuickFixLine {fg = colors.bg, bg = colors.yellow}, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-        -- Search {fg = colors.fg, bg = colors.bg2}, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
-        Search {fg = colors.fg, bg = colors.search }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+        Search {fg = colors.fg, bg = colors.visual_yellow}, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
         SpecialKey {fg = colors.bg3}, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
         SpellBad { gui = "underline"}, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise. 
         SpellCap { gui = "underline"}, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
@@ -594,7 +597,7 @@ local theme = lush(function()
         -- START vim-visual-multi
         -- needs "vim.g.VM_theme_set_by_colorscheme = true" for it to work
         VM_Mono {fg = colors.bg, bg = colors.green},
-        VM_Extend {fg = colors.fg, bg = colors.search},
+        VM_Extend {fg = colors.fg, bg = colors.visual_yellow},
         VM_Cursor { fg = colors.bg, bg = colors.yellow_2, gui = "underline" },
         VM_Insert {gui = "underline", sp = colors.red},
         -- END vim-visual-multi
