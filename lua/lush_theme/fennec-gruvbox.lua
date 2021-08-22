@@ -251,7 +251,8 @@ local theme = lush(function()
         -- TSBoolean            { colors.blue };    -- For booleans.
         TSCharacter {fg = colors.green}, -- For characters.
         -- TSComment            { };    -- For comment blocks.
-        TSConstructor {fg = colors.aqua_2}, -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
+        -- TSConstructor {fg = colors.aqua_2}, -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
+        TSConstructor {fg = colors.orange}, -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
         TSConditional {fg = colors.purple}, -- For keywords related to conditionnals.
         TSConstant {fg = colors.yellow}, -- For constants
         TSConstBuiltin {fg = colors.blue}, -- For constant that are built in the language: `nil` in Lua.
