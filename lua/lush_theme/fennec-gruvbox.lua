@@ -41,6 +41,38 @@
 local lush = require('lush')
 local hsl = lush.hsl
 
+local util = {}
+
+util.bg = "#000000"
+util.fg = "#ffffff"
+
+local function hexToRgb(hex_str)
+  local hex = "[abcdef0-9][abcdef0-9]"
+  local pat = "^#(" .. hex .. ")(" .. hex .. ")(" .. hex .. ")$"
+  hex_str = string.lower(hex_str)
+
+  assert(string.find(hex_str, pat) ~= nil, "hex_to_rgb: invalid hex_str: " .. tostring(hex_str))
+
+  local r, g, b = string.match(hex_str, pat)
+  return { tonumber(r, 16), tonumber(g, 16), tonumber(b, 16) }
+end
+
+function util.blend(fg, bg, alpha)
+  bg = hexToRgb(bg)
+  fg = hexToRgb(fg)
+
+  local blendChannel = function(i)
+    local ret = (alpha * fg[i] + ((1 - alpha) * bg[i]))
+    return math.floor(math.min(math.max(0, ret), 255) + 0.5)
+  end
+
+  return string.format("#%02X%02X%02X", blendChannel(1), blendChannel(2), blendChannel(3))
+end
+
+function util.darken(hex, amount, bg) return util.blend(hex, bg or util.bg, math.abs(amount)) end
+function util.lighten(hex, amount, fg) return util.blend(hex, fg or util.fg, math.abs(amount)) end
+
+
 local colors = {
     fg = "#EBDBB2",
     bg = "#282828",
@@ -138,7 +170,7 @@ local theme = lush(function()
         Substitute {fg = colors.bh0_h, bg = colors.red}, -- |:substitute| replacement text highlighting
         LineNr {fg = colors.bg2}, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
         CursorLineNr {fg = colors.bg4}, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-        MatchParen {fg = colors.blue, gui = "underline", gui = "bold"}, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+        MatchParen {fg = util.lighten(colors.blue, 0.95), gui = "underline", gui = "bold"}, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
         ModeMsg {fg = colors.fg, gui = "bold"}, -- 'showmode' message (e.g., "-- INSERT -- ")
         MsgArea {fg = colors.fg}, -- Area for messages and cmdlin,
         -- MsgSeparator { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
@@ -181,7 +213,7 @@ local theme = lush(function()
         String {fg = colors.green}, --   a string constant: "this is a string"
         Character {fg = colors.green}, --  a character constant: 'c', '\n'
         -- Number {fg = colors.yellow_2}, --   a number constant: 234, 0xff
-        -- Boolean {fg = colors.orange}, --  a boolean constant: TRUE, false
+        -- Boolean {fg = colors.purple}, --  a boolean constant: TRUE, false
         -- Float {fg = colors.yellow_2}, --    a floating point constant: 2.3e10
         Identifier {fg = colors.red}, -- (preferred) any variable name
         Function {fg = colors.blue}, -- function name (also: methods for classes)
@@ -189,7 +221,7 @@ local theme = lush(function()
         -- Conditional {fg = colors.fg}, --  if, then, else, endif, switch, etc.
         -- Repeat {fg = colors.purple}, --   for, do, while, etc.
         -- Label {fg = colors.blue_2}, --    case, default, etc.
-        Operator {fg = colors.red}, -- "sizeof", "+", "*", etc.
+        Operator {fg = util.darken(colors.red, 0.85)}, -- "sizeof", "+", "*", etc.
         Keyword {fg = colors.aqua}, --  any other keyword
         -- Exception {fg = colors.purple}, --  try, catch, throw
         PreProc {fg = colors.aqua}, -- (preferred) generic Preprocessor
@@ -225,10 +257,10 @@ local theme = lush(function()
         LspDiagnosticsDefaultInformation {fg = colors.blue}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
         LspDiagnosticsDefaultHint {fg = colors.aqua}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
-        LspDiagnosticsVirtualTextError {fg = colors.red}, -- Used for "Error" diagnostic virtual text
-        LspDiagnosticsVirtualTextWarning {fg = colors.yellow}, -- Used for "Warning" diagnostic virtual text
-        LspDiagnosticsVirtualTextInformation {fg = colors.blue}, -- Used for "Information" diagnostic virtual text
-        LspDiagnosticsVirtualTextHint {fg = colors.aqua}, -- Used for "Hint" diagnostic virtual text
+        LspDiagnosticsVirtualTextError {bg = util.darken(colors.red, 0.1),fg = colors.red}, -- Used for "Error" diagnostic virtual text
+        LspDiagnosticsVirtualTextWarning {bg = util.darken(colors.yellow, 0.1), fg = colors.yellow}, -- Used for "Warning" diagnostic virtual text
+        LspDiagnosticsVirtualTextInformation {bg = util.darken(colors.blue, 0.1), fg = colors.blue}, -- Used for "Information" diagnostic virtual text
+        LspDiagnosticsVirtualTextHint {bg = util.darken(colors.green, 0.1), fg = colors.aqua}, -- Used for "Hint" diagnostic virtual text
         LspDiagnosticsUnderlineError {gui = "undercurl", sp = colors.red}, -- Used to underline "Error" diagnostics
         LspDiagnosticsUnderlineWarning {gui = "undercurl", sp = colors.yellow}, -- Used to underline "Warning" diagnostics
         LspDiagnosticsUnderlineInformation {gui = "undercurl", sp = colors.blue}, -- Used to underline "Information" diagnostics
@@ -251,8 +283,9 @@ local theme = lush(function()
         -- TSBoolean            { colors.blue };    -- For booleans.
         TSCharacter {fg = colors.green}, -- For characters.
         -- TSComment            { };    -- For comment blocks.
-        -- TSConstructor {fg = colors.aqua_2}, -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
-        TSConstructor {fg = colors.orange}, -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
+        TSConstructor {fg = colors.aqua_2}, -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
+        -- TSConstructor {fg = colors.orange}, -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
+        luaTSConstructor {fg = colors.orange},
         TSConditional {fg = colors.purple}, -- For keywords related to conditionnals.
         TSConstant {fg = colors.yellow}, -- For constants
         TSConstBuiltin {fg = colors.blue}, -- For constant that are built in the language: `nil` in Lua.
@@ -274,13 +307,14 @@ local theme = lush(function()
         -- TSNone               { };    -- TODO: docs
         -- TSNote = {}
         TSNumber {fg = colors.purple}, -- For all numbers
-        TSOperator {fg = colors.fg}, -- For any operator: `+`, but also `->` and `*` in C.
-        TSParameter {fg = colors.red}, -- For parameters of a function.
+        -- TSOperator {fg = colors.fg}, -- For any operator: `+`, but also `->` and `*` in C.
+        TSOperator {fg = util.darken(colors.orange, 0.85)}, -- For any operator: `+`, but also `->` and `*` in C.        TSParameter {fg = colors.red}, -- For parameters of a function.
         -- TSParameterReference {fg = colors.blue_2}, -- For references to parameters of a function.
         TSProperty {fg = colors.red}, -- Same as `TSField`.
         TSPunctDelimiter {fg = colors.red}, -- For delimiters ie: `.`
-        TSPunctBracket {fg = colors.orange}, -- For brackets and parens.
-        TSPunctSpecial {fg = colors.orange}, -- For special punctutation that does not fall in the catagories before.
+        TSPunctBracket {fg = util.darken(colors.orange, 0.85) }, -- For brackets and parens.
+        -- TSPunctBracket {fg = colors.fg}, -- For brackets and parens.
+        TSPunctSpecial {fg = util.darken(colors.orange, 0.85)}, -- For special punctutation that does not fall in the catagories before.
         TSRepeat {fg = colors.purple}, -- For keywords related to loops.
         TSString {fg = colors.green}, -- For strings.
         -- TSStringRegex        { colors.orange };    -- For regexes.
