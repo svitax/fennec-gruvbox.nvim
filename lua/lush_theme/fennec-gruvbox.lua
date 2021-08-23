@@ -108,16 +108,26 @@ local colors = {
     fg2 = "#d5c4a1",
     fg1 = "#ebdbb2",
 
+
     git = {
-      delete = "#c14a4a",
-      bg_delete = '#3c1f1e',
-      add = "#6f8352",
-      bg_add = "#32361a",
+      delete = "#c44936",
+      bg_delete = '#543834',
+
+      inactive_delete = "#9e3a2a",
+      inactive_bg_delete = '#473834',
+
+      add = "#9e9e3c",
+      bg_add = "#3f3f29",
+
+      inactive_add = "#7c7c2e",
+      inactive_bg_add = "#333327",
+
       -- change = '#45707a',
       -- bg_change = "#0d3138"
       change = '#b47109',
       bg_change = "#482D03"
     },
+
     -- gitSigns = {delete = "#ea4a5a", add = "#28a745", change = "#2188ff"}, -- github dark
     -- gitSigns = {delete = "#c14a4a", add = "#6c782e", change = "#45707a"}, -- gruvbox-material
     gitSigns = {delete = "#c14a4a", add = "#6c782e", change = "#b47109"}, -- gruvbox-flat
@@ -402,13 +412,15 @@ local theme = lush(function()
         -- END gitgutter
 
         --  START neogit
-        NeogitBranch {fg = colors.blue}, --
+        NeogitUnmergedInto {fg = colors.red, gui = "bold"},
+        NeogitUnpulledFrom {fg = colors.red, gui = "bold"},
+        NeogitBranch {fg = colors.aqua, gui = "bold"}, --
         NeogitRemote {fg = colors.blue},--
-        NeogitHunkHeader {bg = colors.bg1, fg = colors.fg},--
+        NeogitHunkHeader {bg = colors.bg1, fg = colors.fg2 },--
         NeogitHunkHeaderHighlight {bg = colors.bg2, fg = colors.purple}, --
-        NeogitDiffContextHighlight {bg = colors.bg1},--
-        NeogitDiffDeleteHighlight {fg = colors.git.delete, bg = colors.bg1},--
-        NeogitDiffAddHighlight {fg = colors.git.add, bg = colors.bg1}, --
+        NeogitDiffContextHighlight {fg = colors.fg, bg = colors.bg},--
+        NeogitDiffDeleteHighlight {fg = colors.git.delete, bg = colors.git.bg_delete},--
+        NeogitDiffAddHighlight {fg = colors.git.add, bg = colors.git.bg_add}, --
         --  END neogit
 
         --  START fennec lightspeed.nvim
