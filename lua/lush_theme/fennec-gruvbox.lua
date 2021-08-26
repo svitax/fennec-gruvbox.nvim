@@ -86,6 +86,8 @@ local colors = {
     orange = "#e78a4e",
     gray = "#a89984",
 
+    black = "#1d2021",
+
     gray_2 = "#928374",
     red_2 = "#c14a4a",
     green_2 = "#b8bb26",
@@ -176,6 +178,7 @@ local theme = lush(function()
         Folded {fg = colors.bg3}, -- line used for closed folds
         -- FoldColumn   { }, -- 'foldcolumn'
         SignColumn {bg = colors.bg}, -- column where |signs| are displayed
+        -- SignColumnSB {bg = colors.bg}, -- column where |signs| are displayed
         IncSearch {fg = colors.fg, bg = colors.visual_yellow}, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
         Substitute {fg = colors.bh0_h, bg = colors.red}, -- |:substitute| replacement text highlighting
         LineNr {fg = colors.bg2}, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
@@ -189,8 +192,8 @@ local theme = lush(function()
         Normal {fg = colors.fg, bg = colors.bg}, -- normal text
         NormalFloat {fg = colors.fg, bg = colors.bg0}, -- Normal text in floating windows.
         FloatBorder {fg = colors.bg2}, --
-        -- NormalNC     { }, -- normal text in non-current windows
-        -- NormalSB =   { }, -- normal text in non-current windows
+        -- NormalNC     { bg = colors.black }, -- normal text in non-current windows
+        -- NormalSB =   { bg = colors.black }, -- normal text in non-current windows
         Pmenu {fg = colors.fg, bg = colors.bg1}, -- Popup menu: normal item.
         PmenuSel {fg = colors.bg, bg = colors.blue}, -- Popup menu: selected item.
         PmenuSbar {bg = colors.bg3}, -- Popup menu: scrollbar.
@@ -356,7 +359,7 @@ local theme = lush(function()
         -- END which-key --
 
         -- START nvimtree --
-        NvimTreeNormal {fg = colors.fg}, --
+        NvimTreeNormal {fg = colors.fg, bg = colors.black}, --
         NvimTreeRootFolder {fg = colors.green, gui = "bold"}, --
         NvimTreeFolderName {fg = colors.blue_2}, --
         NvimTreeFolderIcon {fg = colors.blue_2},--
