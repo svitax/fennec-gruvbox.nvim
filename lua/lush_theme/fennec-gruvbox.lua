@@ -179,7 +179,8 @@ local theme = lush(function()
         -- FoldColumn   { }, -- 'foldcolumn'
         SignColumn {bg = colors.bg}, -- column where |signs| are displayed
         -- SignColumnSB {bg = colors.bg}, -- column where |signs| are displayed
-        IncSearch {fg = colors.fg, bg = colors.visual_yellow}, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+        -- IncSearch {fg = colors.fg, bg = colors.visual_yellow}, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+        IncSearch {fg = colors.bg, bg = colors.yellow}, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
         Substitute {fg = colors.bh0_h, bg = colors.red}, -- |:substitute| replacement text highlighting
         LineNr {fg = colors.bg2}, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
         CursorLineNr {fg = colors.bg4}, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
@@ -200,7 +201,8 @@ local theme = lush(function()
         PmenuThumb {bg = colors.fg}, -- Popup menu: Thumb of the scrollbar.
         Question {fg = colors.purple}, -- |hit-enter| prompt and yes/no questions
         QuickFixLine {fg = colors.bg, bg = colors.yellow}, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-        Search {fg = colors.fg, bg = colors.visual_yellow}, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+        -- Search {fg = colors.fg, bg = colors.visual_yellow}, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+        Search {fg = colors.bg, bg = colors.yellow}, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
         SpecialKey {fg = colors.bg3}, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
         SpellBad { gui = "underline"}, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise. 
         SpellCap { gui = "underline"}, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
