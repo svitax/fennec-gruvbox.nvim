@@ -364,6 +364,7 @@ local theme = lush(function()
         -- START nvimtree --
         NvimTreeNormal {fg = colors.fg, bg = colors.black}, --
         NvimTreeRootFolder {fg = colors.green, gui = "bold"}, --
+        -- NvimTreeFolderName {fg = colors.blue_2}, --
         NvimTreeFolderName {fg = colors.blue_2}, --
         NvimTreeFolderIcon {fg = colors.blue_2},--
         NvimTreeEmptyFolderName {fg = colors.blue_2}, --
@@ -372,9 +373,12 @@ local theme = lush(function()
         NvimTreeExecFile {fg = colors.green},--
         NvimTreeSpecialFile {fg = colors.yellow, gui = "underline"}, --
         NvimTreeSymlink {fg = colors.blue},--
-        NvimTreeGitNew {fg = colors.git.add}, --
-        NvimTreeGitDirty {fg = colors.git.change},--
-        NvimTreeGitDeleted {fg = colors.git.delete}, --
+        -- NvimTreeGitNew {fg = colors.git.add}, --
+        NvimTreeGitNew {fg = colors.fg}, --
+        -- NvimTreeGitDirty {fg = colors.git.change},--
+        NvimTreeGitDirty {fg = colors.fg},--
+        -- NvimTreeGitDeleted {fg = colors.git.delete}, --
+        NvimTreeGitDeleted {fg = colors.fg}, --
         NvimTreeGitStaged {fg = colors.green},--
         NvimTreeGitMerge {fg = colors.green}, --
         NvimTreeGitRenamed {fg = colors.green},--
@@ -654,6 +658,18 @@ local theme = lush(function()
         VM_Cursor { fg = colors.bg, bg = colors.yellow_2, gui = "underline" },
         VM_Insert {gui = "underline", sp = colors.red},
         -- END vim-visual-multi
+
+        -- START cmp custom menu
+        CmpDocumentation {fg = colors.fg},
+        CmpDocumentationBorder {fg = colors.bg3},
+        CmpItemAbbr {fg = colors.fg},
+        CmpItemAbbrDeprecated {fg = colors.bg2},
+        CmpItemAbbrMatch {fg = colors.blue },
+        CmpItemAbbrMatchFuzzy {fg = colors.blue },
+        CmpItemKind {fg = colors.purple},
+        CmpItemMenu {fg = colors.bg4},
+        -- END cmp custom menu
+
 
     }
 end)
