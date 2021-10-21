@@ -670,6 +670,9 @@ local theme = lush(function()
         CmpItemMenu {fg = colors.bg4},
         -- END cmp custom menu
 
+        -- START treesitter contex
+        TreesitterContext {bg = colors.bg1},
+        -- END treesitter contex
 
     }
 end)
