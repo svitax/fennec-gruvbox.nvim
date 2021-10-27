@@ -366,10 +366,10 @@ local theme = lush(function()
         NvimTreeNormal {fg = colors.fg, bg = colors.black}, --
         NvimTreeRootFolder {fg = colors.green, gui = "bold"}, --
         -- NvimTreeFolderName {fg = colors.blue_2}, --
-        NvimTreeFolderName {fg = colors.bg4}, --
-        NvimTreeFolderIcon {fg = colors.bg4},--
-        NvimTreeEmptyFolderName {fg = colors.bg4}, --
-        NvimTreeOpenedFolderName {fg = colors.blue_2},--
+        NvimTreeFolderName {fg = colors.blue_2}, --
+        NvimTreeFolderIcon {fg = colors.blue_2},--
+        NvimTreeEmptyFolderName {fg = colors.blue_2}, --
+        NvimTreeOpenedFolderName {fg = colors.purple_2},--
         NvimTreeOpenedFile {fg = colors.blue_2},--
         NvimTreeImageFile {fg = colors.purple}, --
         NvimTreeExecFile {fg = colors.green},--
