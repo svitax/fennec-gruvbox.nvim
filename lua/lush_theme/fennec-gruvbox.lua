@@ -362,26 +362,29 @@ local theme = lush(function()
         -- END which-key --
 
         -- START nvimtree --
+        -- #aa9987
         NvimTreeNormal {fg = colors.fg, bg = colors.black}, --
         NvimTreeRootFolder {fg = colors.green, gui = "bold"}, --
         -- NvimTreeFolderName {fg = colors.blue_2}, --
-        NvimTreeFolderName {fg = colors.blue_2}, --
-        NvimTreeFolderIcon {fg = colors.blue_2},--
-        NvimTreeEmptyFolderName {fg = colors.blue_2}, --
+        NvimTreeFolderName {fg = colors.bg4}, --
+        NvimTreeFolderIcon {fg = colors.bg4},--
+        NvimTreeEmptyFolderName {fg = colors.bg4}, --
         NvimTreeOpenedFolderName {fg = colors.blue_2},--
+        NvimTreeOpenedFile {fg = colors.blue_2},--
         NvimTreeImageFile {fg = colors.purple}, --
         NvimTreeExecFile {fg = colors.green},--
         NvimTreeSpecialFile {fg = colors.yellow, gui = "underline"}, --
         NvimTreeSymlink {fg = colors.blue},--
-        -- NvimTreeGitNew {fg = colors.git.add}, --
-        NvimTreeGitNew {fg = colors.fg}, --
-        -- NvimTreeGitDirty {fg = colors.git.change},--
-        NvimTreeGitDirty {fg = colors.fg},--
-        -- NvimTreeGitDeleted {fg = colors.git.delete}, --
-        NvimTreeGitDeleted {fg = colors.fg}, --
-        NvimTreeGitStaged {fg = colors.green},--
-        NvimTreeGitMerge {fg = colors.green}, --
-        NvimTreeGitRenamed {fg = colors.green},--
+        -- NvimTreeGitNew {fg = colors.fg}, --
+        -- NvimTreeGitDeleted {fg = colors.fg}, --
+        -- NvimTreeGitDirty {fg = colors.fg},--
+        NvimTreeGitNew {fg = colors.git.add}, --
+        NvimTreeGitDirty {fg = colors.git.change},--
+        NvimTreeGitDeleted {fg = colors.git.delete}, --
+        NvimTreeGitSpecialFile {fg = colors.yellow},
+        -- NvimTreeGitStaged {fg = colors.green},--
+        -- NvimTreeGitMerge {fg = colors.green}, --
+        -- NvimTreeGitRenamed {fg = colors.green},--
         NvimTreeIndentMarker {fg = colors.gray}, --
         NvimTreeLspDiagnostics {fg = colors.orange},--
         -- LspDiagnosticsError = { fg = c.error },
