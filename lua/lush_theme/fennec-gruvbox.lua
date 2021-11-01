@@ -437,24 +437,24 @@ local theme = lush(function()
         --  END neogit
 
         --  START fennec lightspeed.nvim
-        -- LightspeedCursor {fg = colors.bg, bg = colors.blue, gui = "bold, underline"},
-        -- LightspeedLabel {fg = colors.red, gui = "bold, underline"},
-        -- -- LightspeedLabelOverlapped {fg = colors.green_2, gui = "bold"},
-        -- LightspeedLabelDistant {fg = colors.orange, gui = "bold, underline"},
-        -- -- LightspeedLabelDistantOverlapped {fg = colors.orange, gui = "bold"},
-        -- LightspeedShortcut {
-        --     fg = colors.bg,
-        --     bg = colors.yellow_2,
-        --     gui = "bold"
-        -- },
-        -- -- LightspeedShortcutOverlapped {fg = colors.bg, bg = colors.green_2, gui = "bold"},
-        -- LightspeedMaskedChar {fg = colors.fg, gui = "bold"},
-        -- LightspeedGreyWash {fg = colors.bg3},
-        -- LightspeedUnlabeledMatch {fg = colors.fg, gui = "italic, bold"},
-        -- LightspeedOneCharMatch {fg = colors.bg, bg = colors.yellow_2, gui = "bold"},
-        -- -- LightspeedUniqueChar {fg = colors.white, gui = "bold"},
-        -- -- LightspeedPendingOpArea {fg = colors.fg, bg = colors.lightspeed.primary},
-        -- -- LightspeedPendingChangeOpArea {fg = colors.lightspeed.primary, gui = "italic, strikethrough"},
+        LightspeedCursor {fg = colors.bg, bg = colors.blue, gui = "bold, underline"},
+        LightspeedLabel {fg = colors.red, gui = "bold, underline"},
+        -- LightspeedLabelOverlapped {fg = colors.green_2, gui = "bold"},
+        LightspeedLabelDistant {fg = colors.orange, gui = "bold, underline"},
+        -- LightspeedLabelDistantOverlapped {fg = colors.orange, gui = "bold"},
+        LightspeedShortcut {
+            fg = colors.bg,
+            bg = colors.yellow_2,
+            gui = "bold"
+        },
+        -- LightspeedShortcutOverlapped {fg = colors.bg, bg = colors.green_2, gui = "bold"},
+        LightspeedMaskedChar {fg = colors.fg, gui = "bold"},
+        LightspeedGreyWash {fg = colors.bg3},
+        LightspeedUnlabeledMatch {fg = colors.fg, gui = "italic, bold"},
+        LightspeedOneCharMatch {fg = colors.bg, bg = colors.yellow_2, gui = "bold"},
+        -- LightspeedUniqueChar {fg = colors.white, gui = "bold"},
+        -- LightspeedPendingOpArea {fg = colors.fg, bg = colors.lightspeed.primary},
+        -- LightspeedPendingChangeOpArea {fg = colors.lightspeed.primary, gui = "italic, strikethrough"},
         --  END fennec lightspeed.nvim
 
         --  START telescope
