@@ -309,6 +309,8 @@ local theme = lush(function()
         -- LspDiagnosticsSignWarning            { }, -- Used for "Warning" signs in sign column
         -- LspDiagnosticsSignInformation        { }, -- Used for "Information" signs in sign column
         -- LspDiagnosticsSignHint               { }, -- Used for "Hint" signs in sign column
+        LspCodeLens { fg = colors.bg3 },
+
         -- These groups are for the neovim tree-sitter highlights.
         -- As of writing, tree-sitter support is a WIP, group names may change.
         -- By default, most of these groups link to an appropriate Vim group,
@@ -693,9 +695,14 @@ local theme = lush(function()
         CmpItemMenu {fg = colors.bg4},
         -- END cmp custom menu
 
-        -- START treesitter contex
+        -- START treesitter context
         TreesitterContext {bg = colors.bg1},
-        -- END treesitter contex
+        -- END treesitter context
+
+        -- START 
+        LspSignatureActiveParameter {fg = colors.orange},
+        -- END 
+
 
     }
 end)
