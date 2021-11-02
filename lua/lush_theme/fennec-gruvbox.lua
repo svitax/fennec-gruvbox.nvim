@@ -699,9 +699,11 @@ local theme = lush(function()
         TreesitterContext {bg = colors.bg1},
         -- END treesitter context
 
-        -- START 
+        -- START
         LspSignatureActiveParameter {fg = colors.orange},
-        -- END 
+        -- END
+
+        BiscuitColor {fg = colors.bg3},
 
 
     }
