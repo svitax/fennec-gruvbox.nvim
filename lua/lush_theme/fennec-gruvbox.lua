@@ -732,7 +732,7 @@ local theme = lush(function()
 
         -- START
         diffAdded { bg = colors.git.bg_add, fg = colors.git.add },
-        diffRemoved { fg = colors.git.delete },
+        diffRemoved { bg = colors.git.bg_delete, fg = colors.git.delete },
         diffChanged { fg = colors.git.change },
         diffOldFile { fg = colors.yellow },
         diffNewFile { fg = colors.orange },
