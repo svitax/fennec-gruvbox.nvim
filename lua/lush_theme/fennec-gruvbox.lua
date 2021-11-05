@@ -170,7 +170,7 @@ local theme = lush(function()
         DiffAdd {fg = colors.git.add, bg = colors.git.bg_add}, -- diff mode: Added line |diff.txt|
         DiffChange {fg = colors.git.change, bg = colors.git.bg_change}, -- diff mode: Changed line |diff.txt|
         DiffDelete {fg = colors.git.delete, bg = colors.git.bg_delete}, -- diff mode: Deleted line |diff.txt|
-        DiffText {fg = colors.bg, bg = colors.yellow}, -- diff mode: Changed text within a changed line |diff.txt|
+        DiffText {fg = colors.git.bg_change, bg = colors.git.change}, -- diff mode: Changed text within a changed line |diff.txt|
         EndOfBuffer {fg = colors.bg}, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
         -- TermCursor   { }, -- cursor in a focused terminal
         -- TermCursorNC { }, -- cursor in an unfocused terminal
@@ -473,10 +473,10 @@ local theme = lush(function()
 
         NeogitHunkHeader {bg = colors.bg1, fg = colors.purple_2 },--
         NeogitHunkHeaderHighlight {bg = colors.bg2, fg = colors.purple}, --
-        NeogitDiffContext {fg = colors.fg, bg = colors.bg},--
+        -- NeogitDiffContext {fg = colors.fg, bg = colors.bg},--
+        -- NeogitDiffDelete {fg = colors.git.delete, bg = colors.git.bg_delete},--
+        -- NeogitDiffAdd {fg = colors.git.add, bg = colors.git.bg_add}, --
         NeogitDiffContextHighlight {bg = colors.bg},--
-        NeogitDiffDelete {fg = colors.git.delete, bg = colors.git.bg_delete},--
-        NeogitDiffAdd {fg = colors.git.add, bg = colors.git.bg_add}, --
         NeogitDiffDeleteHighlight {fg = colors.git.delete, bg = colors.git.bg_delete},--
         NeogitDiffAddHighlight {fg = colors.git.add, bg = colors.git.bg_add}, --
         --  END neogit
@@ -726,9 +726,20 @@ local theme = lush(function()
         LspSignatureActiveParameter {fg = colors.orange},
         -- END
 
+        -- START
         BiscuitColor {fg = colors.bg3},
+        -- END
 
-
+        -- START
+        diffAdded { bg = colors.git.bg_add, fg = colors.git.add },
+        diffRemoved { fg = colors.git.delete },
+        diffChanged { fg = colors.git.change },
+        diffOldFile { fg = colors.yellow },
+        diffNewFile { fg = colors.orange },
+        diffFile { fg = colors.blue },
+        diffLine { fg = colors.bg3 },
+        diffIndexLine { fg = colors.magenta },
+        -- END
     }
 end)
 
