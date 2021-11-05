@@ -125,9 +125,9 @@ local colors = {
       inactive_bg_add = "#333327",
 
       change = '#45707a',
-      bg_change = "#0d3138"
-      -- change = '#b47109',
-      -- bg_change = "#482D03"
+      bg_change = "#0d3138",
+      yellow_change = '#b47109',
+      yellow_bg_change = "#482D03"
     },
 
     -- gitSigns = {delete = "#ea4a5a", add = "#28a745", change = "#2188ff"}, -- github dark
@@ -167,10 +167,17 @@ local theme = lush(function()
         CursorColumn {bg = colors.bg0}, -- Screen-column at the cursor, when 'cursorcolumn' is set.
         CursorLine {bg = colors.bg0_s}, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
         Directory {fg = colors.blue_2}, -- directory names (and other special names in listings)
-        DiffAdd {fg = colors.git.add, bg = colors.git.bg_add}, -- diff mode: Added line |diff.txt|
-        DiffChange {fg = colors.git.change, bg = colors.git.bg_change}, -- diff mode: Changed line |diff.txt|
-        DiffDelete {fg = colors.git.delete, bg = colors.git.bg_delete}, -- diff mode: Deleted line |diff.txt|
-        DiffText {fg = colors.git.bg_change, bg = colors.git.change}, -- diff mode: Changed text within a changed line |diff.txt|
+
+        DiffAdd { bg = "#32361a" }, -- diff mode: Added line |diff.txt|
+        DiffChange { bg = "#0d3138" }, -- diff mode: Changed line |diff.txt|
+        DiffDelete { bg = "#3c1f1e" }, -- diff mode: Deleted line |diff.txt|
+        DiffText { bg = "#2e3b3b" }, -- diff mode: Changed text within a changed line |diff.txt|
+
+        -- DiffAdd {fg = colors.git.add, bg = colors.git.bg_add}, -- diff mode: Added line |diff.txt|
+        -- DiffChange {fg = colors.git.change, bg = colors.git.bg_change}, -- diff mode: Changed line |diff.txt|
+        -- DiffDelete {fg = colors.git.delete, bg = colors.git.bg_delete}, -- diff mode: Deleted line |diff.txt|
+        -- DiffText {fg = colors.git.yellow_change, bg = colors.git.bg_change }, -- diff mode: Changed text within a changed line |diff.txt|
+
         EndOfBuffer {fg = colors.bg}, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
         -- TermCursor   { }, -- cursor in a focused terminal
         -- TermCursorNC { }, -- cursor in an unfocused terminal
