@@ -276,10 +276,10 @@ local theme = lush(function()
         LspReferenceRead {bg = colors.bg2}, -- used for highlighting "read" references
         LspReferenceWrite {bg = colors.bg2}, -- used for highlighting "write" references
 
-        LspDiagnosticsDefaultError {fg = colors.red}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-        LspDiagnosticsDefaultWarning {fg = colors.yellow}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-        LspDiagnosticsDefaultInformation {fg = colors.blue}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-        LspDiagnosticsDefaultHint {fg = colors.aqua}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+        -- LspDiagnosticsDefaultError {fg = colors.red}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+        -- LspDiagnosticsDefaultWarning {fg = colors.yellow}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+        -- LspDiagnosticsDefaultInformation {fg = colors.blue}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+        -- LspDiagnosticsDefaultHint {fg = colors.aqua}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
         DiagnosticError {fg = colors.red}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
         DiagnosticWarn {fg = colors.yellow}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
         DiagnosticInformation {fg = colors.blue}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
@@ -290,20 +290,19 @@ local theme = lush(function()
         DiagnosticSignInfo {fg = colors.blue}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
         DiagnosticSignHint {fg = colors.aqua}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
-        LspDiagnosticsVirtualTextError {bg = util.darken(colors.red, 0.1),fg = colors.red}, -- Used for "Error" diagnostic virtual text
-        LspDiagnosticsVirtualTextWarning {bg = util.darken(colors.yellow, 0.1), fg = colors.yellow}, -- Used for "Warning" diagnostic virtual text
-        LspDiagnosticsVirtualTextInformation {bg = util.darken(colors.blue, 0.1), fg = colors.blue}, -- Used for "Information" diagnostic virtual text
-        LspDiagnosticsVirtualTextHint {bg = util.darken(colors.green, 0.1), fg = colors.aqua}, -- Used for "Hint" diagnostic virtual text
+        -- LspDiagnosticsVirtualTextError {bg = util.darken(colors.red, 0.1),fg = colors.red}, -- Used for "Error" diagnostic virtual text
+        -- LspDiagnosticsVirtualTextWarning {bg = util.darken(colors.yellow, 0.1), fg = colors.yellow}, -- Used for "Warning" diagnostic virtual text
+        -- LspDiagnosticsVirtualTextInformation {bg = util.darken(colors.blue, 0.1), fg = colors.blue}, -- Used for "Information" diagnostic virtual text
+        -- LspDiagnosticsVirtualTextHint {bg = util.darken(colors.green, 0.1), fg = colors.aqua}, -- Used for "Hint" diagnostic virtual text
         DiagnosticVirtualTextError {bg = util.darken(colors.red, 0.1),fg = colors.red}, -- Used for "Error" diagnostic virtual text
         DiagnosticVirtualTextWarn {bg = util.darken(colors.yellow, 0.1), fg = colors.yellow}, -- Used for "Warning" diagnostic virtual text
         DiagnosticVirtualTextInfo {bg = util.darken(colors.blue, 0.1), fg = colors.blue}, -- Used for "Information" diagnostic virtual text
         DiagnosticVirtualTextHint {bg = util.darken(colors.green, 0.1), fg = colors.aqua}, -- Used for "Hint" diagnostic virtual text
 
-        LspDiagnosticsUnderlineError {gui = "undercurl", sp = colors.red}, -- Used to underline "Error" diagnostics
-        LspDiagnosticsUnderlineWarning {gui = "undercurl", sp = colors.yellow}, -- Used to underline "Warning" diagnostics
-        LspDiagnosticsUnderlineInformation {gui = "undercurl", sp = colors.blue}, -- Used to underline "Information" diagnostics
-        LspDiagnosticsUnderlineHint {gui = "undercurl", sp = colors.aqua}, -- Used to underline "Hint" diagnostics
-
+        -- LspDiagnosticsUnderlineError {gui = "undercurl", sp = colors.red}, -- Used to underline "Error" diagnostics
+        -- LspDiagnosticsUnderlineWarning {gui = "undercurl", sp = colors.yellow}, -- Used to underline "Warning" diagnostics
+        -- LspDiagnosticsUnderlineInformation {gui = "undercurl", sp = colors.blue}, -- Used to underline "Information" diagnostics
+        -- LspDiagnosticsUnderlineHint {gui = "undercurl", sp = colors.aqua}, -- Used to underline "Hint" diagnostics
         DiagnosticUnderlineError {gui = "undercurl", sp = colors.red}, -- Used to underline "Error" diagnostics
         DiagnosticUnderlineWarn {gui = "undercurl", sp = colors.yellow}, -- Used to underline "Warning" diagnostics
         DiagnosticUnderlineInfo {gui = "undercurl", sp = colors.blue}, -- Used to underline "Information" diagnostics
@@ -430,8 +429,8 @@ local theme = lush(function()
         -- END dashboard
 
         -- START hop
-        HopNextKey {fg = colors.red_2, gui = "bold"}, --
-        HopUnmatched {fg = colors.bg3},--
+        -- HopNextKey {fg = colors.red_2, gui = "bold"}, --
+        -- HopUnmatched {fg = colors.bg3},--
         -- END hop
 
         -- START easymotion
@@ -473,7 +472,7 @@ local theme = lush(function()
         -- NeogitPush {fg = colors.red, gui = "bold"},--
         -- NeogitUnmergedInto {fg = colors.yellow, gui = "bold"},--
         -- NeogitUnpulledFrom {fg = colors.yellow, gui = "bold"},--
-        NeogitStash {fg = colors.red, gui = "bold"},--
+        NeogitStash {fg = colors.aqua_2, gui = "bold"},--
         NeogitObjectId {fg = colors.bg3, gui = "bold"},--
         NeogitBranch {fg = colors.aqua_2, gui = "bold"}, --
         NeogitRemote {fg = colors.green_2},--
@@ -519,25 +518,25 @@ local theme = lush(function()
         --  END telescope
 
         --  START buffer
-        BufferCurrent {fg = colors.fg, bg = colors.bg},
-        BufferCurrentIndex {fg = colors.blue, bg = colors.bg},
-        BufferCurrentMod {fg = colors.fg, bg = colors.bg},
-        BufferCurrentSign {fg = colors.blue, bg = colors.bg},
-        BufferCurrentTarget {fg = colors.red, bg = colors.bg, gui = "bold"},
+        -- BufferCurrent {fg = colors.fg, bg = colors.bg},
+        -- BufferCurrentIndex {fg = colors.blue, bg = colors.bg},
+        -- BufferCurrentMod {fg = colors.fg, bg = colors.bg},
+        -- BufferCurrentSign {fg = colors.blue, bg = colors.bg},
+        -- BufferCurrentTarget {fg = colors.red, bg = colors.bg, gui = "bold"},
 
-        BufferVisible {fg = colors.fg, bg = colors.bg},
-        BufferVisibleIndex {fg = colors.fg, bg = colors.bg},
-        BufferVisibleMod {fg = colors.fg, bg = colors.bg},
-        BufferVisibleSign {fg = colors.fg, bg = colors.bg},
-        BufferVisibleTarget {fg = colors.red, bg = colors.bg, gui = "bold"},
+        -- BufferVisible {fg = colors.fg, bg = colors.bg},
+        -- BufferVisibleIndex {fg = colors.fg, bg = colors.bg},
+        -- BufferVisibleMod {fg = colors.fg, bg = colors.bg},
+        -- BufferVisibleSign {fg = colors.fg, bg = colors.bg},
+        -- BufferVisibleTarget {fg = colors.red, bg = colors.bg, gui = "bold"},
 
-        BufferInactive {fg = colors.gray_2, bg = colors.bg1},
-        BufferInactiveIndex {fg = colors.gray_2, bg = colors.bg1},
-        BufferInactiveMod {fg = colors.gray_2, bg = colors.bg1},
-        BufferInactiveSign {fg = colors.gray_2, bg = colors.bg1},
-        BufferInactiveTarget {fg = colors.red, bg = colors.bg_inactive, gui = "bold"}, --
-        -- BufferTabpages: "blue bg_inactive b",
-        -- BufferTabpageFill: "gutter_fg_grey bg_inactive",
+        -- BufferInactive {fg = colors.gray_2, bg = colors.bg1},
+        -- BufferInactiveIndex {fg = colors.gray_2, bg = colors.bg1},
+        -- BufferInactiveMod {fg = colors.gray_2, bg = colors.bg1},
+        -- BufferInactiveSign {fg = colors.gray_2, bg = colors.bg1},
+        -- BufferInactiveTarget {fg = colors.red, bg = colors.bg_inactive, gui = "bold"}, --
+        -- -- BufferTabpages: "blue bg_inactive b",
+        -- -- BufferTabpageFill: "gutter_fg_grey bg_inactive",
         --  END buffer
 
         -- START markdown
@@ -729,15 +728,15 @@ local theme = lush(function()
         TreesitterContext {bg = colors.bg1},
         -- END treesitter context
 
-        -- START
+        -- START lsp_signature
         LspSignatureActiveParameter {fg = colors.orange},
-        -- END
+        -- END lsp_signature
 
-        -- START
+        -- START nvim-biscuits
         BiscuitColor {fg = colors.bg3},
-        -- END
+        -- END nvim-biscuits
 
-        -- START
+        -- START diffview
         diffAdded { bg = colors.git.bg_add, fg = colors.git.add },
         diffRemoved { bg = colors.git.bg_delete, fg = colors.git.delete },
         diffChanged { fg = colors.git.change },
@@ -746,7 +745,7 @@ local theme = lush(function()
         diffFile { fg = colors.blue },
         diffLine { fg = colors.bg3 },
         diffIndexLine { fg = colors.purple },
-        -- END
+        -- END diffview
     }
 end)
 
