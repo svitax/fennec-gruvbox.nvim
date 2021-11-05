@@ -435,10 +435,10 @@ local theme = lush(function()
         -- END hop
 
         -- START easymotion
-        EasyMotionTarget {fg = colors.red_2, gui = "bold"}, --
-        EasyMotionTarget2First {fg = colors.red_2, gui = "bold"},--
-        EasyMotionTarget2Second {fg = colors.red_2, gui = "bold"}, --
-        EasyMotionShade {fg = colors.bg3}, --
+        -- EasyMotionTarget {fg = colors.red_2, gui = "bold"}, --
+        -- EasyMotionTarget2First {fg = colors.red_2, gui = "bold"},--
+        -- EasyMotionTarget2Second {fg = colors.red_2, gui = "bold"}, --
+        -- EasyMotionShade {fg = colors.bg3}, --
         -- END easymotion
 
         -- START gitsigns
@@ -462,17 +462,17 @@ local theme = lush(function()
         NeogitStagedChanges {fg = colors.aqua_2, gui = "bold"},--
         NeogitStashes {fg = colors.aqua_2, gui = "bold"},--
 
-        NeogitCommandText {fg = colors.red, gui = "bold"},--
-        NeogitCommandTime {fg = colors.red, gui = "bold"},--
+        -- NeogitCommandText {fg = colors.red, gui = "bold"},--
+        -- NeogitCommandTime {fg = colors.red, gui = "bold"},--
         NeogitFilePath {fg = colors.purple },--
         NeogitCommitViewHeader {fg = colors.bg4, gui = "bold"},--
-        NeogitCommitViewDescription {fg = colors.red, gui = "bold"},--
+        -- NeogitCommitViewDescription {fg = colors.red, gui = "bold"},--
         -- NeogitCommitMessage {fg = colors.red, gui = "bold"},--
-        NeogitFold {fg = colors.red, gui = "bold"},--
-        NeogitHead {fg = colors.red, gui = "bold"},--
-        NeogitPush {fg = colors.red, gui = "bold"},--
-        NeogitUnmergedInto {fg = colors.yellow, gui = "bold"},--
-        NeogitUnpulledFrom {fg = colors.yellow, gui = "bold"},--
+        -- NeogitFold {fg = colors.red, gui = "bold"},--
+        -- NeogitHead {fg = colors.red, gui = "bold"},--
+        -- NeogitPush {fg = colors.red, gui = "bold"},--
+        -- NeogitUnmergedInto {fg = colors.yellow, gui = "bold"},--
+        -- NeogitUnpulledFrom {fg = colors.yellow, gui = "bold"},--
         NeogitStash {fg = colors.red, gui = "bold"},--
         NeogitObjectId {fg = colors.bg3, gui = "bold"},--
         NeogitBranch {fg = colors.aqua_2, gui = "bold"}, --
@@ -643,28 +643,28 @@ local theme = lush(function()
         -- END vimwiki
 
         -- START orgmode.nvim
-        org_bold_delimiter {fg = colors.bg3},
-        org_bold {fg = colors.orange, gui = "bold"},
-        org_italic_delimiter {fg = colors.bg3}, 
-        org_italic {fg = colors.yellow, gui = "italic"},
-        org_underline_delimiter {fg = colors.bg3}, 
-        org_underline {gui = "underline"},
-        org_code_delimiter {fg = colors.bg3}, 
-        org_code {fg = colors.green},
-        org_verbatim_delimiter {fg = colors.bg3}, 
-        org_verbatim {fg = colors.green},
-        org_strike_delimiter {fg = colors.bg3}, 
-        org_strike {gui = "strikethrough"},
+        -- org_bold_delimiter {fg = colors.bg3},
+        -- org_bold {fg = colors.orange, gui = "bold"},
+        -- org_italic_delimiter {fg = colors.bg3}, 
+        -- org_italic {fg = colors.yellow, gui = "italic"},
+        -- org_underline_delimiter {fg = colors.bg3}, 
+        -- org_underline {gui = "underline"},
+        -- org_code_delimiter {fg = colors.bg3}, 
+        -- org_code {fg = colors.green},
+        -- org_verbatim_delimiter {fg = colors.bg3}, 
+        -- org_verbatim {fg = colors.green},
+        -- org_strike_delimiter {fg = colors.bg3}, 
+        -- org_strike {gui = "strikethrough"},
         -- org_timestamp {},
         -- org_timestamp_inactive {},
         -- org_deadline_scheduled {},
-        org_hyperlink {fg = colors.green},
-        org_hyperlinkBracketsLeft {fg = colors.bg3},
-        org_hyperlinkURL {fg = colors.purple},
-        org_hyperlinkBracketsRight {fg = colors.bg3},
+        -- org_hyperlink {fg = colors.green},
+        -- org_hyperlinkBracketsLeft {fg = colors.bg3},
+        -- org_hyperlinkURL {fg = colors.purple},
+        -- org_hyperlinkBracketsRight {fg = colors.bg3},
         -- org_comment {},
-        org_list_ordered {fg = colors.orange},
-        org_list_unordered {fg = colors.orange},
+        -- org_list_ordered {fg = colors.orange},
+        -- org_list_unordered {fg = colors.orange},
         -- org_list_def {},
         -- org_list_item {},
         -- org_list_bullet {},
