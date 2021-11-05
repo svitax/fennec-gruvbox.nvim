@@ -480,9 +480,9 @@ local theme = lush(function()
 
         NeogitHunkHeader {bg = colors.bg1, fg = colors.purple_2 },--
         NeogitHunkHeaderHighlight {bg = colors.bg2, fg = colors.purple}, --
-        -- NeogitDiffContext {fg = colors.fg, bg = colors.bg},--
-        -- NeogitDiffDelete {fg = colors.git.delete, bg = colors.git.bg_delete},--
-        -- NeogitDiffAdd {fg = colors.git.add, bg = colors.git.bg_add}, --
+        NeogitDiffContext {fg = colors.fg, bg = colors.bg},--
+        NeogitDiffDelete {fg = colors.git.delete, bg = colors.git.bg_delete},--
+        NeogitDiffAdd {fg = colors.git.add, bg = colors.git.bg_add}, --
         NeogitDiffContextHighlight {bg = colors.bg},--
         NeogitDiffDeleteHighlight {fg = colors.git.delete, bg = colors.git.bg_delete},--
         NeogitDiffAddHighlight {fg = colors.git.add, bg = colors.git.bg_add}, --
