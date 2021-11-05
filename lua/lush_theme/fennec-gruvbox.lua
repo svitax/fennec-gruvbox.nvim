@@ -738,7 +738,7 @@ local theme = lush(function()
         diffNewFile { fg = colors.orange },
         diffFile { fg = colors.blue },
         diffLine { fg = colors.bg3 },
-        diffIndexLine { fg = colors.magenta },
+        diffIndexLine { fg = colors.purple },
         -- END
     }
 end)
