@@ -124,10 +124,10 @@ local colors = {
       inactive_add = "#7c7c2e",
       inactive_bg_add = "#333327",
 
-      -- change = '#45707a',
-      -- bg_change = "#0d3138"
-      change = '#b47109',
-      bg_change = "#482D03"
+      change = '#45707a',
+      bg_change = "#0d3138"
+      -- change = '#b47109',
+      -- bg_change = "#482D03"
     },
 
     -- gitSigns = {delete = "#ea4a5a", add = "#28a745", change = "#2188ff"}, -- github dark
