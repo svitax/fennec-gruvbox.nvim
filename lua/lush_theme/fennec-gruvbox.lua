@@ -453,38 +453,38 @@ local theme = lush(function()
         -- END gitgutter
 
         --  START neogit
-        NeogitUnstagedChanges {fg = colors.aqua_2, gui = "bold"},--
-        NeogitUntrackedFiles {fg = colors.aqua_2, gui = "bold"},--
-        NeogitUnmergedChanges {fg = colors.aqua_2, gui = "bold"},--
-        NeogitUnpulledChanges {fg = colors.aqua_2, gui = "bold"},--
-        NeogitRecentCommits {fg = colors.aqua_2, gui = "bold"},--
-        NeogitStagedChanges {fg = colors.aqua_2, gui = "bold"},--
-        NeogitStashes {fg = colors.aqua_2, gui = "bold"},--
+        -- NeogitUnstagedChanges {fg = colors.aqua_2, gui = "bold"},--
+        -- NeogitUntrackedFiles {fg = colors.aqua_2, gui = "bold"},--
+        -- NeogitUnmergedChanges {fg = colors.aqua_2, gui = "bold"},--
+        -- NeogitUnpulledChanges {fg = colors.aqua_2, gui = "bold"},--
+        -- NeogitRecentCommits {fg = colors.aqua_2, gui = "bold"},--
+        -- NeogitStagedChanges {fg = colors.aqua_2, gui = "bold"},--
+        -- NeogitStashes {fg = colors.aqua_2, gui = "bold"},--
 
-        -- NeogitCommandText {fg = colors.red, gui = "bold"},--
-        -- NeogitCommandTime {fg = colors.red, gui = "bold"},--
-        NeogitFilePath {fg = colors.purple },--
-        NeogitCommitViewHeader {fg = colors.bg4, gui = "bold"},--
-        -- NeogitCommitViewDescription {fg = colors.red, gui = "bold"},--
-        -- NeogitCommitMessage {fg = colors.red, gui = "bold"},--
-        -- NeogitFold {fg = colors.red, gui = "bold"},--
-        -- NeogitHead {fg = colors.red, gui = "bold"},--
-        -- NeogitPush {fg = colors.red, gui = "bold"},--
-        -- NeogitUnmergedInto {fg = colors.yellow, gui = "bold"},--
-        -- NeogitUnpulledFrom {fg = colors.yellow, gui = "bold"},--
-        NeogitStash {fg = colors.aqua_2, gui = "bold"},--
-        NeogitObjectId {fg = colors.bg3, gui = "bold"},--
-        NeogitBranch {fg = colors.aqua_2, gui = "bold"}, --
-        NeogitRemote {fg = colors.green_2},--
+        -- -- NeogitCommandText {fg = colors.red, gui = "bold"},--
+        -- -- NeogitCommandTime {fg = colors.red, gui = "bold"},--
+        -- NeogitFilePath {fg = colors.purple },--
+        -- NeogitCommitViewHeader {fg = colors.bg4, gui = "bold"},--
+        -- -- NeogitCommitViewDescription {fg = colors.red, gui = "bold"},--
+        -- -- NeogitCommitMessage {fg = colors.red, gui = "bold"},--
+        -- -- NeogitFold {fg = colors.red, gui = "bold"},--
+        -- -- NeogitHead {fg = colors.red, gui = "bold"},--
+        -- -- NeogitPush {fg = colors.red, gui = "bold"},--
+        -- -- NeogitUnmergedInto {fg = colors.yellow, gui = "bold"},--
+        -- -- NeogitUnpulledFrom {fg = colors.yellow, gui = "bold"},--
+        -- NeogitStash {fg = colors.aqua_2, gui = "bold"},--
+        -- NeogitObjectId {fg = colors.bg3, gui = "bold"},--
+        -- NeogitBranch {fg = colors.aqua_2, gui = "bold"}, --
+        -- NeogitRemote {fg = colors.green_2},--
 
-        NeogitHunkHeader {bg = colors.bg1, fg = colors.purple_2 },--
-        NeogitHunkHeaderHighlight {bg = colors.bg2, fg = colors.purple}, --
-        NeogitDiffContext {fg = colors.fg, bg = colors.bg},--
-        NeogitDiffDelete {fg = colors.git.delete, bg = colors.git.bg_delete},--
-        NeogitDiffAdd {fg = colors.git.add, bg = colors.git.bg_add}, --
-        NeogitDiffContextHighlight {bg = colors.bg},--
-        NeogitDiffDeleteHighlight {fg = colors.git.delete, bg = colors.git.bg_delete},--
-        NeogitDiffAddHighlight {fg = colors.git.add, bg = colors.git.bg_add}, --
+        -- NeogitHunkHeader {bg = colors.bg1, fg = colors.purple_2 },--
+        -- NeogitHunkHeaderHighlight {bg = colors.bg2, fg = colors.purple}, --
+        -- NeogitDiffContext {fg = colors.fg, bg = colors.bg},--
+        -- NeogitDiffDelete {fg = colors.git.delete, bg = colors.git.bg_delete},--
+        -- NeogitDiffAdd {fg = colors.git.add, bg = colors.git.bg_add}, --
+        -- NeogitDiffContextHighlight {bg = colors.bg},--
+        -- NeogitDiffDeleteHighlight {fg = colors.git.delete, bg = colors.git.bg_delete},--
+        -- NeogitDiffAddHighlight {fg = colors.git.add, bg = colors.git.bg_add}, --
         --  END neogit
 
         --  START fennec lightspeed.nvim
