@@ -642,22 +642,33 @@ local theme = lush(function()
         -- END vimwiki
 
         -- START orgmode.nvim
-        OrgTSTimestampActive {fg = colors.fg},
-        OrgTSTimestampInactive {fg = colors.fg},
-        OrgTSBullet {fg = colors.fg},
+        -- OrgTSTimestampActive {fg = colors.fg},
+        -- OrgTSTimestampInactive {fg = colors.fg},
+        -- OrgTSBullet {fg = colors.fg},
         OrgTSHeadlineLevel1 {fg=colors.red},
         OrgTSHeadlineLevel2 {fg=colors.orange},
         OrgTSHeadlineLevel3 {fg=colors.yellow},
         OrgTSHeadlineLevel4 {fg=colors.green},
         OrgTSHeadlineLevel5 {fg=colors.aqua},
         OrgTSHeadlineLevel6 {fg=colors.blue},
+        -- OrgTSPropertyDrawer {fg=colors.purple},
+        -- OrgTSDrawer {fg=colors.purple},
+        -- OrgTSTag {fg=colors.purple},
+        -- OrgTSPlan {fg=colors.purple},
+        -- OrgTSComment {fg=colors.purple},
+        OrgDirective {fg=colors.purple},
+        -- OrgTSCheckbox {fg=colors.purple},
+        -- OrgTSCheckboxChecked {fg=colors.purple},
+        -- OrgTSCheckboxHalfChecked {fg=colors.purple},
+        -- OrgTSCheckboxUnchecked {fg=colors.purple},
+
         -- org_bold_delimiter {fg = colors.bg3},
         -- org_bold {fg = colors.orange, gui = "bold"},
         -- org_italic_delimiter {fg = colors.bg3}, 
         -- org_italic {fg = colors.yellow, gui = "italic"},
         -- org_underline_delimiter {fg = colors.bg3}, 
         -- org_underline {gui = "underline"},
-        -- org_code_delimiter {fg = colors.bg3}, 
+        -- org_code_delimiter {fg = colors.bg3},
         -- org_code {fg = colors.green},
         -- org_verbatim_delimiter {fg = colors.bg3}, 
         -- org_verbatim {fg = colors.green},
@@ -701,10 +712,19 @@ local theme = lush(function()
         -- OrgHeadlineStar2
         -- OrgHeadlineStar3
         -- OrgHeadlineStar4
-        -- OrgHeadlineLevel1 {fg = colors.red},
-        -- OrgHeadlineLevel2 {fg = colors.orange},
-        -- OrgHeadlineLevel3 {fg = colors.yellow},
-        -- OrgHeadlineLevel4 {fg = colors.green},
+        OrgHeadlineLevel1 {fg = colors.red},
+        OrgHeadlineLevel2 {fg = colors.orange},
+        OrgHeadlineLevel3 {fg = colors.yellow},
+        OrgHeadlineLevel4 {fg = colors.green},
+        OrgHeadlineLevel5 {fg = colors.aqua},
+        OrgHeadlineLevel6 {fg = colors.blue},
+--         red},
+-- orange}
+-- yellow}
+-- green},
+-- aqua},
+-- blue},
+
         -- END orgmode.nvim
 
         -- "START" vim-sandwich
