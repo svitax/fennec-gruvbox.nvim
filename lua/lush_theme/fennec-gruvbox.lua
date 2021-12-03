@@ -120,7 +120,8 @@ local b = {
     base03 = "#404344",
     base08 = "#ec6b64",
     base01 = "#2c2f30",
-    base00 = "#222526",
+    -- base00 = "#222526",
+    base00 = "#3c3836",
     base09 = "#e78a4e",
     base06 = "#c3b499"
 }
@@ -238,8 +239,8 @@ local theme = lush(function()
 
         -- START spelling
         SpellBad { gui = "undercurl", sp = b.base08}, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise. 
+    SpellLocal { gui = "undercurl", sp = b.base0C}, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
         SpellCap { gui = "undercurl", sp = b.base0D}, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
-        SpellLocal { gui = "undercurl", sp = b.base0C}, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
         SpellRare { gui = "undercurl", sp = b.base0E}, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
         -- END spelling
 
