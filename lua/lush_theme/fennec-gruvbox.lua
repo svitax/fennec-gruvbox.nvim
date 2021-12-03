@@ -73,75 +73,128 @@ function util.darken(hex, amount, bg) return util.blend(hex, bg or util.bg, math
 function util.lighten(hex, amount, fg) return util.blend(hex, fg or util.fg, math.abs(amount)) end
 
 
-local colors = {
-    fg = "#EBDBB2",
-    bg = "#282828",
+-- local colors = {
+--     fg = "#EBDBB2",
+--     bg = "#282828",
 
-    red = "#ea6962",
-    green = "#a9b665",
-    yellow = "#d8a657",
-    blue = "#7daea3",
-    purple = "#d3869b",
-    aqua = "#89b482",
+--     red = "#ea6962",
+--     green = "#a9b665",
+--     yellow = "#d8a657",
+--     blue = "#7daea3",
+--     purple = "#d3869b",
+--     aqua = "#89b482",
+--     orange = "#e78a4e",
+--     gray = "#a89984",
+
+--     black = "#1d2021",
+
+--     gray_2 = "#928374",
+--     red_2 = "#c14a4a",
+--     green_2 = "#b8bb26",
+--     yellow_2 = "#fabd2f",
+--     blue_2 = "#83a598",
+--     purple_2 = "#d3869b",
+--     aqua_2 = "#8ec07c",
+--     orange_2 = "#fe8019",
+
+--     bh0_h = "#1d2021",
+--     bg0 = "#282828",
+--     bg1 = "#3c3836",
+--     bg2 = "#504945",
+--     bg3 = "#665c54",
+--     bg4 = "#7c6f64",
+
+--     bg0_s = "#32302f",
+--     fg4 = "#a89984",
+--     fg3 = "#bdae93",
+--     fg2 = "#d5c4a1",
+--     fg1 = "#ebdbb2",
+
+
+--     git = {
+--       delete = "#c44936",
+--       bg_delete = '#543834',
+
+--       inactive_delete = "#9e3a2a",
+--       inactive_bg_delete = '#473834',
+
+--       add = "#9e9e3c",
+--       bg_add = "#3f3f29",
+
+--       inactive_add = "#7c7c2e",
+--       inactive_bg_add = "#333327",
+
+--       change = '#45707a',
+--       bg_change = "#0d3138",
+--       yellow_change = '#b47109',
+--       yellow_bg_change = "#482D03"
+--     },
+
+--     -- gitSigns = {delete = "#ea4a5a", add = "#28a745", change = "#2188ff"}, -- github dark
+--     -- gitSigns = {delete = "#c14a4a", add = "#6c782e", change = "#45707a"}, -- gruvbox-material
+--     gitSigns = {delete = "#c14a4a", add = "#6c782e", change = "#b47109"}, -- gruvbox-flat
+
+--     visual_red = "#442e2d",
+--     visual_green = "#333e34",
+--     visual_blue = "#2e3b3b",
+--     visual_yellow = "#473c29",
+--     search = "#335075",
+
+--     -- lightspeed = {primary = "#fabd2f", secondary = "#EBDBB2" },
+--     lightspeed = {secondary = "#9ADDFF", primary = "#F00077"},
+-- }
+
+local c = {
+    white = "#c7b89d",
+    darker_black = "#232323",
+    black = "#282828", --  nvim bg
+    black2 = "#2e2e2e",
+    one_bg = "#353535",
+    one_bg2 = "#3f3f3f",
+    one_bg3 = "#444444",
+    grey = "#46494a",
+    grey_fg = "#5d6061",
+    grey_fg2 = "#5b5e5f",
+    light_grey = "#585b5c",
+    red = "#ec6b64",
+    baby_pink = "#ce8196",
+    pink = "#ff75a0",
+    line = "#2c2f30", -- for lines like vertsplit
+    green = "#89b482",
+    vibrant_green = "#a9b665",
+    nord_blue = "#6f8faf",
+    blue = "#6d8dad",
+    yellow = "#d6b676",
+    sun = "#d1b171",
+    purple = "#b4bbc8",
+    dark_purple = "#cc7f94",
+    teal = "#749689",
     orange = "#e78a4e",
-    gray = "#a89984",
+    cyan = "#82b3a8",
+    statusline_bg = "#2c2c2c",
+    lightbg = "#353535",
+    lightbg2 = "#303030",
+    pmenu_bg = "#89b482",
+    folder_bg = "#6d8dad",
+}
 
-    black = "#1d2021",
-
-    gray_2 = "#928374",
-    red_2 = "#c14a4a",
-    green_2 = "#b8bb26",
-    yellow_2 = "#fabd2f",
-    blue_2 = "#83a598",
-    purple_2 = "#d3869b",
-    aqua_2 = "#8ec07c",
-    orange_2 = "#fe8019",
-
-    bh0_h = "#1d2021",
-    bg0 = "#282828",
-    bg1 = "#3c3836",
-    bg2 = "#504945",
-    bg3 = "#665c54",
-    bg4 = "#7c6f64",
-
-    bg0_s = "#32302f",
-    fg4 = "#a89984",
-    fg3 = "#bdae93",
-    fg2 = "#d5c4a1",
-    fg1 = "#ebdbb2",
-
-
-    git = {
-      delete = "#c44936",
-      bg_delete = '#543834',
-
-      inactive_delete = "#9e3a2a",
-      inactive_bg_delete = '#473834',
-
-      add = "#9e9e3c",
-      bg_add = "#3f3f29",
-
-      inactive_add = "#7c7c2e",
-      inactive_bg_add = "#333327",
-
-      change = '#45707a',
-      bg_change = "#0d3138",
-      yellow_change = '#b47109',
-      yellow_bg_change = "#482D03"
-    },
-
-    -- gitSigns = {delete = "#ea4a5a", add = "#28a745", change = "#2188ff"}, -- github dark
-    -- gitSigns = {delete = "#c14a4a", add = "#6c782e", change = "#45707a"}, -- gruvbox-material
-    gitSigns = {delete = "#c14a4a", add = "#6c782e", change = "#b47109"}, -- gruvbox-flat
-
-    visual_red = "#442e2d",
-    visual_green = "#333e34",
-    visual_blue = "#2e3b3b",
-    visual_yellow = "#473c29",
-    search = "#335075",
-
-    -- lightspeed = {primary = "#fabd2f", secondary = "#EBDBB2" },
-    lightspeed = {secondary = "#9ADDFF", primary = "#F00077"},
+local b = {
+    base0A = "#e0c080",
+    base04 = "#d4be98",
+    base07 = "#c7b89d",
+    base05 = "#c0b196",
+    base0E = "#d3869b",
+    base0D = "#7daea3",
+    base0C = "#86b17f",
+    base0B = "#a9b665",
+    base02 = "#36393a",
+    base0F = "#d65d0e",
+    base03 = "#404344",
+    base08 = "#ec6b64",
+    base01 = "#2c2f30",
+    base00 = "#222526",
+    base09 = "#e78a4e",
+    base06 = "#c3b499"
 }
 
 local theme = lush(function()
@@ -158,155 +211,209 @@ local theme = lush(function()
         -- styling for that group (meaning they mostly get styled as Normal)
         -- or leave them commented to apply vims default colouring or linking.
 
-        Comment {fg = colors.bg3, gui = "italic"}, -- any comment
-        ColorColumn {bg = colors.bg2}, -- used for the columns set with 'colorcolumn'
-        Conceal {fg = colors.bg3}, -- placeholder characters substituted for concealed text (see 'conceallevel')
-        -- Cursor       {bg = colors.gray }, -- character under the cursor
+        Normal {fg = b.base05, bg = b.base00}, -- normal text
+        Bold {gui = "bold"}, --
+        Debug {fg = b.base08 }, -- debugging statements
+        Directory {fg = b.base0D}, -- directory names (and other special names in listings)
+        Error {fg = b.base00, bg = b.base08}, -- (preferred) any erroneous construct
+        ErrorMsg {fg = b.base08, bg = b.base00}, -- error messages on the command line
+        Exception {fg = b.base08}, -- try, catch, throw
+        FoldColumn {fg =  b.base0C, bg = b.base01 }, -- 'foldcolumn'
+        Folded {fg = b.base03, bg = b.base01}, -- line used for closed folds
+        IncSearch {fg = b.base01, bg = b.base09}, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+        Italic {gui = "italic"}, -- ("Ignore", below, may be invisible...)
+        Macro {fg = b.base08}, -- same as Define
+        MatchParen {bg = b.base03, gui = "underline", gui = "bold"}, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+        ModeMsg {fg = b.base0B, gui = "bold"}, -- 'showmode' message (e.g., "-- INSERT -- ")
+        MoreMsg {fg = b.base0B}, -- |more-prompt|
+        Question {fg = b.base0D}, -- |hit-enter| prompt and yes/no questions
+        Search {fg = b.base01, bg = b.base0A}, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+        Substitute {fg = b.base01, bg = b.base0A}, -- |:substitute| replacement text highlighting
+        SpecialKey {fg = b.base03}, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
+        TooLong {fg = b.base08},
+        Underlined {gui = "underline"}, -- (preferred) text that stands out, HTML links
+        Visual {bg = b.base02}, -- Visual mode selection
+        VisualNOS {fg = b.base08}, -- Visual mode selection when vim is "Not Owning the Selection".
+        WarningMsg {fg = b.base0B}, -- warning messages
+        WildMenu {fg = b.base08, bg = b.base0A}, -- current added nvim-comment configmatch in 'wildmenu' completion
+        Title {fg = b.base0D}, -- titles for output from ":set all", ":autocmd" etc.
+        Conceal {fg = b.base0D, bg = b.base00}, -- placeholder characters substituted for concealed text (see 'conceallevel')
+        Cursor {fg = b.base00, bg = b.base05}, -- character under the cursor
+        NonText {fg = b.base03}, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+        LineNr {fg = c.grey}, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+        SignColumn {bg = b.base03}, -- column where |signs| are displayed
+        StatusLine {fg = b.base04}, -- status line of current window
+        StatusLineNC {fg = c.one_bg3, gui = "underline"}, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+        VertSplit {fg = c.one_bg2}, -- the column separating vertically split windows
+        ColorColumn {bg = b.base01}, -- used for the columns set with 'colorcolumn'
+        CursorColumn {bg = b.base01}, -- Screen-column at the cursor, when 'cursorcolumn' is set.
+        CursorLine {bg = b.base01}, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+        CursorLineNr {fg = c.white}, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+        QuickFixLine {bg = b.base01}, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
+        Pmenu {bg = c.one_bg}, -- Popup menu: normal item.
+        PmenuSel {bg = c.pmenu_bg}, -- Popup menu: selected item.
+        TabLine {fg = b.base03, bg = b.base01}, -- tab pages line, not active tab page label
+        TabLineFill {fg = b.base03, bg = b.base01}, -- tab pages line, where there are no labels
+        TabLineSel {fg = b.base0B, bg = b.base01}, -- tab pages line, active tab page label
+
+        EndOfBuffer {fg = c.black}, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
+        FloatBorder {fg = c.blue}, --
+        NormalFloat {bg = c.one_bg}, -- Normal text in floating windows.
+        PmenuSbar {bg = c.one_bg2}, -- Popup menu: scrollbar.
+        PmenuThumb {bg = c.nord_blue}, -- Popup menu: Thumb of the scrollbar.
+        NvimInternalError {fg = c.red},
+
+        Boolean {fg = b.base09}, --  a boolean constant: TRUE, false
+        Character {fg = b.base08}, --  a character constant: 'c', '\n'
+        Comment {fg = c.grey_fg, gui = "italic"}, -- any comment
+        Conditional {fg = b.base0E}, --  if, then, else, endif, switch, etc.
+        Constant {fg = b.base09}, -- (preferred) any constant
+        Define {fg = b.base0E}, --   preprocessor #define
+        Delimiter {fg = b.base0F }, --  character that needs attention
+        Float {fg = b.base09}, --    a floating point constant: 2.3e10
+        Function {fg = b.base0D}, -- function name (also: methods for classes)
+        Identifier {fg = b.base08}, -- (preferred) any variable name
+        Include {fg = b.base0D}, --  preprocessor #include
+        Keyword {fg = b.base0E}, --  any other keyword
+        Label {fg = b.base0A}, --    case, default, etc.
+        Number {fg = b.base09}, --   a number constant: 234, 0xff
+        Operator {fg = b.base05}, -- "sizeof", "+", "*", etc.
+        PreProc {fg = b.base0A}, -- (preferred) generic Preprocessor
+        Repeat {fg = b.base0A}, --   for, do, while, etc.
+        Special {fg = b.base0C}, -- (preferred) any special symbol
+        SpecialChar {fg = b.base0F}, --  special character in a constant
+        Statement {fg = b.base08}, -- (preferred) any statement
+        StorageClass {fg = b.base0A}, -- static, register, volatile, etc.
+        String {fg = b.base0B}, --   a string constant: "this is a string"
+        Structure {fg = b.base0E}, --  struct, union, enum, etc.
+        Tag {fg = b.base0A}, --    you can use CTRL-] on this
+        Todo {fg = b.base0A, bg = b.base01, gui = "italic"}, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+        Type {fg = b.base0A}, -- (preferred) int, long, char, etc.
+        Typedef {fg = b.base0A}, --  A typedef
+
+        -- PreCondit {fg = colors.purple}, --  preprocessor #if, #else, #endif, etc.
+        -- SpecialComment {fg = c.bg3}, -- special things inside a comment
+        -- Ignore         { }, -- (preferred) left blank, hidden  |hl-Ignore|
         -- lCursor      { }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
         -- CursorIM     { }, -- like Cursor, but used when in IME mode |CursorIM|
-        CursorColumn {bg = colors.bg0}, -- Screen-column at the cursor, when 'cursorcolumn' is set.
-        CursorLine {bg = colors.bg0_s}, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
-        Directory {fg = colors.blue_2}, -- directory names (and other special names in listings)
 
-        DiffAdd { bg = "#32361a" }, -- diff mode: Added line |diff.txt|
-        DiffChange { bg = "#0d3138" }, -- diff mode: Changed line |diff.txt|
-        DiffDelete { bg = "#3c1f1e" }, -- diff mode: Deleted line |diff.txt|
-        DiffText { bg = "#2e3b3b" }, -- diff mode: Changed text within a changed line |diff.txt|
+        DiffAdd {fg = c.nord_blue, bg = b.base01}, -- diff mode: Added line |diff.txt|
+        DiffChange {fg = c.grey_fg, bg = b.base01}, -- diff mode: Changed line |diff.txt|
+        DiffModified {fg = c.nord_blue}, --
+        DiffDelete {fg = b.base08, bg = b.base01 }, -- diff mode: Deleted line |diff.txt|
+        DiffText {fg = b.base0D, bg = b.base01 }, -- diff mode: Changed text within a changed line |diff.txt|
+        DiffAdded {fg = b.base0B, bg = b.base00}, --
+        DiffFile {fg = b.base08, bg = b.base00}, --
+        DiffNewFile {fg = b.base0B, bg = b.base00}, --
+        DiffLine {fg = b.base0D, bg = b.base00}, --
+        DiffRemoved {fg = b.base08, bg = b.base00}, --
 
-        -- DiffAdd {fg = colors.git.add, bg = colors.git.bg_add}, -- diff mode: Added line |diff.txt|
-        -- DiffChange {fg = colors.git.change, bg = colors.git.bg_change}, -- diff mode: Changed line |diff.txt|
-        -- DiffDelete {fg = colors.git.delete, bg = colors.git.bg_delete}, -- diff mode: Deleted line |diff.txt|
-        -- DiffText {fg = colors.git.yellow_change, bg = colors.git.bg_change }, -- diff mode: Changed text within a changed line |diff.txt|
+        -- START spelling
+        SpellBad { gui = "undercurl", sp = b.base08}, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise. 
+        SpellCap { gui = "undercurl", sp = b.base0D}, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
+        SpellLocal { gui = "undercurl", sp = b.base0C}, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
+        SpellRare { gui = "undercurl", sp = b.base0E}, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
+        -- END spelling
 
-        EndOfBuffer {fg = colors.bg}, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
+        -- START cmp custom menu
+        CmpItemAbbr {fg = c.white},
+        CmpItemAbbrMatch {fg = c.blue},
+        CmpItemKind {fg = c.green},
+        CmpItemMenu {fg = c.white},
+        -- CmpDocumentation {fg = colors.fg},
+        -- CmpDocumentationBorder {fg = colors.bg3},
+        -- CmpItemAbbrDeprecated {fg = colors.bg2},
+        CmpItemAbbrMatchFuzzy {fg = c.blue},
+        -- END cmp custom menu
+
+        -- START diagnostics
+        DiagnosticError {fg = c.red}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+        DiagnosticWarn {fg = c.yellow}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+        DiagnosticInfo {fg = c.green}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+        DiagnosticHint {fg = c.aqua}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+
+        DiagnosticSignError {fg = c.red}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+        DiagnosticSignWarn {fg = c.yellow}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+        DiagnosticSignInfo {fg = c.green}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+        DiagnosticSignHint {fg = c.aqua}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+
+        DiagnosticVirtualTextError {bg = util.darken(c.red, 0.1),fg = c.red}, -- Used for "Error" diagnostic virtual text
+        DiagnosticVirtualTextWarn {bg = util.darken(c.yellow, 0.1), fg = c.yellow}, -- Used for "Warning" diagnostic virtual text
+        DiagnosticVirtualTextInfo {bg = util.darken(c.green, 0.1), fg = c.green}, -- Used for "Information" diagnostic virtual text
+        DiagnosticVirtualTextHint {bg = util.darken(c.purple, 0.1), fg = c.purple}, -- Used for "Hint" diagnostic virtual text
+
+        DiagnosticUnderlineError {gui = "undercurl", sp = c.red}, -- Used to underline "Error" diagnostics
+        DiagnosticUnderlineWarn {gui = "undercurl", sp = c.yellow}, -- Used to underline "Warning" diagnostics
+        DiagnosticUnderlineInfo {gui = "undercurl", sp = c.green}, -- Used to underline "Information" diagnostics
+        DiagnosticUnderlineHint {gui = "undercurl", sp = c.purple}, -- Used to underline "Hint" diagnostics
+        -- END diagnostics
+
+        -- START dashboard
+        DashboardShortCut {fg = c.purple}, --
+        DashboardHeader {fg = c.red}, --
+        DashboardCenter {fg = c.blue},--
+        DashboardFooter {fg = c.yellow, gui = "italic"}, --
+        -- END dashboard
+
+        IndentBlanklineChar {fg = c.line},
+
+        --  START telescope
+        TelescopeBorder { fg = c.one_bg }, --
+        TelescopePromptTitle { fg = c.blue, bg = c.one_bg }, --
+        TelescopeResultsTitle { fg = c.red, bg = c.one_bg}, --
+        TelescopePreviewTitle { fg = c.green, bg = c.one_bg }, --
+        -- TelescopePromptBorder { fg = colors.bg3 }, --
+        -- TelescopeResultsBorder { fg = colors.bg3}, --
+        -- TelescopeSelectionCaret { fg = colors.purple }, --
+        -- TelescopeSelection { fg = colors.purple, bg = colors.bg2}, --
+        -- TelescopeMatching { fg = colors.blue }, --
+        --  END telescope
+
+
+
+
+
+
+
+
         -- TermCursor   { }, -- cursor in a focused terminal
         -- TermCursorNC { }, -- cursor in an unfocused terminal
-        ErrorMsg {fg = colors.red_2}, -- error messages on the command line
-        VertSplit {fg = colors.bg1}, -- the column separating vertically split windows
-        Folded {fg = colors.bg3}, -- line used for closed folds
-        -- FoldColumn   { }, -- 'foldcolumn'
-        SignColumn {bg = colors.bg}, -- column where |signs| are displayed
         -- SignColumnSB {bg = colors.bg}, -- column where |signs| are displayed
         -- IncSearch {fg = colors.fg, bg = colors.visual_yellow}, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
-        IncSearch {fg = colors.fg, bg = colors.search}, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
-        Substitute {fg = colors.bh0_h, bg = colors.red}, -- |:substitute| replacement text highlighting
-        LineNr {fg = colors.bg2}, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-        CursorLineNr {fg = colors.bg4}, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-        MatchParen {fg = util.lighten(colors.blue, 0.95), gui = "underline", gui = "bold"}, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
-        ModeMsg {fg = colors.fg, gui = "bold"}, -- 'showmode' message (e.g., "-- INSERT -- ")
-        MsgArea {fg = colors.fg}, -- Area for messages and cmdlin,
+        -- MsgArea {fg = c.fg}, -- Area for messages and cmdlin,
         -- MsgSeparator { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
-        MoreMsg {fg = colors.fg}, -- |more-prompt|
-        NonText {fg = colors.bg3}, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-        Normal {fg = colors.fg, bg = colors.bg}, -- normal text
-        NormalFloat {fg = colors.fg, bg = colors.bg0}, -- Normal text in floating windows.
-        FloatBorder {fg = colors.bg2}, --
         -- NormalNC     { bg = colors.black }, -- normal text in non-current windows
         -- NormalSB =   { bg = colors.black }, -- normal text in non-current windows
-        Pmenu {fg = colors.fg, bg = colors.bg1}, -- Popup menu: normal item.
-        PmenuSel {fg = colors.bg, bg = colors.blue}, -- Popup menu: selected item.
-        PmenuSbar {bg = colors.bg3}, -- Popup menu: scrollbar.
-        PmenuThumb {bg = colors.fg}, -- Popup menu: Thumb of the scrollbar.
-        Question {fg = colors.purple}, -- |hit-enter| prompt and yes/no questions
-        QuickFixLine {fg = colors.bg, bg = colors.yellow}, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
         -- Search {fg = colors.fg, bg = colors.visual_yellow}, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
-        Search {fg = colors.fg, bg = colors.search}, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
-        SpecialKey {fg = colors.bg3}, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
-        SpellBad { gui = "underline"}, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise. 
-        SpellCap { gui = "underline"}, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
-        SpellLocal {fg = colors.fg}, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
-        SpellRare {fg = colors.fg}, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-        StatusLine {fg = colors.fg, bg = colors.bg2}, -- status line of current window
-        StatusLineNC {fg = colors.bg3}, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-        TabLine {fg = colors.bg3}, -- tab pages line, not active tab page label
-        TabLineFill {bg = colors.bg}, -- tab pages line, where there are no labels
-        TabLineSel {fg = colors.fg}, -- tab pages line, active tab page label
-        Title {fg = colors.fg}, -- titles for output from ":set all", ":autocmd" etc.
-        Visual {bg = colors.bg2}, -- Visual mode selection
-        VisualNOS {bg = colors.bg2}, -- Visual mode selection when vim is "Not Owning the Selection".
-        WarningMsg {fg = colors.yellow}, -- warning messages
         -- Whitespace   { }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
-        WildMenu {fg = colors.bg, bg = colors.blue}, -- current added nvim-comment configmatch in 'wildmenu' completion
         -- These groups are not listed as default vim groups,
         -- but they are defacto standard group names for syntax highlighting.
         -- commented out groups should chain up to their "preferred" group by
         -- default,
         -- Uncomment and edit if you want more specific syntax highlighting.
-        Constant {fg = colors.orange}, -- (preferred) any constant
-        String {fg = colors.green}, --   a string constant: "this is a string"
-        Character {fg = colors.green}, --  a character constant: 'c', '\n'
-        -- Number {fg = colors.yellow_2}, --   a number constant: 234, 0xff
-        -- Boolean {fg = colors.purple}, --  a boolean constant: TRUE, false
-        -- Float {fg = colors.yellow_2}, --    a floating point constant: 2.3e10
-        Identifier {fg = colors.red}, -- (preferred) any variable name
-        Function {fg = colors.blue}, -- function name (also: methods for classes)
-        Statement {fg = colors.purple}, -- (preferred) any statement
-        -- Conditional {fg = colors.fg}, --  if, then, else, endif, switch, etc.
-        -- Repeat {fg = colors.purple}, --   for, do, while, etc.
-        -- Label {fg = colors.blue_2}, --    case, default, etc.
-        Operator {fg = util.darken(colors.red, 0.85)}, -- "sizeof", "+", "*", etc.
-        Keyword {fg = colors.aqua}, --  any other keyword
-        -- Exception {fg = colors.purple}, --  try, catch, throw
-        PreProc {fg = colors.aqua}, -- (preferred) generic Preprocessor
-        -- Include {fg = colors.blue}, --  preprocessor #include
-        -- Define {fg = colors.purple}, --   preprocessor #define
-        -- Macro {fg = colors.purple}, --    same as Define
-        -- PreCondit {fg = colors.purple}, --  preprocessor #if, #else, #endif, etc.
-        Type {fg = colors.yellow}, -- (preferred) int, long, char, etc.
-        -- StorageClass {fg = colors.blue}, -- static, register, volatile, etc.
-        -- Structure {fg = colors.yellow}, --  struct, union, enum, etc.
-        -- Typedef {fg = colors.yellow}, --  A typedef
-        Special {fg = colors.red, gui = "italic"}, -- (preferred) any special symbol
-        -- SpecialChar    { }, --  special character in a constant
-        -- Tag            { }, --    you can use CTRL-] on this
-        -- Delimiter      { }, --  character that needs attention
-        SpecialComment {fg = colors.bg3}, -- special things inside a comment
-        -- Debug          { }, --    debugging statements
-        Underlined {gui = "underline"}, -- (preferred) text that stands out, HTML links
-        Bold {gui = "bold"}, Italic {gui = "italic"}, -- ("Ignore", below, may be invisible...)
-        -- Ignore         { }, -- (preferred) left blank, hidden  |hl-Ignore|
-        Error {fg = colors.red_2}, -- (preferred) any erroneous construct
-        Todo {fg = colors.purple, gui = "italic"}, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
         -- These groups are for the native LSP client. Some other LSP clients may
         -- use these groups, or use their own. Consult your LSP client's
         -- documentation.
 
-        LspReferenceText {bg = colors.bg2}, -- used for highlighting "text" references
-        LspReferenceRead {bg = colors.bg2}, -- used for highlighting "read" references
-        LspReferenceWrite {bg = colors.bg2}, -- used for highlighting "write" references
+        -- LspReferenceText {bg = c.bg2}, -- used for highlighting "text" references
+        -- LspReferenceRead {bg = c.bg2}, -- used for highlighting "read" references
+        -- LspReferenceWrite {bg = c.bg2}, -- used for highlighting "write" references
 
         -- LspDiagnosticsDefaultError {fg = colors.red}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
         -- LspDiagnosticsDefaultWarning {fg = colors.yellow}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
         -- LspDiagnosticsDefaultInformation {fg = colors.blue}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
         -- LspDiagnosticsDefaultHint {fg = colors.aqua}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-        DiagnosticError {fg = colors.red}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-        DiagnosticWarn {fg = colors.yellow}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-        DiagnosticInfo {fg = colors.blue}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-        DiagnosticHint {fg = colors.aqua}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-
-        DiagnosticSignError {fg = colors.red}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-        DiagnosticSignWarn {fg = colors.yellow}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-        DiagnosticSignInfo {fg = colors.blue}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-        DiagnosticSignHint {fg = colors.aqua}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
         -- LspDiagnosticsVirtualTextError {bg = util.darken(colors.red, 0.1),fg = colors.red}, -- Used for "Error" diagnostic virtual text
         -- LspDiagnosticsVirtualTextWarning {bg = util.darken(colors.yellow, 0.1), fg = colors.yellow}, -- Used for "Warning" diagnostic virtual text
         -- LspDiagnosticsVirtualTextInformation {bg = util.darken(colors.blue, 0.1), fg = colors.blue}, -- Used for "Information" diagnostic virtual text
         -- LspDiagnosticsVirtualTextHint {bg = util.darken(colors.green, 0.1), fg = colors.aqua}, -- Used for "Hint" diagnostic virtual text
-        DiagnosticVirtualTextError {bg = util.darken(colors.red, 0.1),fg = colors.red}, -- Used for "Error" diagnostic virtual text
-        DiagnosticVirtualTextWarn {bg = util.darken(colors.yellow, 0.1), fg = colors.yellow}, -- Used for "Warning" diagnostic virtual text
-        DiagnosticVirtualTextInfo {bg = util.darken(colors.blue, 0.1), fg = colors.blue}, -- Used for "Information" diagnostic virtual text
-        DiagnosticVirtualTextHint {bg = util.darken(colors.green, 0.1), fg = colors.aqua}, -- Used for "Hint" diagnostic virtual text
 
         -- LspDiagnosticsUnderlineError {gui = "undercurl", sp = colors.red}, -- Used to underline "Error" diagnostics
         -- LspDiagnosticsUnderlineWarning {gui = "undercurl", sp = colors.yellow}, -- Used to underline "Warning" diagnostics
         -- LspDiagnosticsUnderlineInformation {gui = "undercurl", sp = colors.blue}, -- Used to underline "Information" diagnostics
         -- LspDiagnosticsUnderlineHint {gui = "undercurl", sp = colors.aqua}, -- Used to underline "Hint" diagnostics
-        DiagnosticUnderlineError {gui = "undercurl", sp = colors.red}, -- Used to underline "Error" diagnostics
-        DiagnosticUnderlineWarn {gui = "undercurl", sp = colors.yellow}, -- Used to underline "Warning" diagnostics
-        DiagnosticUnderlineInfo {gui = "undercurl", sp = colors.blue}, -- Used to underline "Information" diagnostics
-        DiagnosticUnderlineHint {gui = "undercurl", sp = colors.aqua}, -- Used to underline "Hint" diagnostics
         -- LspDiagnosticsFloatingError          { }, -- Used to color "Error" diagnostic messages in diagnostics float
         -- LspDiagnosticsFloatingWarning        { }, -- Used to color "Warning" diagnostic messages in diagnostics float
         -- LspDiagnosticsFloatingInformation    { }, -- Used to color "Information" diagnostic messages in diagnostics float
@@ -315,7 +422,7 @@ local theme = lush(function()
         -- LspDiagnosticsSignWarning            { }, -- Used for "Warning" signs in sign column
         -- LspDiagnosticsSignInformation        { }, -- Used for "Information" signs in sign column
         -- LspDiagnosticsSignHint               { }, -- Used for "Hint" signs in sign column
-        LspCodeLens { fg = colors.bg3 },
+        -- LspCodeLens { fg = c.bg3 },
 
         -- These groups are for the neovim tree-sitter highlights.
         -- As of writing, tree-sitter support is a WIP, group names may change.
@@ -325,108 +432,107 @@ local theme = lush(function()
         -- TSAnnotation         { colors.yellow };    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
         -- TSAttribute          { colors.orange };    -- (unstable) TODO: docs
         -- TSBoolean            { colors.blue };    -- For booleans.
-        TSCharacter {fg = colors.green}, -- For characters.
+        -- TSCharacter {fg = c.green}, -- For characters.
         -- TSComment            { };    -- For comment blocks.
-        TSConstructor {fg = colors.aqua_2}, -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
+        -- TSConstructor {fg = c.aqua_2}, -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
         -- TSConstructor {fg = colors.orange}, -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
-        luaTSConstructor {fg = colors.orange},
-        TSConditional {fg = colors.purple}, -- For keywords related to conditionnals.
-        TSConstant {fg = colors.yellow}, -- For constants
-        TSConstBuiltin {fg = colors.blue}, -- For constant that are built in the language: `nil` in Lua.
+        -- luaTSConstructor {fg = c.orange},
+        -- TSConditional {fg = c.purple}, -- For keywords related to conditionnals.
+        -- TSConstant {fg = c.yellow}, -- For constants
+        -- TSConstBuiltin {fg = c.blue}, -- For constant that are built in the language: `nil` in Lua.
         -- TSConstMacro         { colors.orange };    -- For constants that are defined by macros: `NULL` in C.
-        TSError {fg = colors.red_2}, -- For syntax/parser errors.
-        TSException {fg = colors.purple}, -- For exception related keywords.
-        TSField {fg = colors.aqua}, -- For fields.
+        -- TSError {fg = c.red_2}, -- For syntax/parser errors.
+        -- TSException {fg = c.purple}, -- For exception related keywords.
+        -- TSField {fg = c.aqua}, -- For fields.
         -- TSFloat              { colors.yellow };    -- For floats.
-        TSFunction {fg = colors.yellow}, -- For function (calls and definitions).
-        TSFuncBuiltin {fg = colors.yellow}, -- For builtin functions: `table.insert` in Lua.
-        TSFuncMacro {fg = colors.yellow}, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-        TSInclude {fg = colors.blue}, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-        TSKeyword {fg = colors.purple}, -- For keywords that don't fall in previous categories.
-        TSKeywordOperator {fg = colors.purple}, -- 
-        TSKeywordFunction {fg = colors.purple}, -- For keywords used to define a fuction.
-        TSLabel {fg = colors.blue}, -- For labels: `label:` in C and `:label:` in Lua.
-        TSMethod {fg = colors.yellow}, -- For method calls and definitions.
-        TSNamespace { fg = colors.red };    -- For identifiers referring to modules and namespaces.
+        -- TSFunction {fg = c.yellow}, -- For function (calls and definitions).
+        -- TSFuncBuiltin {fg = c.yellow}, -- For builtin functions: `table.insert` in Lua.
+        -- TSFuncMacro {fg = c.yellow}, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
+        -- TSInclude {fg = c.blue}, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+        -- TSKeyword {fg = c.purple}, -- For keywords that don't fall in previous categories.
+        -- TSKeywordOperator {fg = c.purple}, --
+        -- TSKeywordFunction {fg = c.purple}, -- For keywords used to define a fuction.
+        -- TSLabel {fg = c.blue}, -- For labels: `label:` in C and `:label:` in Lua.
+        -- TSMethod {fg = c.yellow}, -- For method calls and definitions.
+        -- TSNamespace { fg = c.red };    -- For identifiers referring to modules and namespaces.
         -- TSNone               { };    -- TODO: docs
         -- TSNote = {}
-        TSNumber {fg = colors.purple}, -- For all numbers
+        -- TSNumber {fg = c.purple}, -- For all numbers
         -- TSOperator {fg = colors.fg}, -- For any operator: `+`, but also `->` and `*` in C.
-        TSOperator {fg = util.darken(colors.orange, 0.85)}, -- For any operator: `+`, but also `->` and `*` in C.        TSParameter {fg = colors.red}, -- For parameters of a function.
+        -- TSOperator {fg = util.darken(c.orange, 0.85)}, -- For any operator: `+`, but also `->` and `*` in C.        TSParameter {fg = colors.red}, -- For parameters of a function.
         -- TSParameterReference {fg = colors.blue_2}, -- For references to parameters of a function.
-        TSProperty {fg = colors.red}, -- Same as `TSField`.
-        TSPunctDelimiter {fg = colors.red}, -- For delimiters ie: `.`
-        TSPunctBracket {fg = util.darken(colors.orange, 0.85) }, -- For brackets and parens.
+        -- TSProperty {fg = c.red}, -- Same as `TSField`.
+        -- TSPunctDelimiter {fg = c.red}, -- For delimiters ie: `.`
+        -- TSPunctBracket {fg = util.darken(c.orange, 0.85) }, -- For brackets and parens.
         -- TSPunctBracket {fg = colors.fg}, -- For brackets and parens.
-        TSPunctSpecial {fg = util.darken(colors.orange, 0.85)}, -- For special punctutation that does not fall in the catagories before.
-        TSRepeat {fg = colors.purple}, -- For keywords related to loops.
-        TSString {fg = colors.green}, -- For strings.
+        -- TSPunctSpecial {fg = util.darken(c.orange, 0.85)}, -- For special punctutation that does not fall in the catagories before.
+        -- TSRepeat {fg = c.purple}, -- For keywords related to loops.
+        -- TSString {fg = c.green}, -- For strings.
         -- TSStringRegex        { colors.orange };    -- For regexes.
         -- TSStructure {},
         -- TSStringEscape       { colors.yellow_2 };    -- For escape characters within a string.
         -- TSSymbol             { };    -- For identifiers referring to symbols or atoms.
-        TSType {fg = colors.yellow}, -- For types.
-        TSTypeBuiltin {fg = colors.blue}, -- For builtin types.
-        TSVariable {fg = colors.fg}, -- Any variable name that does not have another highlight.
-        TSVariableBuiltin {fg = colors.blue}, -- Variable names that are defined by the languages, like `this` or `self`.
+        -- TSType {fg = c.yellow}, -- For types.
+        -- TSTypeBuiltin {fg = c.blue}, -- For builtin types.
+        -- TSVariable {fg = c.fg}, -- Any variable name that does not have another highlight.
+        -- TSVariableBuiltin {fg = c.blue}, -- Variable names that are defined by the languages, like `this` or `self`.
 
-        TSTag {fg = colors.blue}, -- Tags like html tag names.
-        TSTagDelimiter {fg = colors.bg3}, -- Tag delimiter like `<` `>` `/`
-        TSText {fg = colors.yellow}, -- For strings considered text in a markup language.
-        TSEmphasis {fg = colors.yellow}, -- For text to be represented with emphasis.
-        TSUnderline {fg = colors.yellow}, -- For text to be represented with an underline.
-        TSStrike {fg = colors.yellow}, -- For strikethrough text.
-        TSTitle {fg = colors.yellow}, -- Text that is part of a title.
-        TSLiteral {fg = colors.yellow}, -- Literal text.
-        TSURI {fg = colors.purple }, -- Any URI like a link or email.
+        -- TSTag {fg = c.blue}, -- Tags like html tag names.
+        -- TSTagDelimiter {fg = c.bg3}, -- Tag delimiter like `<` `>` `/`
+        -- TSText {fg = c.yellow}, -- For strings considered text in a markup language.
+        -- TSEmphasis {fg = c.yellow}, -- For text to be represented with emphasis.
+        -- TSUnderline {fg = c.yellow}, -- For text to be represented with an underline.
+        -- TSStrike {fg = c.yellow}, -- For strikethrough text.
+        -- TSTitle {fg = c.yellow}, -- Text that is part of a title.
+        -- TSLiteral {fg = c.yellow}, -- Literal text.
+        -- TSURI {fg = c.purple }, -- Any URI like a link or email.
 
         -- START which-key --
-        WhichKey {fg = colors.yellow}, --
-        WhichKeySeperator {fg = colors.fg}, --
-        WhichKeyGroup {fg = colors.blue},--
-        WhichKeyDesc {fg = colors.red}, --
-        WhichKeyFloat {bg = colors.bg}, --
-        WhichKeyValue {fg = colors.bg2},--
+        -- WhichKey {fg = colors.yellow}, --
+        -- WhichKeySeperator {fg = colors.fg}, --
+        -- WhichKeyGroup {fg = colors.blue},--
+        -- WhichKeyDesc {fg = colors.red}, --
+        -- WhichKeyFloat {bg = colors.bg}, --
+        -- WhichKeyValue {fg = colors.bg2},--
         -- END which-key --
 
         -- START nvimtree --
-        -- #aa9987
-        NvimTreeNormal {fg = colors.fg, bg = colors.black}, --
-        NvimTreeRootFolder {fg = colors.green, gui = "bold"}, --
+        -- NvimTreeEmptyFolderName {fg = c.blue}, --
+        -- NvimTreeEndOfBuffer {fg = c.darker_black},--
+        -- NvimTreeFolderIcon {fg = c.folder_bg},--
+        -- NvimTreeFolderName {fg = c.folder_bg}, --
+        -- NvimTreeGitDirty {fg = c.red},--
+        -- NvimTreeIndentMarker {fg = c.bg2}, --
+        -- NvimTreeNormal {bg = c.darker_black}, --
+        -- NvimTreeNormalNC {bg = c.darker_black}, --
+        -- NvimTreeOpenedFolderName {fg = c.blue},--
+        -- NvimTreeRootFolder {fg = c.red, gui = "underline"}, --
+        -- NvimTreeStatuslineNc {fg = c.darker_black, bg = c.darker_black},--
+        -- NvimTreeVertSplit {fg = c.darker_black, bg = c.darker_black},--
+        -- NvimTreeWindowPicker {fg = c.red, bg = c.black2},--
+
         -- NvimTreeFolderName {fg = colors.blue_2}, --
-        NvimTreeFolderName {fg = colors.blue_2}, --
-        NvimTreeFolderIcon {fg = colors.blue_2},--
-        NvimTreeEmptyFolderName {fg = colors.blue_2}, --
-        NvimTreeOpenedFolderName {fg = colors.blue_2},--
-        NvimTreeOpenedFile {fg = colors.blue_2},--
-        NvimTreeImageFile {fg = colors.purple}, --
-        NvimTreeExecFile {fg = colors.green},--
-        NvimTreeSpecialFile {fg = colors.yellow, gui = "underline"}, --
-        NvimTreeSymlink {fg = colors.blue},--
+        -- NvimTreeOpenedFile {fg = colors.blue_2},--
+        -- NvimTreeImageFile {fg = colors.purple}, --
+        -- NvimTreeExecFile {fg = colors.green},--
+        -- NvimTreeSpecialFile {fg = colors.yellow, gui = "underline"}, --
+        -- NvimTreeSymlink {fg = colors.blue},--
         -- NvimTreeGitNew {fg = colors.fg}, --
         -- NvimTreeGitDeleted {fg = colors.fg}, --
         -- NvimTreeGitDirty {fg = colors.fg},--
-        NvimTreeGitNew {fg = colors.git.add}, --
-        NvimTreeGitDirty {fg = colors.git.change},--
-        NvimTreeGitDeleted {fg = colors.git.delete}, --
-        NvimTreeGitSpecialFile {fg = colors.yellow},
+        -- NvimTreeGitNew {fg = colors.git.add}, --
+        -- NvimTreeGitDeleted {fg = colors.git.delete}, --
+        -- NvimTreeGitSpecialFile {fg = colors.yellow},
         -- NvimTreeGitStaged {fg = colors.green},--
         -- NvimTreeGitMerge {fg = colors.green}, --
         -- NvimTreeGitRenamed {fg = colors.green},--
-        NvimTreeIndentMarker {fg = colors.gray}, --
-        NvimTreeLspDiagnostics {fg = colors.orange},--
+        -- NvimTreeLspDiagnostics {fg = colors.orange},--
         -- LspDiagnosticsError = { fg = c.error },
         -- LspDiagnosticsWarning = { fg = c.warning },
         -- LspDiagnosticsInformation = { fg = c.info },
         -- LspDiagnosticsHint = { fg = c.hint },
         -- END nvimtree --
 
-        -- START dashboard
-        DashboardShortCut {fg = colors.purple}, --
-        DashboardHeader {fg = colors.red}, --
-        DashboardCenter {fg = colors.blue},--
-        DashboardFooter {fg = colors.yellow, gui = "italic"}, --
-        -- END dashboard
 
         -- START hop
         -- HopNextKey {fg = colors.red_2, gui = "bold"}, --
@@ -441,25 +547,30 @@ local theme = lush(function()
         -- END easymotion
 
         -- START gitsigns
-        GitSignsAdd {fg = colors.gitSigns.add}, -- diff mode: Added line |diff.txt|
-        GitSignsChange {fg = colors.gitSigns.change}, -- diff mode: Changed line |diff.txt|
-        GitSignsDelete {fg = colors.gitSigns.delete}, -- diff mode: Deleted line |diff.txt|
+        -- GitSignsAdd {fg = colors.gitSigns.add}, -- diff mode: Added line |diff.txt|
+        -- GitSignsChange {fg = colors.gitSigns.change}, -- diff mode: Changed line |diff.txt|
+        -- GitSignsDelete {fg = colors.gitSigns.delete}, -- diff mode: Deleted line |diff.txt|
         -- END gitsigns
 
         -- START gitgutter
-        GitGutterAdd {fg = colors.gitSigns.add}, -- diff mode: Added line |diff.txt|
-        GitGutterChange {fg = colors.gitSigns.change}, -- diff mode: Changed line |diff.txt|
-        GitGutterDelete {fg = colors.gitSigns.delete}, -- diff mode: Deleted line |diff.txt|
+        -- GitGutterAdd {fg = colors.gitSigns.add}, -- diff mode: Added line |diff.txt|
+        -- GitGutterChange {fg = colors.gitSigns.change}, -- diff mode: Changed line |diff.txt|
+        -- GitGutterDelete {fg = colors.gitSigns.delete}, -- diff mode: Deleted line |diff.txt|
         -- END gitgutter
 
+        -- DiffAdd {fg = c.nord_blue, bg = c.nord_blue},
+        -- DiffChange {fg = c.grey_fg, bg = c.grey_fg},
+        -- DiffModified {fg = c.nord_blue, bg = c.nord_blue},
+
+
         --  START neogit
-        NeogitUnstagedChanges {fg = colors.aqua_2, gui = "bold"},--
-        NeogitUntrackedFiles {fg = colors.aqua_2, gui = "bold"},--
-        NeogitUnmergedChanges {fg = colors.aqua_2, gui = "bold"},--
-        NeogitUnpulledChanges {fg = colors.aqua_2, gui = "bold"},--
-        NeogitRecentCommits {fg = colors.aqua_2, gui = "bold"},--
-        NeogitStagedChanges {fg = colors.aqua_2, gui = "bold"},--
-        NeogitStashes {fg = colors.aqua_2, gui = "bold"},--
+        -- NeogitUnstagedChanges {fg = colors.aqua_2, gui = "bold"},--
+        -- NeogitUntrackedFiles {fg = colors.aqua_2, gui = "bold"},--
+        -- NeogitUnmergedChanges {fg = colors.aqua_2, gui = "bold"},--
+        -- NeogitUnpulledChanges {fg = colors.aqua_2, gui = "bold"},--
+        -- NeogitRecentCommits {fg = colors.aqua_2, gui = "bold"},--
+        -- NeogitStagedChanges {fg = colors.aqua_2, gui = "bold"},--
+        -- NeogitStashes {fg = colors.aqua_2, gui = "bold"},--
 
         -- -- NeogitCommandText {fg = colors.red, gui = "bold"},--
         -- -- NeogitCommandTime {fg = colors.red, gui = "bold"},--
@@ -477,45 +588,37 @@ local theme = lush(function()
         -- NeogitBranch {fg = colors.aqua_2, gui = "bold"}, --
         -- NeogitRemote {fg = colors.green_2},--
 
-        NeogitHunkHeader {bg = colors.bg1, fg = colors.purple_2 },--
-        NeogitHunkHeaderHighlight {bg = colors.bg2, fg = colors.purple}, --
-        NeogitDiffContext {fg = colors.fg, bg = colors.bg},--
-        NeogitDiffDelete {fg = colors.git.delete, bg = colors.git.bg_delete},--
-        NeogitDiffAdd {fg = colors.git.add, bg = colors.git.bg_add}, --
-        NeogitDiffContextHighlight {bg = colors.bg},--
-        NeogitDiffDeleteHighlight {fg = colors.git.delete, bg = colors.git.bg_delete},--
-        NeogitDiffAddHighlight {fg = colors.git.add, bg = colors.git.bg_add}, --
+        -- NeogitHunkHeader {bg = colors.bg1, fg = colors.purple_2 },--
+        -- NeogitHunkHeaderHighlight {bg = colors.bg2, fg = colors.purple}, --
+        -- NeogitDiffContext {fg = colors.fg, bg = colors.bg},--
+        -- NeogitDiffDelete {fg = colors.git.delete, bg = colors.git.bg_delete},--
+        -- NeogitDiffAdd {fg = colors.git.add, bg = colors.git.bg_add}, --
+        -- NeogitDiffContextHighlight {bg = colors.bg},--
+        -- NeogitDiffDeleteHighlight {fg = colors.git.delete, bg = colors.git.bg_delete},--
+        -- NeogitDiffAddHighlight {fg = colors.git.add, bg = colors.git.bg_add}, --
         --  END neogit
 
         --  START fennec lightspeed.nvim
-        LightspeedCursor {fg = colors.bg, bg = colors.blue, gui = "bold, underline"},
-        LightspeedLabel {fg = colors.red, gui = "bold, underline"},
-        -- LightspeedLabelOverlapped {fg = colors.green_2, gui = "bold"},
-        LightspeedLabelDistant {fg = colors.orange, gui = "bold, underline"},
-        -- LightspeedLabelDistantOverlapped {fg = colors.orange, gui = "bold"},
-        LightspeedShortcut {
-            fg = colors.bg,
-            bg = colors.yellow_2,
-            gui = "bold"
-        },
-        -- LightspeedShortcutOverlapped {fg = colors.bg, bg = colors.green_2, gui = "bold"},
-        LightspeedMaskedChar {fg = colors.fg, gui = "bold"},
-        LightspeedGreyWash {fg = colors.bg3},
-        LightspeedUnlabeledMatch {fg = colors.fg, gui = "italic, bold"},
-        LightspeedOneCharMatch {fg = colors.bg, bg = colors.yellow_2, gui = "bold"},
-        -- LightspeedUniqueChar {fg = colors.white, gui = "bold"},
-        -- LightspeedPendingOpArea {fg = colors.fg, bg = colors.lightspeed.primary},
-        -- LightspeedPendingChangeOpArea {fg = colors.lightspeed.primary, gui = "italic, strikethrough"},
+        -- LightspeedCursor {fg = colors.bg, bg = colors.blue, gui = "bold, underline"},
+        -- LightspeedLabel {fg = colors.red, gui = "bold, underline"},
+        -- -- LightspeedLabelOverlapped {fg = colors.green_2, gui = "bold"},
+        -- LightspeedLabelDistant {fg = colors.orange, gui = "bold, underline"},
+        -- -- LightspeedLabelDistantOverlapped {fg = colors.orange, gui = "bold"},
+        -- LightspeedShortcut {
+        --     fg = colors.bg,
+        --     bg = colors.yellow_2,
+        --     gui = "bold"
+        -- },
+        -- -- LightspeedShortcutOverlapped {fg = colors.bg, bg = colors.green_2, gui = "bold"},
+        -- LightspeedMaskedChar {fg = colors.fg, gui = "bold"},
+        -- LightspeedGreyWash {fg = colors.bg3},
+        -- LightspeedUnlabeledMatch {fg = colors.fg, gui = "italic, bold"},
+        -- LightspeedOneCharMatch {fg = colors.bg, bg = colors.yellow_2, gui = "bold"},
+        -- -- LightspeedUniqueChar {fg = colors.white, gui = "bold"},
+        -- -- LightspeedPendingOpArea {fg = colors.fg, bg = colors.lightspeed.primary},
+        -- -- LightspeedPendingChangeOpArea {fg = colors.lightspeed.primary, gui = "italic, strikethrough"},
         --  END fennec lightspeed.nvim
 
-        --  START telescope
-        TelescopeBorder { fg = colors.bg3 },
-        TelescopePromptBorder { fg = colors.bg3 },
-        TelescopeResultsBorder { fg = colors.bg3},
-        TelescopeSelectionCaret { fg = colors.purple },
-        TelescopeSelection { fg = colors.purple, bg = colors.bg2},
-        TelescopeMatching { fg = colors.blue },
-        --  END telescope
 
         --  START buffer
         -- BufferCurrent {fg = colors.fg, bg = colors.bg},
@@ -540,117 +643,117 @@ local theme = lush(function()
         --  END buffer
 
         -- START markdown
-        markdownH1 { fg = colors.red, gui = "bold" },
-        markdownH2 { fg = colors.orange, gui = "bold" },
-        markdownH3 {fg = colors.yellow, gui = "bold"},
-        markdownH4 {fg = colors.green, gui = "bold"},
-        markdownH5 {fg = colors.aqua, gui = "bold"},
-        markdownH6 {fg = colors.blue, gui = "bold"},
-        markdownHeadingDelimiter { fg = colors.bg3 },
-        markdownHeadingRule { fg = colors.bg3 },
-        markdownBold{ fg = colors.orange, gui = "bold"},
-        markdownBoldDelimiter{ fg = colors.bg3},
-        markdownItalic {fg = colors.yellow, gui = "italic" },
-        markdownItalicDelimiter {fg = colors.bg3 },
-        markdownBoldItalic {fg = colors.red, gui = "bold, italic" },
-        markdownBoldItalicDelimiter {fg = colors.bg3 },
-        markdownCode { fg = colors.green},
-        markdownCodeDelimiter { fg = colors.bg3},
-        markdownCodeBlock { fg = colors.bg3},
-        markdownBlockQuote { fg = colors.bg3},
-        -- not sure what the markdownID stuff does
-        markdownID {fg = colors.red},
-        markdownIDDeclaration {fg = colors.red },
-        markdownIDDelimiter {fg = colors.bg3 },
-        markdownIDItalic {fg = colors.red, gui = "italic"},
-        -- not sure what the markdownID stuff does
-        markdownLinkDelimiter {fg = colors.bg3},
-        markdownLinkText {fg = colors.green},
-        markdownListMarker {fg = colors.orange, gui = "bold"},
-        markdownOrderedListMarker {fg = colors.orange, gui = "bold"},
-        markdownRule { fg = colors.bg3 },
-        markdownURL {fg = colors.purple},
-        markdownInlineURL {fg = colors.blue},
-        markdownUrlTitle {fg = colors.blue },
+        -- markdownH1 { fg = c.red, gui = "bold" },
+        -- markdownH2 { fg = c.orange, gui = "bold" },
+        -- markdownH3 {fg = c.yellow, gui = "bold"},
+        -- markdownH4 {fg = c.green, gui = "bold"},
+        -- markdownH5 {fg = c.aqua, gui = "bold"},
+        -- markdownH6 {fg = c.blue, gui = "bold"},
+        -- markdownHeadingDelimiter { fg = c.bg3 },
+        -- markdownHeadingRule { fg = c.bg3 },
+        -- markdownBold{ fg = c.orange, gui = "bold"},
+        -- markdownBoldDelimiter{ fg = c.bg3},
+        -- markdownItalic {fg = c.yellow, gui = "italic" },
+        -- markdownItalicDelimiter {fg = c.bg3 },
+        -- markdownBoldItalic {fg = c.red, gui = "bold, italic" },
+        -- markdownBoldItalicDelimiter {fg = c.bg3 },
+        -- markdownCode { fg = c.green},
+        -- markdownCodeDelimiter { fg = c.bg3},
+        -- markdownCodeBlock { fg = c.bg3},
+        -- markdownBlockQuote { fg = c.bg3},
+        -- -- not sure what the markdownID stuff does
+        -- markdownID {fg = c.red},
+        -- markdownIDDeclaration {fg = c.red },
+        -- markdownIDDelimiter {fg = c.bg3 },
+        -- markdownIDItalic {fg = c.red, gui = "italic"},
+        -- -- not sure what the markdownID stuff does
+        -- markdownLinkDelimiter {fg = c.bg3},
+        -- markdownLinkText {fg = c.green},
+        -- markdownListMarker {fg = c.orange, gui = "bold"},
+        -- markdownOrderedListMarker {fg = c.orange, gui = "bold"},
+        -- markdownRule { fg = c.bg3 },
+        -- markdownURL {fg = c.purple},
+        -- markdownInlineURL {fg = c.blue},
+        -- markdownUrlTitle {fg = c.blue },
         -- END markdown
 
         -- START vim-markdown
-        htmlH1 {fg = colors.red, gui = "bold"},
-        htmlH2 {fg = colors.orange, gui = "bold"},
-        htmlH3 {fg = colors.yellow, gui = "bold"},
-        htmlH4 {fg = colors.green, gui = "bold"},
-        htmlH5 {fg = colors.aqua, gui = "bold"},
-        htmlH6 {fg = colors.blue, gui = "bold"},
-        mkdHeading {fg = colors.bg3, gui = "bold"},
-        htmlBold {fg = colors.orange, gui = "bold"},
-        mkdBold {fg = colors.bg3, gui = "bold"},
-        htmlItalic {fg = colors.yellow, gui = "italic"},
-        mkdItalic {fg = colors.bg3, gui = "italic"},
-        htmlBoldItalic {fg = colors.red, gui = "bold, italic"},
-        mkdBoldItalic {fg = colors.bg3},
-        -- mkdFootnotes {},
-        -- mkdLinkDef  {},
-        -- mkdLinkDefTarget {},
-        -- mkdLinkTitle {},
-        mkdListItem {fg = colors.orange},
-        -- mkdNonListItemBlock {},
-        -- mkdListItemLine {fg = colors.orange},
-        -- mkdString {},
-        mkdCode {fg = colors.green},
-        mkdCodeDelimiter {fg = colors.bg3},
-        mkdCodeStart {fg = colors.bg3},
-        mkdCodeEnd {fg = colors.bg3},
-        -- mkdFootnote {},
-        -- mkdBlockquote {},
-        mkdRule {fg = colors.orange},
-        -- mkdLineBreak {},
-        -- mkdFootnotes {},
-        mkdLink {fg = colors.green},
-        mkdURL {fg = colors.purple},
-        -- mkdInlineURL {fg = colors.purple},
-        -- mkdID {fg = colors.yellow},
-        -- mkdLinkDef {fg = colors.orange},
-        -- mkdLinkDefTarget {fg = colors.orange},
-        -- mkdLinkTitle {fg = colors.orange},
-        mkdDelimiter {fg = colors.bg3},
+        -- htmlH1 {fg = c.red, gui = "bold"},
+        -- htmlH2 {fg = c.orange, gui = "bold"},
+        -- htmlH3 {fg = c.yellow, gui = "bold"},
+        -- htmlH4 {fg = c.green, gui = "bold"},
+        -- htmlH5 {fg = c.aqua, gui = "bold"},
+        -- htmlH6 {fg = c.blue, gui = "bold"},
+        -- mkdHeading {fg = c.bg3, gui = "bold"},
+        -- htmlBold {fg = c.orange, gui = "bold"},
+        -- mkdBold {fg = c.bg3, gui = "bold"},
+        -- htmlItalic {fg = c.yellow, gui = "italic"},
+        -- mkdItalic {fg = c.bg3, gui = "italic"},
+        -- htmlBoldItalic {fg = c.red, gui = "bold, italic"},
+        -- mkdBoldItalic {fg = c.bg3},
+        -- -- mkdFootnotes {},
+        -- -- mkdLinkDef  {},
+        -- -- mkdLinkDefTarget {},
+        -- -- mkdLinkTitle {},
+        -- mkdListItem {fg = c.orange},
+        -- -- mkdNonListItemBlock {},
+        -- -- mkdListItemLine {fg = colors.orange},
+        -- -- mkdString {},
+        -- mkdCode {fg = c.green},
+        -- mkdCodeDelimiter {fg = c.bg3},
+        -- mkdCodeStart {fg = c.bg3},
+        -- mkdCodeEnd {fg = c.bg3},
+        -- -- mkdFootnote {},
+        -- -- mkdBlockquote {},
+        -- mkdRule {fg = c.orange},
+        -- -- mkdLineBreak {},
+        -- -- mkdFootnotes {},
+        -- mkdLink {fg = c.green},
+        -- mkdURL {fg = c.purple},
+        -- -- mkdInlineURL {fg = colors.purple},
+        -- -- mkdID {fg = colors.yellow},
+        -- -- mkdLinkDef {fg = colors.orange},
+        -- -- mkdLinkDefTarget {fg = colors.orange},
+        -- -- mkdLinkTitle {fg = colors.orange},
+        -- mkdDelimiter {fg = c.bg3},
         -- END vim-markdown
 
         -- START vimwiki
-        VimwikiHeader1 {fg = colors.red, gui = "bold"},
-        VimwikiHeader2 {fg = colors.orange, gui = "bold"},
-        VimwikiHeader3 {fg = colors.yellow, gui = "bold"},
-        VimwikiHeader4 {fg = colors.green, gui = "bold"},
-        VimwikiHeader5 {fg = colors.aqua, gui = "bold"},
-        VimwikiHeader6 {fg = colors.blue, gui = "bold"},
-        VimwikiLink {fg = colors.purple},
-        VimwikiLinkT {fg = colors.bg3},
-        VimwikiWeblink1 {fg = colors.purple},
-        VimwikiHeaderChar {fg = colors.bg3},
-        VimwikiCode {fg = colors.green},
-        VimwikiList {fg = colors.orange, gui = "bold"},
-        -- VimwikiTodo {fg = colors.blue},
-        -- VimwikiListTodo {fg = colors.orange, gui = "bold"},
-        -- VimwikiComment {fg = colors.red},
-        VimwikiTag {fg = colors.purple, gui = "bold"},
-        VimwikiBold {fg = colors.orange, gui = "bold"},
-        -- VimwikiBoldChar {fg = colors.bg3},
-        VimwikiItalic {fg = colors.yellow, gui = "italic"},
-        -- VimwikiItalicChar {fg = colors.bg3},
-        VimwikiBoldItalic {fg = colors.red, gui = "bold, italic"},
-        VimwikiUnderline {gui = "underline"},
-        -- VimwikiHR {fg = colors.yellow},
+        -- VimwikiHeader1 {fg = c.red, gui = "bold"},
+        -- VimwikiHeader2 {fg = c.orange, gui = "bold"},
+        -- VimwikiHeader3 {fg = c.yellow, gui = "bold"},
+        -- VimwikiHeader4 {fg = c.green, gui = "bold"},
+        -- VimwikiHeader5 {fg = c.aqua, gui = "bold"},
+        -- VimwikiHeader6 {fg = c.blue, gui = "bold"},
+        -- VimwikiLink {fg = c.purple},
+        -- VimwikiLinkT {fg = c.bg3},
+        -- VimwikiWeblink1 {fg = c.purple},
+        -- VimwikiHeaderChar {fg = c.bg3},
+        -- VimwikiCode {fg = c.green},
+        -- VimwikiList {fg = c.orange, gui = "bold"},
+        -- -- VimwikiTodo {fg = colors.blue},
+        -- -- VimwikiListTodo {fg = colors.orange, gui = "bold"},
+        -- -- VimwikiComment {fg = colors.red},
+        -- VimwikiTag {fg = c.purple, gui = "bold"},
+        -- VimwikiBold {fg = c.orange, gui = "bold"},
+        -- -- VimwikiBoldChar {fg = colors.bg3},
+        -- VimwikiItalic {fg = c.yellow, gui = "italic"},
+        -- -- VimwikiItalicChar {fg = colors.bg3},
+        -- VimwikiBoldItalic {fg = c.red, gui = "bold, italic"},
+        -- VimwikiUnderline {gui = "underline"},
+        -- -- VimwikiHR {fg = colors.yellow},
         -- END vimwiki
 
         -- START orgmode.nvim
         -- OrgTSTimestampActive {fg = colors.fg},
         -- OrgTSTimestampInactive {fg = colors.fg},
         -- OrgTSBullet {fg = colors.fg},
-        OrgTSHeadlineLevel1 {fg=colors.red},
-        OrgTSHeadlineLevel2 {fg=colors.orange},
-        OrgTSHeadlineLevel3 {fg=colors.yellow},
-        OrgTSHeadlineLevel4 {fg=colors.green},
-        OrgTSHeadlineLevel5 {fg=colors.aqua},
-        OrgTSHeadlineLevel6 {fg=colors.blue},
+        OrgTSHeadlineLevel1 {fg=c.red},
+        OrgTSHeadlineLevel2 {fg=c.orange},
+        OrgTSHeadlineLevel3 {fg=c.yellow},
+        OrgTSHeadlineLevel4 {fg=c.green},
+        OrgTSHeadlineLevel5 {fg=c.aqua},
+        OrgTSHeadlineLevel6 {fg=c.blue},
         -- OrgTSPropertyDrawer {fg=colors.purple},
         -- OrgTSDrawer {fg=colors.purple},
         -- OrgTSTag {fg=colors.purple},
@@ -662,111 +765,101 @@ local theme = lush(function()
         -- OrgTSCheckboxHalfChecked {fg=colors.purple},
         -- OrgTSCheckboxUnchecked {fg=colors.purple},
 
-        org_bold_delimiter {fg = colors.bg3},
-        org_bold {fg = colors.orange, gui = "bold"},
-        org_italic_delimiter {fg = colors.bg3},
-        org_italic {fg = colors.yellow, gui = "italic"},
-        org_underline_delimiter {fg = colors.bg3},
-        org_underline {fg = colors.green, gui = "underline"},
-        -- org_code_delimiter {fg = colors.bg3},
-        -- org_code {fg = colors.green},
-        -- org_verbatim_delimiter {fg = colors.bg3}, 
-        -- org_verbatim {fg = colors.green},
-        org_strike_delimiter {fg = colors.bg3},
-        org_strike {gui = "strikethrough"},
-        -- org_timestamp {},
-        -- org_timestamp_inactive {},
-        -- org_deadline_scheduled {},
-        -- org_hyperlink {fg = colors.green},
-        -- org_hyperlinkBracketsLeft {fg = colors.bg3},
-        -- org_hyperlinkURL {fg = colors.purple},
-        -- org_hyperlinkBracketsRight {fg = colors.bg3},
-        -- org_comment {},
-        -- org_list_ordered {fg = colors.orange},
-        -- org_list_unordered {fg = colors.orange},
-        -- org_list_def {},
-        -- org_list_item {},
-        -- org_list_bullet {},
-        -- org_list_checkbox {},
-        -- org_block_delimiter {},
-        -- org_key_identifier {},
-        org_title {fg = colors.purple},
-        -- org_properties_delimiter {},
-        -- org_property {},
-        -- org_property_value {},
-        -- org_subtask_number {},
-        -- org_subtask_percent {},
-        -- org_subtask_number_all {},
-        -- org_subtask_percent_100 {},
-        -- org_latex {},
-        -- OrgAgendaDay {},
-        -- OrgAgendaTags {},
-        -- orghelp_key {},
-        -- orghelp_bold {},
-        -- orghelp_bold_italic {},
-        -- orghelp_backtick {},
-        -- orghelp_asterisk {},
-        -- orghelp_underscore {},
+        -- org_bold_delimiter {fg = c.bg3},
+        -- org_bold {fg = c.orange, gui = "bold"},
+        -- org_italic_delimiter {fg = c.bg3},
+        -- org_italic {fg = c.yellow, gui = "italic"},
+        -- org_underline_delimiter {fg = c.bg3},
+        -- org_underline {fg = c.green, gui = "underline"},
+        -- -- org_code_delimiter {fg = colors.bg3},
+        -- -- org_code {fg = colors.green},
+        -- -- org_verbatim_delimiter {fg = colors.bg3}, 
+        -- -- org_verbatim {fg = colors.green},
+        -- org_strike_delimiter {fg = c.bg3},
+        -- org_strike {gui = "strikethrough"},
+        -- -- org_timestamp {},
+        -- -- org_timestamp_inactive {},
+        -- -- org_deadline_scheduled {},
+        -- -- org_hyperlink {fg = colors.green},
+        -- -- org_hyperlinkBracketsLeft {fg = colors.bg3},
+        -- -- org_hyperlinkURL {fg = colors.purple},
+        -- -- org_hyperlinkBracketsRight {fg = colors.bg3},
+        -- -- org_comment {},
+        -- -- org_list_ordered {fg = colors.orange},
+        -- -- org_list_unordered {fg = colors.orange},
+        -- -- org_list_def {},
+        -- -- org_list_item {},
+        -- -- org_list_bullet {},
+        -- -- org_list_checkbox {},
+        -- -- org_block_delimiter {},
+        -- -- org_key_identifier {},
+        -- org_title {fg = c.purple},
+        -- -- org_properties_delimiter {},
+        -- -- org_property {},
+        -- -- org_property_value {},
+        -- -- org_subtask_number {},
+        -- -- org_subtask_percent {},
+        -- -- org_subtask_number_all {},
+        -- -- org_subtask_percent_100 {},
+        -- -- org_latex {},
+        -- -- OrgAgendaDay {},
+        -- -- OrgAgendaTags {},
+        -- -- orghelp_key {},
+        -- -- orghelp_bold {},
+        -- -- orghelp_bold_italic {},
+        -- -- orghelp_backtick {},
+        -- -- orghelp_asterisk {},
+        -- -- orghelp_underscore {},
 
         -- OrgHeadlineStar1 {}
         -- OrgHeadlineStar2
         -- OrgHeadlineStar3
         -- OrgHeadlineStar4
-        OrgHeadlineLevel1 {fg = colors.red},
-        OrgHeadlineLevel2 {fg = colors.orange},
-        OrgHeadlineLevel3 {fg = colors.yellow},
-        OrgHeadlineLevel4 {fg = colors.green},
-        OrgHeadlineLevel5 {fg = colors.aqua},
-        OrgHeadlineLevel6 {fg = colors.blue},
+        OrgHeadlineLevel1 {fg = c.red},
+        OrgHeadlineLevel2 {fg = c.orange},
+        OrgHeadlineLevel3 {fg = c.yellow},
+        OrgHeadlineLevel4 {fg = c.green},
+        OrgHeadlineLevel5 {fg = c.aqua},
+        OrgHeadlineLevel6 {fg = c.blue},
         -- END orgmode.nvim
 
         -- "START" vim-sandwich
-        -- OperatorSandwichBuns {fg = colors.bg, bg = colors.yellow_2},
-        OperatorSandwichChange {bg = colors.bg2},
-        OperatorSandwichDelete {fg = colors.bg, bg = colors.yellow_2},
-        -- OperatorSandwichAdd {},
+        -- -- OperatorSandwichBuns {fg = colors.bg, bg = colors.yellow_2},
+        -- OperatorSandwichChange {bg = c.bg2},
+        -- OperatorSandwichDelete {fg = c.bg, bg = c.yellow_2},
+        -- -- OperatorSandwichAdd {},
         -- END vim-sandwich
 
         -- START vim-visual-multi
-        -- needs "vim.g.VM_theme_set_by_colorscheme = true" for it to work
-        VM_Mono {fg = colors.bg, bg = colors.green},
-        VM_Extend {fg = colors.fg, bg = colors.search},
-        VM_Cursor { fg = colors.bg, bg = colors.yellow_2, gui = "underline" },
-        VM_Insert {gui = "underline", sp = colors.red},
+        -- -- needs "vim.g.VM_theme_set_by_colorscheme = true" for it to work
+        -- VM_Mono {fg = c.bg, bg = c.green},
+        -- VM_Extend {fg = c.fg, bg = c.search},
+        -- VM_Cursor { fg = c.bg, bg = c.yellow_2, gui = "underline" },
+        -- VM_Insert {gui = "underline", sp = c.red},
         -- END vim-visual-multi
 
-        -- START cmp custom menu
-        CmpDocumentation {fg = colors.fg},
-        CmpDocumentationBorder {fg = colors.bg3},
-        CmpItemAbbr {fg = colors.fg},
-        CmpItemAbbrDeprecated {fg = colors.bg2},
-        CmpItemAbbrMatch {fg = colors.blue },
-        CmpItemAbbrMatchFuzzy {fg = colors.blue },
-        CmpItemKind {fg = colors.purple},
-        CmpItemMenu {fg = colors.bg4},
-        -- END cmp custom menu
 
         -- START treesitter context
-        TreesitterContext {bg = colors.bg1},
+        -- TreesitterContext {bg = c.bg1},
         -- END treesitter context
 
         -- START lsp_signature
-        LspSignatureActiveParameter {fg = colors.orange},
+        LspSignatureActiveParameter {fg = c.orange},
         -- END lsp_signature
 
         -- START nvim-biscuits
-        BiscuitColor {fg = colors.bg3},
+        -- BiscuitColor {fg = c.bg3},
         -- END nvim-biscuits
 
         -- START diffview
-        diffAdded { bg = colors.git.bg_add, fg = colors.git.add },
-        diffRemoved { bg = colors.git.bg_delete, fg = colors.git.delete },
-        diffChanged { fg = colors.git.change },
-        diffOldFile { fg = colors.yellow },
-        diffNewFile { fg = colors.orange },
-        diffFile { fg = colors.blue },
-        diffLine { fg = colors.bg3 },
-        diffIndexLine { fg = colors.purple },
+        -- diffAdded { bg = c.git.bg_add, fg = c.git.add },
+        -- diffRemoved { bg = c.git.bg_delete, fg = c.git.delete },
+        -- diffChanged { fg = c.git.change },
+        -- diffOldFile { fg = c.yellow },
+        -- diffNewFile { fg = c.orange },
+        -- diffFile { fg = c.blue },
+        -- diffLine { fg = c.bg3 },
+        -- diffIndexLine { fg = c.purple },
         -- END diffview
     }
 end)
