@@ -72,78 +72,6 @@ end
 function util.darken(hex, amount, bg) return util.blend(hex, bg or util.bg, math.abs(amount)) end
 function util.lighten(hex, amount, fg) return util.blend(hex, fg or util.fg, math.abs(amount)) end
 
-
--- local colors = {
---     fg = "#EBDBB2",
---     bg = "#282828",
-
---     red = "#ea6962",
---     green = "#a9b665",
---     yellow = "#d8a657",
---     blue = "#7daea3",
---     purple = "#d3869b",
---     aqua = "#89b482",
---     orange = "#e78a4e",
---     gray = "#a89984",
-
---     black = "#1d2021",
-
---     gray_2 = "#928374",
---     red_2 = "#c14a4a",
---     green_2 = "#b8bb26",
---     yellow_2 = "#fabd2f",
---     blue_2 = "#83a598",
---     purple_2 = "#d3869b",
---     aqua_2 = "#8ec07c",
---     orange_2 = "#fe8019",
-
---     bh0_h = "#1d2021",
---     bg0 = "#282828",
---     bg1 = "#3c3836",
---     bg2 = "#504945",
---     bg3 = "#665c54",
---     bg4 = "#7c6f64",
-
---     bg0_s = "#32302f",
---     fg4 = "#a89984",
---     fg3 = "#bdae93",
---     fg2 = "#d5c4a1",
---     fg1 = "#ebdbb2",
-
-
---     git = {
---       delete = "#c44936",
---       bg_delete = '#543834',
-
---       inactive_delete = "#9e3a2a",
---       inactive_bg_delete = '#473834',
-
---       add = "#9e9e3c",
---       bg_add = "#3f3f29",
-
---       inactive_add = "#7c7c2e",
---       inactive_bg_add = "#333327",
-
---       change = '#45707a',
---       bg_change = "#0d3138",
---       yellow_change = '#b47109',
---       yellow_bg_change = "#482D03"
---     },
-
---     -- gitSigns = {delete = "#ea4a5a", add = "#28a745", change = "#2188ff"}, -- github dark
---     -- gitSigns = {delete = "#c14a4a", add = "#6c782e", change = "#45707a"}, -- gruvbox-material
---     gitSigns = {delete = "#c14a4a", add = "#6c782e", change = "#b47109"}, -- gruvbox-flat
-
---     visual_red = "#442e2d",
---     visual_green = "#333e34",
---     visual_blue = "#2e3b3b",
---     visual_yellow = "#473c29",
---     search = "#335075",
-
---     -- lightspeed = {primary = "#fabd2f", secondary = "#EBDBB2" },
---     lightspeed = {secondary = "#9ADDFF", primary = "#F00077"},
--- }
-
 local c = {
     white = "#c7b89d",
     darker_black = "#232323",
@@ -241,7 +169,7 @@ local theme = lush(function()
         Cursor {fg = b.base00, bg = b.base05}, -- character under the cursor
         NonText {fg = b.base03}, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
         LineNr {fg = c.grey}, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-        SignColumn {bg = b.base03}, -- column where |signs| are displayed
+        SignColumn {bg = b.base00}, -- column where |signs| are displayed
         StatusLine {fg = b.base04}, -- status line of current window
         StatusLineNC {fg = c.one_bg3, gui = "underline"}, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
         VertSplit {fg = c.one_bg2}, -- the column separating vertically split windows
@@ -250,8 +178,8 @@ local theme = lush(function()
         CursorLine {bg = b.base01}, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
         CursorLineNr {fg = c.white}, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
         QuickFixLine {bg = b.base01}, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-        Pmenu {bg = c.one_bg}, -- Popup menu: normal item.
-        PmenuSel {bg = c.pmenu_bg}, -- Popup menu: selected item.
+        Pmenu {fg = b.base05, bg = c.one_bg}, -- Popup menu: normal item.
+        PmenuSel {fg = b.base01, bg = c.pmenu_bg}, -- Popup menu: selected item.
         TabLine {fg = b.base03, bg = b.base01}, -- tab pages line, not active tab page label
         TabLineFill {fg = b.base03, bg = b.base01}, -- tab pages line, where there are no labels
         TabLineSel {fg = b.base0B, bg = b.base01}, -- tab pages line, active tab page label
@@ -317,13 +245,13 @@ local theme = lush(function()
 
         -- START cmp custom menu
         CmpItemAbbr {fg = c.white},
-        CmpItemAbbrMatch {fg = c.blue},
-        CmpItemKind {fg = c.green},
+        CmpItemAbbrMatch {fg = c.green},
+        CmpItemKind {fg = c.white},
         CmpItemMenu {fg = c.white},
         -- CmpDocumentation {fg = colors.fg},
         -- CmpDocumentationBorder {fg = colors.bg3},
         -- CmpItemAbbrDeprecated {fg = colors.bg2},
-        CmpItemAbbrMatchFuzzy {fg = c.blue},
+        CmpItemAbbrMatchFuzzy {fg = c.green},
         -- END cmp custom menu
 
         -- START diagnostics
