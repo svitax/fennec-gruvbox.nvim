@@ -73,103 +73,54 @@ function util.darken(hex, amount, bg) return util.blend(hex, bg or util.bg, math
 function util.lighten(hex, amount, fg) return util.blend(hex, fg or util.fg, math.abs(amount)) end
 
 local c = {
-    white = "#ebdbb2",
+    white = "#c7b89d",
     darker_black = "#232323",
     black = "#282828", --  nvim bg
     black2 = "#2e2e2e",
     one_bg = "#353535",
     one_bg2 = "#3f3f3f",
     one_bg3 = "#444444",
-    grey = "#464646",
-    grey_fg = "#4e4e4e",
-    grey_fg2 = "#505050",
-    light_grey = "#565656",
-    red = "#fb4934",
-    baby_pink = "#cc241d",
+    grey = "#46494a",
+    grey_fg = "#5d6061",
+    grey_fg2 = "#5b5e5f",
+    light_grey = "#585b5c",
+    red = "#ec6b64",
+    baby_pink = "#ce8196",
     pink = "#ff75a0",
     line = "#2c2f30", -- for lines like vertsplit
-    green = "#b8bb26",
+    green = "#89b482",
     vibrant_green = "#a9b665",
-    nord_blue = "#83a598",
-    blue = "#458588",
-    yellow = "#d79921",
-    sun = "#fabd2f",
+    nord_blue = "#6f8faf",
+    blue = "#6d8dad",
+    yellow = "#d6b676",
+    sun = "#d1b171",
     purple = "#b4bbc8",
-    dark_purple = "#d3869b",
+    dark_purple = "#cc7f94",
     teal = "#749689",
     orange = "#e78a4e",
     cyan = "#82b3a8",
     statusline_bg = "#2c2c2c",
     lightbg = "#353535",
     lightbg2 = "#303030",
-    pmenu_bg = "#83a598",
-    folder_bg = "#83a598",
-
-    -- white = "#c7b89d",
-    -- darker_black = "#232323",
-    -- black = "#282828", --  nvim bg
-    -- black2 = "#2e2e2e",
-    -- one_bg = "#353535",
-    -- one_bg2 = "#3f3f3f",
-    -- one_bg3 = "#444444",
-    -- grey = "#46494a",
-    -- grey_fg = "#5d6061",
-    -- grey_fg2 = "#5b5e5f",
-    -- light_grey = "#585b5c",
-    -- red = "#ec6b64",
-    -- baby_pink = "#ce8196",
-    -- pink = "#ff75a0",
-    -- line = "#2c2f30", -- for lines like vertsplit
-    -- green = "#89b482",
-    -- vibrant_green = "#a9b665",
-    -- nord_blue = "#6f8faf",
-    -- blue = "#6d8dad",
-    -- yellow = "#d6b676",
-    -- sun = "#d1b171",
-    -- purple = "#b4bbc8",
-    -- dark_purple = "#cc7f94",
-    -- teal = "#749689",
-    -- orange = "#e78a4e",
-    -- cyan = "#82b3a8",
-    -- statusline_bg = "#2c2c2c",
-    -- lightbg = "#353535",
-    -- lightbg2 = "#303030",
-    -- pmenu_bg = "#89b482",
-    -- folder_bg = "#6d8dad",
+    pmenu_bg = "#89b482",
+    folder_bg = "#6d8dad",
 }
 
 local b = {
-    -- base00 = "#222526",
-    -- base01 = "#2c2f30",
-    -- base02 = "#36393a",
-    -- base03 = "#404344",
-    -- base04 = "#d4be98",
-    -- base05 = "#c0b196",
-    -- base06 = "#c3b499",
-    -- base07 = "#c7b89d",
-    -- base08 = "#ec6b64",
-    -- base09 = "#e78a4e",
-    -- base0A = "#e0c080",
-    -- base0B = "#a9b665",
-    -- base0C = "#86b17f",
-    -- base0D = "#7daea3",
-    -- base0E = "#d3869b",
-    -- base0F = "#d65d0e",
-
-    base00 = "#282828",
-    base01 = "#3c3836",
-    base02 = "#504945",
-    base03 = "#665c54",
-    base04 = "#bdae93",
-    base05 = "#d5c4a1",
-    base06 = "#ebdbb2",
-    base07 = "#fbf1c7",
-    base08 = "#fb4934",
-    base09 = "#fe8019",
-    base0A = "#fabd2f",
-    base0B = "#b8bb26",
-    base0C = "#8ec07c",
-    base0D = "#83a598",
+    base00 = "#222526",
+    base01 = "#2c2f30",
+    base02 = "#36393a",
+    base03 = "#404344",
+    base04 = "#d4be98",
+    base05 = "#c0b196",
+    base06 = "#c3b499",
+    base07 = "#c7b89d",
+    base08 = "#ec6b64",
+    base09 = "#e78a4e",
+    base0A = "#e0c080",
+    base0B = "#a9b665",
+    base0C = "#86b17f",
+    base0D = "#7daea3",
     base0E = "#d3869b",
     base0F = "#d65d0e",
 }
@@ -242,7 +193,7 @@ local theme = lush(function()
 
         Boolean {fg = b.base09}, --  a boolean constant: TRUE, false
         Character {fg = b.base08}, --  a character constant: 'c', '\n'
-        Comment {fg = c.grey_fg, gui = "italic"}, -- any comment
+        Comment {fg = c.grey_fg2, gui = "italic"}, -- any comment
         Conditional {fg = b.base0E}, --  if, then, else, endif, switch, etc.
         Constant {fg = b.base09}, -- (preferred) any constant
         Define {fg = b.base0E}, --   preprocessor #define
@@ -273,6 +224,180 @@ local theme = lush(function()
         -- Ignore         { }, -- (preferred) left blank, hidden  |hl-Ignore|
         -- lCursor      { }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
         -- CursorIM     { }, -- like Cursor, but used when in IME mode |CursorIM|
+
+        -- These groups are for the neovim tree-sitter highlights.
+        -- As of writing, tree-sitter support is a WIP, group names may change.
+        -- By default, most of these groups link to an appropriate Vim group,
+        -- TSError -> Error for example, so you do not have to define these unless
+        -- you explicitly want to support Treesitter's improved syntax awareness.
+        -- TSAnnotation { fg = c.yellow },    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
+        -- TSAttribute { fg = c.orange },    -- (unstable) TODO: docs
+        -- TSBoolean { fg = c.blue },    -- For booleans.
+        -- TSCharacter {fg = c.green}, -- For characters.
+        -- TSComment { };    -- For comment blocks.
+        -- TSConstructor {fg = c.green}, -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
+        -- TSConstructor {fg = c.orange}, -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
+        luaTSConstructor {fg = c.orange},
+        -- TSConditional {fg = c.dark_purple}, -- For keywords related to conditionnals.
+        -- TSConstant {fg = c.yellow}, -- For constants
+        -- TSConstBuiltin {fg = c.blue}, -- For constant that are built in the language: `nil` in Lua.
+        -- TSConstMacro { colors.orange };    -- For constants that are defined by macros: `NULL` in C.
+        TSError {fg = c.red}, -- For syntax/parser errors.
+        -- TSException {fg = c.purple}, -- For exception related keywords.
+        -- TSField {fg = c.aqua}, -- For fields.
+        -- TSFloat { colors.yellow };    -- For floats.
+        -- TSFunction {fg = c.yellow}, -- For function (calls and definitions).
+        -- TSFuncBuiltin {fg = c.yellow}, -- For builtin functions: `table.insert` in Lua.
+        -- TSFuncMacro {fg = c.yellow}, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
+        -- TSInclude {fg = c.blue}, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+        -- TSKeyword {fg = c.purple}, -- For keywords that don't fall in previous categories.
+        TSKeywordOperator {fg = c.purple}, --
+        -- TSKeywordFunction {fg = c.purple}, -- For keywords used to define a fuction.
+        -- TSLabel {fg = c.blue}, -- For labels: `label:` in C and `:label:` in Lua.
+        -- TSMethod {fg = c.yellow}, -- For method calls and definitions.
+        -- TSNamespace { fg = c.red };    -- For identifiers referring to modules and namespaces.
+        -- TSNone { };    -- TODO: docs
+        -- TSNote = {} --
+        -- TSNumber {fg = c.purple}, -- For all numbers
+        -- TSOperator {fg = colors.fg}, -- For any operator: `+`, but also `->` and `*` in C.
+        -- TSOperator {fg = util.darken(c.orange, 0.85)}, -- For any operator: `+`, but also `->` and `*` in C.        TSParameter {fg = colors.red}, -- For parameters of a function.
+        -- TSParameter {fg = colors.blue_2}, --
+        -- TSParameterReference {fg = colors.blue_2}, -- For references to parameters of a function.
+        -- TSProperty {fg = c.red}, -- Same as `TSField`.
+        -- TSPunctDelimiter {fg = b.base05}, -- For delimiters ie: `.`
+        -- TSPunctBracket {fg = util.darken(c.orange, 0.85) }, -- For brackets and parens.
+        -- TSPunctBracket {fg = c.white}, -- For brackets and parens.
+        -- TSPunctSpecial {fg = util.darken(c.orange, 0.85)}, -- For special punctutation that does not fall in the catagories before.
+        TSRepeat {fg = c.purple}, -- For keywords related to loops.
+        -- TSString {fg = c.green}, -- For strings.
+        -- TSStringRegex { colors.orange };    -- For regexes.
+        -- TSStructure {},
+        -- TSStringEscape { colors.yellow_2 };    -- For escape characters within a string.
+        -- TSSymbol { };    -- For identifiers referring to symbols or atoms.
+        -- TSType {fg = c.yellow}, -- For types.
+        -- TSTypeBuiltin {fg = c.blue}, -- For builtin types.
+        TSVariable {fg = c.white}, -- Any variable name that does not have another highlight.
+        -- TSVariableBuiltin {fg = c.blue}, -- Variable names that are defined by the languages, like `this` or `self`.
+
+        -- TSTag {fg = b.base05}, -- Tags like html tag names.
+        -- TSTagDelimiter {fg = b.base05}, -- Tag delimiter like `<` `>` `/`
+        -- TSText {fg = c.yellow}, -- For strings considered text in a markup language.
+        -- TSEmphasis {fg = c.yellow}, -- For text to be represented with emphasis.
+        -- TSUnderline {fg = c.yellow}, -- For text to be represented with an underline.
+        -- TSStrike {fg = c.yellow}, -- For strikethrough text.
+        -- TSTitle {fg = c.yellow}, -- Text that is part of a title.
+        -- TSLiteral {fg = c.yellow}, -- Literal text.
+        -- TSURI {fg = c.purple }, -- Any URI like a link or email.
+
+        -- C highlighting
+        cOperator {fg = b.base0C},
+        cPreCondit {fg = b.base0E},
+
+        -- C# highlighting
+        csClass {fg = b.base0A},
+        csAttribute {fg = b.base0A},
+        csModifier {fg = b.base0E},
+        csType {fg = b.base08},
+        csUnspecifiedStatement {fg = b.base0D},
+        csContextualStatement {fg = b.base0E},
+        csNewDecleration {fg = b.base08},
+
+        -- CSS highlighting
+        cssBraces {fg = b.base05},
+        cssClassName {fg = b.base0E},
+        cssColor {fg = b.base0C},
+
+        -- Git highlighting
+        gitcommitOverflow {fg = b.base08},
+        gitcommitSummary {fg = b.base0B},
+        gitcommitComment {fg = b.base03},
+        gitcommitUntracked {fg = b.base03},
+        gitcommitDiscarded {fg = b.base03},
+        gitcommitSelected {fg = b.base03},
+        gitcommitHeader {fg = b.base0E},
+        gitcommitSelectedType {fg = b.base0D},
+        gitcommitUnmergedType {fg = b.base0D},
+        gitcommitDiscardedType {fg = b.base0D},
+        gitcommitBranch {fg = b.base09, gui = "bold"},
+        gitcommitUntrackedFile {fg = b.base0A},
+        gitcommitUnmergedFile {fg = b.base08, gui = "bold"},
+        gitcommitDiscardedFile {fg = b.base08, gui = "bold"},
+        gitcommitSelectedFile {fg = b.base0B, gui = "bold"},
+
+        -- HTML highlighting
+        htmlBold {fg = b.base0A},
+        htmlItalic {fg = b.base0E},
+        htmlEndTag {fg = b.base05},
+        htmlTag {fg = b.base05},
+
+        -- JavaScript highlighting
+        javaScript {fg = b.base05},
+        javaScriptBraces {fg = b.base05},
+        javaScriptNumber {fg = b.base09},
+        -- pangloss/vim-javascript highlighting
+        jsOperator {fg = b.base0D},
+        jsStatement {fg = b.base0E},
+        jsReturn {fg = b.base0E},
+        jsThis {fg = b.base08},
+        jsClassDefinition {fg = b.base0A},
+        jsFunction {fg = b.base0E},
+        jsFuncName {fg = b.base0D},
+        jsFuncCall {fg = b.base0D},
+        jsClassFuncName {fg = b.base0D},
+        jsClassMethodType {fg = b.base0E},
+        jsRegexpString {fg = b.base0C},
+        jsGlobalObjects {fg = b.base0A},
+        jsGlobalNodeObjects {fg = b.base0A},
+        jsExceptions {fg = b.base0A},
+        jsBuiltins {fg = b.base0A},
+
+        -- Mail highlighting
+        mailQuoted1 {fg = b.base0A},
+        mailQuoted2 {fg = b.base0B},
+        mailQuoted3 {fg = b.base0E},
+        mailQuoted4 {fg = b.base0C},
+        mailQuoted5 {fg = b.base0D},
+        mailQuoted6 {fg = b.base0A},
+        mailURL {fg = b.base0D},
+        mailEmail {fg = b.base0D},
+
+        -- Markdown highlighting
+        markdownCode {fg = b.base0B},
+        markdownError {fg = b.base05, bg = b.base00},
+        markdownCodeBlock {fg = b.base0B},
+        markdownHeadingDelimiter {fg = b.base0D},
+
+        -- PHP highlighting
+        phpMemberSelector {fg = b.base05},
+        phpComparison {fg = b.base05},
+        phpParent {fg = b.base05},
+        phpMethodsVar {fg = b.base0C},
+
+        -- Python highlighting
+        pythonOperator {fg = b.base0E},
+        pythonRepeat {fg = b.base0E},
+        pythonInclude {fg = b.base0E},
+        pythonStatement {fg = b.base0E},
+
+        -- Ruby highlighting
+        rubyAttribute {fg = b.base0D},
+        rubyConstant {fg = b.base0A},
+        rubyInterpolationDelimiter {fg = b.base0F},
+        rubyRegexp {fg = b.base0C},
+        rubySymbol {fg = b.base0B},
+        rubyStringDelimiter {fg = b.base0B},
+
+        -- SASS highlighting
+        sassidChar {fg = b.base08},
+        sassClassChar {fg = b.base09},
+        sassInclude {fg = b.base0E},
+        sassMixing {fg = b.base0E},
+        sassMixinName {fg = b.base0D},
+
+        -- Java highlighting
+        javaOperator {fg = b.base0D},
+
+
 
         DiffAdd {fg = c.nord_blue, bg = b.base00}, -- diff mode: Added line |diff.txt|
         DiffModified {fg = c.nord_blue}, --
@@ -432,68 +557,6 @@ local theme = lush(function()
         -- LspDiagnosticsSignHint               { }, -- Used for "Hint" signs in sign column
         -- LspCodeLens { fg = c.bg3 },
 
-        -- These groups are for the neovim tree-sitter highlights.
-        -- As of writing, tree-sitter support is a WIP, group names may change.
-        -- By default, most of these groups link to an appropriate Vim group,
-        -- TSError -> Error for example, so you do not have to define these unless
-        -- you explicitly want to support Treesitter's improved syntax awareness.
-        -- TSAnnotation         { colors.yellow };    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
-        -- TSAttribute          { colors.orange };    -- (unstable) TODO: docs
-        -- TSBoolean            { colors.blue };    -- For booleans.
-        -- TSCharacter {fg = c.green}, -- For characters.
-        -- TSComment            { };    -- For comment blocks.
-        -- TSConstructor {fg = c.aqua_2}, -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
-        -- TSConstructor {fg = colors.orange}, -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
-        -- luaTSConstructor {fg = c.orange},
-        -- TSConditional {fg = c.purple}, -- For keywords related to conditionnals.
-        -- TSConstant {fg = c.yellow}, -- For constants
-        -- TSConstBuiltin {fg = c.blue}, -- For constant that are built in the language: `nil` in Lua.
-        -- TSConstMacro         { colors.orange };    -- For constants that are defined by macros: `NULL` in C.
-        -- TSError {fg = c.red_2}, -- For syntax/parser errors.
-        -- TSException {fg = c.purple}, -- For exception related keywords.
-        -- TSField {fg = c.aqua}, -- For fields.
-        -- TSFloat              { colors.yellow };    -- For floats.
-        -- TSFunction {fg = c.yellow}, -- For function (calls and definitions).
-        -- TSFuncBuiltin {fg = c.yellow}, -- For builtin functions: `table.insert` in Lua.
-        -- TSFuncMacro {fg = c.yellow}, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-        -- TSInclude {fg = c.blue}, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-        -- TSKeyword {fg = c.purple}, -- For keywords that don't fall in previous categories.
-        -- TSKeywordOperator {fg = c.purple}, --
-        -- TSKeywordFunction {fg = c.purple}, -- For keywords used to define a fuction.
-        -- TSLabel {fg = c.blue}, -- For labels: `label:` in C and `:label:` in Lua.
-        -- TSMethod {fg = c.yellow}, -- For method calls and definitions.
-        -- TSNamespace { fg = c.red };    -- For identifiers referring to modules and namespaces.
-        -- TSNone               { };    -- TODO: docs
-        -- TSNote = {}
-        -- TSNumber {fg = c.purple}, -- For all numbers
-        -- TSOperator {fg = colors.fg}, -- For any operator: `+`, but also `->` and `*` in C.
-        -- TSOperator {fg = util.darken(c.orange, 0.85)}, -- For any operator: `+`, but also `->` and `*` in C.        TSParameter {fg = colors.red}, -- For parameters of a function.
-        -- TSParameterReference {fg = colors.blue_2}, -- For references to parameters of a function.
-        -- TSProperty {fg = c.red}, -- Same as `TSField`.
-        -- TSPunctDelimiter {fg = c.red}, -- For delimiters ie: `.`
-        -- TSPunctBracket {fg = util.darken(c.orange, 0.85) }, -- For brackets and parens.
-        -- TSPunctBracket {fg = colors.fg}, -- For brackets and parens.
-        -- TSPunctSpecial {fg = util.darken(c.orange, 0.85)}, -- For special punctutation that does not fall in the catagories before.
-        -- TSRepeat {fg = c.purple}, -- For keywords related to loops.
-        -- TSString {fg = c.green}, -- For strings.
-        -- TSStringRegex        { colors.orange };    -- For regexes.
-        -- TSStructure {},
-        -- TSStringEscape       { colors.yellow_2 };    -- For escape characters within a string.
-        -- TSSymbol             { };    -- For identifiers referring to symbols or atoms.
-        -- TSType {fg = c.yellow}, -- For types.
-        -- TSTypeBuiltin {fg = c.blue}, -- For builtin types.
-        -- TSVariable {fg = c.fg}, -- Any variable name that does not have another highlight.
-        -- TSVariableBuiltin {fg = c.blue}, -- Variable names that are defined by the languages, like `this` or `self`.
-
-        -- TSTag {fg = c.blue}, -- Tags like html tag names.
-        -- TSTagDelimiter {fg = c.bg3}, -- Tag delimiter like `<` `>` `/`
-        -- TSText {fg = c.yellow}, -- For strings considered text in a markup language.
-        -- TSEmphasis {fg = c.yellow}, -- For text to be represented with emphasis.
-        -- TSUnderline {fg = c.yellow}, -- For text to be represented with an underline.
-        -- TSStrike {fg = c.yellow}, -- For strikethrough text.
-        -- TSTitle {fg = c.yellow}, -- Text that is part of a title.
-        -- TSLiteral {fg = c.yellow}, -- Literal text.
-        -- TSURI {fg = c.purple }, -- Any URI like a link or email.
 
 
         -- START nvimtree --
