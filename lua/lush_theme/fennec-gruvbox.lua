@@ -106,23 +106,6 @@ local c = {
     folder_bg = "#6d8dad",
 }
 
-    -- base0A = "e0c080",
-    -- base04 = "d4be98",
-    -- base07 = "c7b89d",
-    -- base05 = "c0b196",
-    -- base0E = "d3869b",
-    -- base0D = "7daea3",
-    -- base0C = "86b17f",
-    -- base0B = "a9b665",
-    -- base02 = "36393a",
-    -- base0F = "d65d0e",
-    -- base03 = "404344",
-    -- base08 = "ec6b64",
-    -- base01 = "2c2f30",
-    -- base00 = "222526",
-    -- base09 = "e78a4e",
-    -- base06 = "c3b499"
-
 local b = {
     -- base00 = "#282c34",
     -- base00 = "#282828",
@@ -170,7 +153,7 @@ local theme = lush(function()
         IncSearch {fg = b.base01, bg = b.base09}, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
         Italic {gui = "italic"}, -- ("Ignore", below, may be invisible...)
         Macro {fg = b.base08}, -- same as Define
-        MatchParen {bg = b.base03, gui = "underline", gui = "bold"}, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+        MatchParen {bg = c.light_grey, gui = "underline"}, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
         ModeMsg {fg = b.base0B, gui = "bold"}, -- 'showmode' message (e.g., "-- INSERT -- ")
         MoreMsg {fg = b.base0B}, -- |more-prompt|
         Question {fg = b.base0D}, -- |hit-enter| prompt and yes/no questions
@@ -277,12 +260,12 @@ local theme = lush(function()
         DiagnosticError {fg = c.red}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
         DiagnosticWarn {fg = c.yellow}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
         DiagnosticInfo {fg = c.green}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-        DiagnosticHint {fg = c.aqua}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+        DiagnosticHint {fg = c.purple}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
         DiagnosticSignError {fg = c.red}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
         DiagnosticSignWarn {fg = c.yellow}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
         DiagnosticSignInfo {fg = c.green}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-        DiagnosticSignHint {fg = c.aqua}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+        DiagnosticSignHint {fg = c.purple}, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
         DiagnosticVirtualTextError {bg = util.darken(c.red, 0.1),fg = c.red}, -- Used for "Error" diagnostic virtual text
         DiagnosticVirtualTextWarn {bg = util.darken(c.yellow, 0.1), fg = c.yellow}, -- Used for "Warning" diagnostic virtual text
@@ -558,7 +541,7 @@ local theme = lush(function()
         -- },
         -- -- LightspeedShortcutOverlapped {fg = colors.bg, bg = colors.green_2, gui = "bold"},
         -- LightspeedMaskedChar {fg = colors.fg, gui = "bold"},
-        -- LightspeedGreyWash {fg = colors.bg3},
+        LightspeedGreyWash {fg = c.grey_fg},
         -- LightspeedUnlabeledMatch {fg = colors.fg, gui = "italic, bold"},
         -- LightspeedOneCharMatch {fg = colors.bg, bg = colors.yellow_2, gui = "bold"},
         -- -- LightspeedUniqueChar {fg = colors.white, gui = "bold"},
@@ -720,7 +703,7 @@ local theme = lush(function()
         -- org_underline {fg = c.green, gui = "underline"},
         -- -- org_code_delimiter {fg = colors.bg3},
         -- -- org_code {fg = colors.green},
-        -- -- org_verbatim_delimiter {fg = colors.bg3}, 
+        -- -- org_verbatim_delimiter {fg = colors.bg3},
         -- -- org_verbatim {fg = colors.green},
         -- org_strike_delimiter {fg = c.bg3},
         -- org_strike {gui = "strikethrough"},
@@ -771,20 +754,19 @@ local theme = lush(function()
         -- END orgmode.nvim
 
         -- "START" vim-sandwich
-        -- -- OperatorSandwichBuns {fg = colors.bg, bg = colors.yellow_2},
-        -- OperatorSandwichChange {bg = c.bg2},
-        -- OperatorSandwichDelete {fg = c.bg, bg = c.yellow_2},
-        -- -- OperatorSandwichAdd {},
+        -- OperatorSandwichBuns {fg = colors.bg, bg = colors.yellow_2},
+        OperatorSandwichChange {bg = b.base02},
+        OperatorSandwichDelete {fg = b.base00, bg = c.yellow},
+        -- OperatorSandwichAdd {},
         -- END vim-sandwich
 
         -- START vim-visual-multi
         -- -- needs "vim.g.VM_theme_set_by_colorscheme = true" for it to work
-        -- VM_Mono {fg = c.bg, bg = c.green},
-        -- VM_Extend {fg = c.fg, bg = c.search},
-        -- VM_Cursor { fg = c.bg, bg = c.yellow_2, gui = "underline" },
-        -- VM_Insert {gui = "underline", sp = c.red},
+        VM_Mono {fg = b.base00, bg = c.green},
+        VM_Extend {bg = b.base02},
+        VM_Cursor {fg = b.base00, bg = b.base0A, gui = "underline" },
+        VM_Insert {gui = "underline", sp = c.red},
         -- END vim-visual-multi
-
 
         -- START treesitter context
         -- TreesitterContext {bg = c.bg1},
