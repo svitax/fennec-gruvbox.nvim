@@ -205,7 +205,7 @@ local theme = lush(function()
 
         EndOfBuffer {fg = c.black}, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
         FloatBorder {fg = c.blue}, --
-        NormalFloat {bg = c.one_bg}, -- Normal text in floating windows.
+        NormalFloat {bg = c.darker_black}, -- Normal text in floating windows.
         PmenuSbar {bg = c.one_bg2}, -- Popup menu: scrollbar.
         PmenuThumb {bg = c.nord_blue}, -- Popup menu: Thumb of the scrollbar.
         NvimInternalError {fg = c.red},
@@ -321,7 +321,7 @@ local theme = lush(function()
         WhichKeySeperator {fg = c.white}, --
         WhichKeyGroup {fg = c.blue},--
         WhichKeyDesc {fg = c.red}, --
-        WhichKeyFloat {bg = c.black}, --
+        WhichKeyFloat {bg = c.darker_black}, --
         -- WhichKeyValue {fg = colors.bg2},--
         -- END which-key --
 
