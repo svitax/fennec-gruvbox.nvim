@@ -227,11 +227,11 @@ local theme = lush(function()
         -- lCursor      { }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
         -- CursorIM     { }, -- like Cursor, but used when in IME mode |CursorIM|
 
-        DiffAdd {fg = c.nord_blue, bg = b.base01}, -- diff mode: Added line |diff.txt|
-        DiffChange {fg = c.grey_fg, bg = b.base01}, -- diff mode: Changed line |diff.txt|
+        DiffAdd {fg = c.nord_blue, bg = b.base00}, -- diff mode: Added line |diff.txt|
+        DiffChange {fg = c.grey_fg, bg = b.base00}, -- diff mode: Changed line |diff.txt|
         DiffModified {fg = c.nord_blue}, --
-        DiffDelete {fg = b.base08, bg = b.base01 }, -- diff mode: Deleted line |diff.txt|
-        DiffText {fg = b.base0D, bg = b.base01 }, -- diff mode: Changed text within a changed line |diff.txt|
+        DiffDelete {fg = b.base08, bg = b.base00 }, -- diff mode: Deleted line |diff.txt|
+        DiffText {fg = b.base0D, bg = b.base00 }, -- diff mode: Changed text within a changed line |diff.txt|
         DiffAdded {fg = b.base0B, bg = b.base00}, --
         DiffFile {fg = b.base08, bg = b.base00}, --
         DiffNewFile {fg = b.base0B, bg = b.base00}, --
