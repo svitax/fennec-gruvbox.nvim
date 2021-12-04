@@ -268,7 +268,7 @@ local theme = lush(function()
         -- TSPunctBracket {fg = util.darken(c.orange, 0.85) }, -- For brackets and parens.
         -- TSPunctBracket {fg = c.white}, -- For brackets and parens.
         -- TSPunctSpecial {fg = util.darken(c.orange, 0.85)}, -- For special punctutation that does not fall in the catagories before.
-        TSRepeat {fg = c.purple}, -- For keywords related to loops.
+        TSRepeat {fg = c.dark_purple}, -- For keywords related to loops.
         -- TSString {fg = c.green}, -- For strings.
         -- TSStringRegex { colors.orange };    -- For regexes.
         -- TSStructure {},
