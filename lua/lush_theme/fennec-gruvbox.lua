@@ -239,7 +239,7 @@ local theme = lush(function()
 
         -- START spelling
         SpellBad { gui = "undercurl", sp = b.base08}, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise. 
-    SpellLocal { gui = "undercurl", sp = b.base0C}, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
+        SpellLocal { gui = "undercurl", sp = b.base0C}, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
         SpellCap { gui = "undercurl", sp = b.base0D}, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
         SpellRare { gui = "undercurl", sp = b.base0E}, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
         -- END spelling
@@ -284,20 +284,28 @@ local theme = lush(function()
         DashboardFooter {fg = c.yellow, gui = "italic"}, --
         -- END dashboard
 
-        IndentBlanklineChar {fg = c.line},
+        IndentBlanklineChar {fg = c.grey_fg2},
 
         --  START telescope
-        TelescopeBorder { fg = c.one_bg }, --
+        TelescopeBorder { fg = c.grey_fg2 }, --
         TelescopePromptTitle { fg = c.blue, bg = c.one_bg }, --
         TelescopeResultsTitle { fg = c.red, bg = c.one_bg}, --
         TelescopePreviewTitle { fg = c.green, bg = c.one_bg }, --
-        -- TelescopePromptBorder { fg = colors.bg3 }, --
-        -- TelescopeResultsBorder { fg = colors.bg3}, --
-        -- TelescopeSelectionCaret { fg = colors.purple }, --
+        TelescopePromptBorder { fg = c.grey_fg }, --
+        TelescopeResultsBorder { fg = c.grey_fg}, --
+        TelescopeSelectionCaret { fg = c.purple }, --
         -- TelescopeSelection { fg = colors.purple, bg = colors.bg2}, --
-        -- TelescopeMatching { fg = colors.blue }, --
+        TelescopeMatching { fg = c.green }, --
         --  END telescope
 
+        -- START which-key --
+        WhichKey {fg = c.yellow}, --
+        WhichKeySeperator {fg = c.white}, --
+        WhichKeyGroup {fg = c.blue},--
+        WhichKeyDesc {fg = c.red}, --
+        WhichKeyFloat {bg = c.black}, --
+        -- WhichKeyValue {fg = colors.bg2},--
+        -- END which-key --
 
 
 
@@ -416,14 +424,6 @@ local theme = lush(function()
         -- TSLiteral {fg = c.yellow}, -- Literal text.
         -- TSURI {fg = c.purple }, -- Any URI like a link or email.
 
-        -- START which-key --
-        -- WhichKey {fg = colors.yellow}, --
-        -- WhichKeySeperator {fg = colors.fg}, --
-        -- WhichKeyGroup {fg = colors.blue},--
-        -- WhichKeyDesc {fg = colors.red}, --
-        -- WhichKeyFloat {bg = colors.bg}, --
-        -- WhichKeyValue {fg = colors.bg2},--
-        -- END which-key --
 
         -- START nvimtree --
         -- NvimTreeEmptyFolderName {fg = c.blue}, --
