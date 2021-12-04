@@ -150,14 +150,14 @@ local theme = lush(function()
         Exception {fg = b.base08}, -- try, catch, throw
         FoldColumn {fg =  b.base0C, bg = b.base01 }, -- 'foldcolumn'
         Folded {fg = b.base03, bg = b.base01}, -- line used for closed folds
-        IncSearch {fg = b.base01, bg = b.base09}, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+        IncSearch {fg = b.base01, bg = b.base0A}, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
         Italic {gui = "italic"}, -- ("Ignore", below, may be invisible...)
         Macro {fg = b.base08}, -- same as Define
         MatchParen {bg = c.light_grey, gui = "underline"}, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
         ModeMsg {fg = b.base0B, gui = "bold"}, -- 'showmode' message (e.g., "-- INSERT -- ")
         MoreMsg {fg = b.base0B}, -- |more-prompt|
         Question {fg = b.base0D}, -- |hit-enter| prompt and yes/no questions
-        Search {fg = b.base01, bg = b.base0A}, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+        Search {fg = c.white, bg = c.light_grey}, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
         Substitute {fg = b.base01, bg = b.base0A}, -- |:substitute| replacement text highlighting
         SpecialKey {fg = b.base03}, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
         TooLong {fg = b.base08},
@@ -188,7 +188,7 @@ local theme = lush(function()
 
         EndOfBuffer {fg = c.black}, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
         FloatBorder {fg = c.blue}, --
-        NormalFloat {bg = c.darker_black}, -- Normal text in floating windows.
+        NormalFloat {bg = b.base00}, -- Normal text in floating windows.
         PmenuSbar {bg = c.one_bg2}, -- Popup menu: scrollbar.
         PmenuThumb {bg = c.nord_blue}, -- Popup menu: Thumb of the scrollbar.
         NvimInternalError {fg = c.red},
@@ -304,7 +304,7 @@ local theme = lush(function()
         WhichKeySeperator {fg = c.white}, --
         WhichKeyGroup {fg = c.blue},--
         WhichKeyDesc {fg = c.red}, --
-        WhichKeyFloat {bg = c.darker_black}, --
+        WhichKeyFloat {bg = b.base00}, --
         -- WhichKeyValue {fg = colors.bg2},--
         -- END which-key --
 
