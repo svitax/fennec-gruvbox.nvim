@@ -317,7 +317,7 @@ local theme = lush(function()
         TelescopeResultsBorder { fg = c.grey_fg}, --
         TelescopeSelectionCaret { fg = c.purple }, --
         -- TelescopeSelection { fg = colors.purple, bg = colors.bg2}, --
-        TelescopeMatching { fg = c.dark_purple }, --
+        TelescopeMatching { fg = c.green }, --
         --  END telescope
 
         -- START which-key --
