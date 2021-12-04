@@ -157,7 +157,7 @@ local theme = lush(function()
         ModeMsg {fg = b.base0B, gui = "bold"}, -- 'showmode' message (e.g., "-- INSERT -- ")
         MoreMsg {fg = b.base0B}, -- |more-prompt|
         Question {fg = b.base0D}, -- |hit-enter| prompt and yes/no questions
-        Search {fg = c.white, bg = c.light_grey}, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+        Search {bg = b.base02}, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
         Substitute {fg = b.base01, bg = b.base0A}, -- |:substitute| replacement text highlighting
         SpecialKey {fg = b.base03}, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
         TooLong {fg = b.base08},
@@ -247,13 +247,36 @@ local theme = lush(function()
 
         -- START cmp custom menu
         CmpItemAbbr {fg = c.white},
-        CmpItemAbbrMatch {fg = c.green},
-        CmpItemKind {fg = c.white},
+        CmpItemAbbrDeprecated {fg = c.white},
         CmpItemMenu {fg = c.white},
+        CmpItemKindText {fg = c.white},
+        CmpItemAbbrMatch {fg = c.blue},
+        CmpItemAbbrMatchFuzzy {fg = c.blue},
+        CmpItemKindMethod {fg = c.vibrant_green},
+        CmpItemKindFunction {fg = c.vibrant_green},
+        CmpItemKindConstructor {fg = c.vibrant_green},
+        CmpItemKindField {fg = c.vibrant_green},
+        CmpItemKindVariable {fg = c.cyan},
+        CmpItemKindProperty {fg = c.cyan},
+        CmpItemKindEnumMember {fg = c.cyan},
+        CmpItemKindConstant {fg = c.cyan},
+        CmpItemKindUnit {fg = c.dark_purple},
+        CmpItemKindValue {fg = c.dark_purple},
+        CmpItemKindClass {fg = c.yellow},
+        CmpItemKindInterface {fg = c.yellow},
+        CmpItemKindModule {fg = c.yellow},
+        CmpItemKindEnum {fg = c.yellow},
+        CmpItemKindStruct {fg = c.yellow},
+        CmpItemKindTypeParameter {fg = c.yellow},
+        CmpItemKindKeyword {fg = c.red},
+        CmpItemKindSnippet {fg = c.green},
+        CmpItemKindColor {fg = c.green},
+        CmpItemKindFile {fg = c.green},
+        CmpItemKindFolder {fg = c.green},
+        CmpItemKindEvent {fg = c.orange},
+        CmpItemKindOperator {fg = c.orange},
         -- CmpDocumentation {fg = colors.fg},
         -- CmpDocumentationBorder {fg = colors.bg3},
-        -- CmpItemAbbrDeprecated {fg = colors.bg2},
-        CmpItemAbbrMatchFuzzy {fg = c.green},
         -- END cmp custom menu
 
         -- START diagnostics
@@ -296,7 +319,7 @@ local theme = lush(function()
         TelescopeResultsBorder { fg = c.grey_fg}, --
         TelescopeSelectionCaret { fg = c.purple }, --
         -- TelescopeSelection { fg = colors.purple, bg = colors.bg2}, --
-        TelescopeMatching { fg = c.green }, --
+        TelescopeMatching { fg = c.dark_purple }, --
         --  END telescope
 
         -- START which-key --
@@ -541,7 +564,7 @@ local theme = lush(function()
         -- },
         -- -- LightspeedShortcutOverlapped {fg = colors.bg, bg = colors.green_2, gui = "bold"},
         -- LightspeedMaskedChar {fg = colors.fg, gui = "bold"},
-        LightspeedGreyWash {fg = c.grey_fg},
+        -- LightspeedGreyWash {fg = c.grey_fg},
         -- LightspeedUnlabeledMatch {fg = colors.fg, gui = "italic, bold"},
         -- LightspeedOneCharMatch {fg = colors.bg, bg = colors.yellow_2, gui = "bold"},
         -- -- LightspeedUniqueChar {fg = colors.white, gui = "bold"},
