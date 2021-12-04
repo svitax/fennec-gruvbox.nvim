@@ -248,8 +248,8 @@ local theme = lush(function()
         CmpItemAbbrDeprecated {fg = c.white},
         CmpItemMenu {fg = c.white},
         CmpItemKindText {fg = c.white},
-        CmpItemAbbrMatch {fg = c.blue},
-        CmpItemAbbrMatchFuzzy {fg = c.blue},
+        CmpItemAbbrMatch {fg = c.green},
+        CmpItemAbbrMatchFuzzy {fg = c.green},
         CmpItemKindMethod {fg = c.vibrant_green},
         CmpItemKindFunction {fg = c.vibrant_green},
         CmpItemKindConstructor {fg = c.vibrant_green},
@@ -317,7 +317,7 @@ local theme = lush(function()
         TelescopeResultsBorder { fg = c.grey_fg}, --
         TelescopeSelectionCaret { fg = c.purple }, --
         -- TelescopeSelection { fg = colors.purple, bg = colors.bg2}, --
-        TelescopeMatching { fg = c.blue }, --
+        TelescopeMatching { fg = c.green }, --
         --  END telescope
 
         -- START which-key --
