@@ -147,7 +147,7 @@ local theme = lush(function()
         ErrorMsg {fg = b.base08, bg = b.base00}, -- error messages on the command line
         Exception {fg = b.base08}, -- try, catch, throw
         FoldColumn {fg =  b.base0C, bg = b.base01 }, -- 'foldcolumn'
-        Folded {fg = b.base03, bg = b.base01}, -- line used for closed folds
+        Folded {fg = c.light_grey, bg = b.base01}, -- line used for closed folds
         IncSearch {fg = b.base01, bg = b.base0A}, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
         Italic {gui = "italic"}, -- ("Ignore", below, may be invisible...)
         Macro {fg = b.base08}, -- same as Define
