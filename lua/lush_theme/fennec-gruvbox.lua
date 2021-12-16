@@ -420,7 +420,7 @@ local theme = lush(function()
         -- START cmp custom menu
         CmpItemAbbr {fg = c.white},
         CmpItemAbbrDeprecated {fg = c.white},
-        CmpItemMenu {fg = c.white},
+        CmpItemMenu {fg = c.grey_fg2},
         CmpItemKindText {fg = c.nord_blue},
         CmpItemAbbrMatch {fg = c.green},
         CmpItemAbbrMatchFuzzy {fg = c.green},
