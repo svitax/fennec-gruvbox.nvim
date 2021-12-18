@@ -503,6 +503,31 @@ local theme = lush(function()
         -- WhichKeyValue {fg = colors.bg2},--
         -- END which-key --
 
+                --  START neogit
+        NeogitUnstagedChanges {fg = c.cyan, gui = "bold"},--
+        NeogitUntrackedFiles {fg = c.cyan, gui = "bold"},--
+        NeogitUnmergedChanges {fg = c.cyan, gui = "bold"},--
+        NeogitUnpulledChanges {fg = c.cyan, gui = "bold"},--
+        NeogitRecentCommits {fg = c.cyan, gui = "bold"},--
+        NeogitStagedChanges {fg = c.cyan, gui = "bold"},--
+        NeogitStashes {fg = c.cyan, gui = "bold"},--
+        NeogitFilePath {fg = c.dark_purple},--
+        NeogitCommitViewHeader {fg = c.grey_fg2, gui = "bold"},--
+        NeogitUnmergedInto {fg = c.yellow, gui = "bold"},--
+        NeogitUnpulledFrom {fg = c.yellow, gui = "bold"},--
+        NeogitStash {fg = c.cyan, gui = "bold"},--
+        NeogitObjectId {fg = c.grey_fg2, gui = "bold"},--
+        NeogitBranch {fg = c.cyan, gui = "bold"}, --
+        NeogitRemote {fg = c.green},--
+        NeogitHunkHeader {bg = c.lightbg, fg = c.dark_purple },--
+        NeogitHunkHeaderHighlight {bg = c.lightbg, fg = c.purple}, --
+        NeogitDiffContext {fg = c.grey_fg2, bg = c.black},--
+        NeogitDiffDelete {fg = b.base08, bg = b.base00},--
+        NeogitDiffAdd {fg = b.base0B, bg = b.base00}, --
+        NeogitDiffContextHighlight {bg = c.black},--
+        NeogitDiffDeleteHighlight {fg = b.base08, bg = b.base00},--
+        NeogitDiffAddHighlight {fg = b.base0B, bg = b.base00}, --
+        --  END neogit
 
 
 
