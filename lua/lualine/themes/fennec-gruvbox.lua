@@ -30,8 +30,8 @@ return {
     c = { bg = c.line_bg, fg = c.milk },
   },
   inactive = {
-    a = { bg = c.dark_gray, fg = c.gray, gui = "bold" },
-    b = { bg = c.dark_gray, fg = c.gray },
-    c = { bg = c.dark_gray, fg = c.gray },
+    a = { bg = c.line_bg, fg = c.gray, gui = "bold" },
+    b = { bg = c.line_bg, fg = c.gray },
+    c = { bg = c.line_bg, fg = c.gray },
   },
 }
