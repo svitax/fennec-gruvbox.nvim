@@ -7,22 +7,34 @@ local palette = {
   medium_gray = "#504945",
   comment = "#665c54",
   gray = "#DEDEDE",
-  soft_yellow = "#EEBD35",
-  soft_green = "#98971a",
-  bright_yellow = "#fabd2f",
-  orange = "#d65d0e",
-  red = "#fb4934",
-  error_red = "#cc241d",
-  magenta = "#b16286",
-  pink = "#D4879C",
-  light_blue = "#7fa2ac",
+  -- og_soft_yellow = "#EEBD35",
+  soft_yellow = "#d1b171",
+  -- og_soft_green = "#98971a",
+  soft_green = "#a9b665",
+  -- og_bright_yellow = "#fabd2f",
+  bright_yellow = "#d6b676",
+  -- og_orange = "#d65d0e",
+  orange = "#e78a4e",
+  -- og_red = "#fb4934",
+  red = "#ec6b64",
+  -- og_error_red = "#cc241d",
+  error_red = "#ec6b64",
+  -- og_magenta = "#b16286",
+  magenta = "#ce8196",
+  -- og_pink = "#D4879C",
+  pink = "#d3869b",
+  -- og_light_blue = "#7fa2ac",
+  light_blue = "#7daea3",
   dark_gray = "#83a598",
-  blue_gray = "#458588",
+  -- og_blue_gray = "#458588",
+  blue_gray = "#6f8faf",
   forest_green = "#689d6a",
-  clean_green = "#8ec07c",
+  -- og_clean_green = "#8ec07c",
+  clean_green = "#86b17f",
   milk = "#E7D7AD",
   none = "NONE",
 }
+
 -- these are backgrounds
 palette.diff = {
   add = "#26332c",
@@ -55,8 +67,8 @@ function M.config(config)
 
   if config.transparent_mode then
     transparent = {
-        background = palette.none,
-        background_dark = palette.none
+      background = palette.none,
+      background_dark = palette.none
     }
     colors = vim.tbl_extend("force", colors, { background = palette.none, background_dark = palette.none })
   end
