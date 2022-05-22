@@ -17,9 +17,21 @@ local palette = {
   background = "#222526",
   background_dark = "#202020",
   bg_light = "#32302f",
-  line_bg = "#3c3836",
+
   line_fg = "#7c6f64",
   line_active_fg = "#d4be98",
+  line_bg1 = "#2b2e2f",
+  line_bg2 = "#3b3e3f",
+  line_bg3 = "#313435",
+
+  statusline_bg = "#252829",
+  light_bg1 = "#2d3139",
+  light_bg2 = "#262a32",
+
+  grey = "#46494a",
+  grey_fg1 = "#5d6061",
+  grey_fg2 = "#5b5e5f",
+
   medium_gray = "#504945",
   comment = "#665c54",
   gray = "#DEDEDE",
@@ -38,6 +50,40 @@ local palette = {
   clean_green = "#86b17f",
   milk = "#E7D7AD",
   none = "NONE",
+}
+
+gruvchad = {
+  white = "#c7b89d",
+  darker_black = "#1e2122",
+  black = "#3c3836",
+  black2 = "#282b2c",
+  one_bg = "#2b2e2f",
+  one_bg2 = "#3b3e3f",
+  one_bg3 = "#313435",
+  grey = "#46494a",
+  grey_fg = "#5d6061",
+  grey_fg2 = "#5b5e5f",
+  light_grey = "#585b5c",
+  red = "#ec6b64",
+  baby_pink = "#ce8196",
+  pink = "#ff75a0",
+  line = "#2c2f30", -- for lines like vertsplit
+  green = "#89b482",
+  vibrant_green = "#a9b665",
+  nord_blue = "#6f8faf",
+  blue = "#6d8dad",
+  yellow = "#d6b676",
+  sun = "#d1b171",
+  purple = "#b4bbc8",
+  dark_purple = "#cc7f94",
+  teal = "#749689",
+  orange = "#e78a4e",
+  cyan = "#82b3a8",
+  statusline_bg = "#252829",
+  lightbg = "#2d3139",
+  lightbg2 = "#262a32",
+  pmenu_bg = "#89b482",
+  folder_bg = "#6d8dad",
 }
 
 -- these are backgrounds
