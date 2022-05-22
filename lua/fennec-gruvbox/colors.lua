@@ -46,7 +46,7 @@ palette.diff = {
 local M = {}
 
 function M.config(config)
-  config = config or require("gruvbox-baby.config")
+  config = config or require("fennec-gruvbox.config")
   local intensity_map = {
     ["dark"] = {
       dark = "#161616",

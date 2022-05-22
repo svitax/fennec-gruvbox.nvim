@@ -7,8 +7,8 @@ local M = {}
 -- end
 
 function M.setup(config)
-  config = config or require("gruvbox-baby.config")
-  local colors = require("gruvbox-baby.colors")
+  config = config or require("fennec-gruvbox.config")
+  local colors = require("fennec-gruvbox.colors")
   local c = colors.config(config)
 
   local theme = {}
