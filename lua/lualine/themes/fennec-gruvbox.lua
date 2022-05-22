@@ -6,9 +6,9 @@ local c = require("fennec-gruvbox.colors").config()
 return {
   normal = {
     -- a = { bg = c.light_blue, fg = c.dark, gui = "bold" },
-    a = { bg = c.line_bg, fg = c.line_fg, gui = "bold" },
-    b = { bg = c.line_bg, fg = c.line_fg },
-    c = { bg = c.line_bg, fg = c.line_fg },
+    a = { bg = c.line_bg, fg = c.line_active_fg, gui = "bold" },
+    b = { bg = c.line_bg, fg = c.line_active_fg },
+    c = { bg = c.line_bg, fg = c.line_active_fg },
   },
   insert = {
     a = { bg = c.bright_yellow, fg = c.dark, gui = "bold" },
