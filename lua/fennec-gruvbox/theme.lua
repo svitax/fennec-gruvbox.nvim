@@ -376,10 +376,10 @@ function M.setup(config)
     DiagnosticSignInfo = { fg = c.soft_green }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
     DiagnosticSignHint = { fg = c.magenta }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
-    DiagnosticVirtualTextError = { bg = c.red, fg = c.red }, -- Used for "Error" diagnostic virtual text
-    DiagnosticVirtualTextWarn = { bg = c.soft_yellow, fg = c.soft_yellow }, -- Used for "Warning" diagnostic virtual text
-    DiagnosticVirtualTextInfo = { bg = c.soft_green, fg = c.soft_green }, -- Used for "Information" diagnostic virtual text
-    DiagnosticVirtualTextHint = { bg = c.magenta, fg = c.magenta }, -- Used for "Hint" diagnostic virtual text
+    DiagnosticVirtualTextError = { fg = c.red }, -- Used for "Error" diagnostic virtual text
+    DiagnosticVirtualTextWarn = { fg = c.soft_yellow }, -- Used for "Warning" diagnostic virtual text
+    DiagnosticVirtualTextInfo = { fg = c.soft_green }, -- Used for "Information" diagnostic virtual text
+    DiagnosticVirtualTextHint = { fg = c.magenta }, -- Used for "Hint" diagnostic virtual text
 
     DiagnosticUnderlineError = { gui = "undercurl", sp = c.red }, -- Used to underline "Error" diagnostics
     DiagnosticUnderlineWarn = { gui = "undercurl", sp = c.soft_yellow }, -- Used to underline "Warning" diagnostics
