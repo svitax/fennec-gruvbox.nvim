@@ -364,6 +364,28 @@ function M.setup(config)
     mailSignature = { fg = c.comment },
     mailURL = { fg = c.orange, style = "underline" },
     mailEmail = { fg = c.soft_yellow },
+
+    -- START diagnostics
+    DiagnosticError = { fg = c.red }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    DiagnosticWarn = { fg = c.yellow }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    DiagnosticInfo = { fg = c.soft_green }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    DiagnosticHint = { fg = c.magenta }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+
+    DiagnosticSignError = { fg = c.red }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    DiagnosticSignWarn = { fg = c.soft_yellow }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    DiagnosticSignInfo = { fg = c.soft_green }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    DiagnosticSignHint = { fg = c.magenta }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+
+    DiagnosticVirtualTextError = { bg = c.red, fg = c.red }, -- Used for "Error" diagnostic virtual text
+    DiagnosticVirtualTextWarn = { bg = c.soft_yellow, fg = c.soft_yellow }, -- Used for "Warning" diagnostic virtual text
+    DiagnosticVirtualTextInfo = { bg = c.soft_green, fg = c.soft_green }, -- Used for "Information" diagnostic virtual text
+    DiagnosticVirtualTextHint = { bg = c.magenta, fg = c.magenta }, -- Used for "Hint" diagnostic virtual text
+
+    DiagnosticUnderlineError = { gui = "undercurl", sp = c.red }, -- Used to underline "Error" diagnostics
+    DiagnosticUnderlineWarn = { gui = "undercurl", sp = c.soft_yellow }, -- Used to underline "Warning" diagnostics
+    DiagnosticUnderlineInfo = { gui = "undercurl", sp = c.soft_green }, -- Used to underline "Information" diagnostics
+    DiagnosticUnderlineHint = { gui = "undercurl", sp = c.magenta }, -- Used to underline "Hint" diagnostics
+    -- END diagnostics
   }
 
   if config.telescope_theme then
