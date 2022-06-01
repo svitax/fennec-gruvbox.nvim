@@ -66,7 +66,7 @@ function M.setup(config)
     Folded = { fg = c.comment },
     IncSearch = { fg = c.forest_green, bg = c.comment },
     LineNr = { fg = c.medium_gray },
-    MatchParen = { bg = c.blue_gray, style = "underline" },
+    MatchParen = { fg = c.milk, bg = c.blue_gray, style = "underline" },
     NonText = { fg = c.comment },
     Pmenu = { fg = c.foreground, bg = c.bg_light },
     PmenuSel = { fg = c.background, bg = c.blue_gray },
@@ -367,7 +367,7 @@ function M.setup(config)
 
     -- START diagnostics
     DiagnosticError = { fg = c.red }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    DiagnosticWarn = { fg = c.yellow }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    DiagnosticWarn = { fg = c.soft_yellow }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
     DiagnosticInfo = { fg = c.soft_green }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
     DiagnosticHint = { fg = c.magenta }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
