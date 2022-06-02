@@ -368,29 +368,29 @@ function M.setup(config)
     -- START diagnostics
     DiagnosticError = { fg = c.red }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
     DiagnosticWarn = { fg = c.soft_yellow }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    DiagnosticInfo = { fg = c.soft_green }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    DiagnosticHint = { fg = c.magenta }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    DiagnosticInfo = { fg = c.blue_gray }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    DiagnosticHint = { fg = c.soft_green }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
     DiagnosticSignError = { fg = c.red }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
     DiagnosticSignWarn = { fg = c.soft_yellow }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    DiagnosticSignInfo = { fg = c.soft_green }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    DiagnosticSignHint = { fg = c.magenta }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    DiagnosticSignInfo = { fg = c.blue_gray }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    DiagnosticSignHint = { fg = c.soft_green }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
     DiagnosticVirtualTextError = { fg = c.red }, -- Used for "Error" diagnostic virtual text
     DiagnosticVirtualTextWarn = { fg = c.soft_yellow }, -- Used for "Warning" diagnostic virtual text
-    DiagnosticVirtualTextInfo = { fg = c.soft_green }, -- Used for "Information" diagnostic virtual text
-    DiagnosticVirtualTextHint = { fg = c.magenta }, -- Used for "Hint" diagnostic virtual text
+    DiagnosticVirtualTextInfo = { fg = c.blue_gray }, -- Used for "Information" diagnostic virtual text
+    DiagnosticVirtualTextHint = { fg = c.soft_green }, -- Used for "Hint" diagnostic virtual text
 
     DiagnosticUnderlineError = { gui = "undercurl", sp = c.red }, -- Used to underline "Error" diagnostics
     DiagnosticUnderlineWarn = { gui = "undercurl", sp = c.soft_yellow }, -- Used to underline "Warning" diagnostics
-    DiagnosticUnderlineInfo = { gui = "undercurl", sp = c.soft_green }, -- Used to underline "Information" diagnostics
-    DiagnosticUnderlineHint = { gui = "undercurl", sp = c.magenta }, -- Used to underline "Hint" diagnostics
+    DiagnosticUnderlineInfo = { gui = "undercurl", sp = c.blue_gray }, -- Used to underline "Information" diagnostics
+    DiagnosticUnderlineHint = { gui = "undercurl", sp = c.soft_green }, -- Used to underline "Hint" diagnostics
     -- END diagnostics
 
-    -- START diagnostics
+    -- START lightbulb.nvim
     LightBulbFloatWin = { bg = c.bg_float, fg = c.milk },
     LightBulbVirtualText = { fg = c.milk },
-    -- END diagnostics
+    -- END lightbulb.nvim
   }
 
   if config.telescope_theme then
