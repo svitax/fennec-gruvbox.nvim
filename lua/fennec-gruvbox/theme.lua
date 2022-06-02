@@ -388,8 +388,8 @@ function M.setup(config)
     -- END diagnostics
 
     -- START diagnostics
-    LightBulbFloatWin = { bg = c.bg_float, fg = c.bright_yellow },
-    LightBulbVirtualText = { fg = c.bright_yellow },
+    LightBulbFloatWin = { bg = c.bg_float, fg = c.milk },
+    LightBulbVirtualText = { fg = c.milk },
     -- END diagnostics
   }
 
