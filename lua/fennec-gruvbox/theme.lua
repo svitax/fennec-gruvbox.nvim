@@ -369,22 +369,22 @@ function M.setup(config)
     DiagnosticError = { fg = c.red }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
     DiagnosticWarn = { fg = c.soft_yellow }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
     DiagnosticInfo = { fg = c.blue_gray }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    DiagnosticHint = { fg = c.forest_green }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    DiagnosticHint = { fg = c.clean_green }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
     DiagnosticSignError = { fg = c.red }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
     DiagnosticSignWarn = { fg = c.soft_yellow }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
     DiagnosticSignInfo = { fg = c.blue_gray }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    DiagnosticSignHint = { fg = c.forest_green }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    DiagnosticSignHint = { fg = c.clean_green }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
     DiagnosticVirtualTextError = { fg = c.red }, -- Used for "Error" diagnostic virtual text
     DiagnosticVirtualTextWarn = { fg = c.soft_yellow }, -- Used for "Warning" diagnostic virtual text
     DiagnosticVirtualTextInfo = { fg = c.blue_gray }, -- Used for "Information" diagnostic virtual text
-    DiagnosticVirtualTextHint = { fg = c.forest_green }, -- Used for "Hint" diagnostic virtual text
+    DiagnosticVirtualTextHint = { fg = c.clean_green }, -- Used for "Hint" diagnostic virtual text
 
     DiagnosticUnderlineError = { gui = "undercurl", sp = c.red }, -- Used to underline "Error" diagnostics
     DiagnosticUnderlineWarn = { gui = "undercurl", sp = c.soft_yellow }, -- Used to underline "Warning" diagnostics
     DiagnosticUnderlineInfo = { gui = "undercurl", sp = c.blue_gray }, -- Used to underline "Information" diagnostics
-    DiagnosticUnderlineHint = { gui = "undercurl", sp = c.forest_green }, -- Used to underline "Hint" diagnostics
+    DiagnosticUnderlineHint = { gui = "undercurl", sp = c.clean_green }, -- Used to underline "Hint" diagnostics
     -- END diagnostics
 
     -- START lightbulb.nvim
