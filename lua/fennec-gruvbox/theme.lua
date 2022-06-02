@@ -386,6 +386,11 @@ function M.setup(config)
     DiagnosticUnderlineInfo = { gui = "undercurl", sp = c.soft_green }, -- Used to underline "Information" diagnostics
     DiagnosticUnderlineHint = { gui = "undercurl", sp = c.magenta }, -- Used to underline "Hint" diagnostics
     -- END diagnostics
+
+    -- START diagnostics
+    LightBulbFloatWin = { bg = c.bg_float, fg = c.bright_yellow },
+    LightBulbVirtualText = { fg = c.bright_yellow },
+    -- END diagnostics
   }
 
   if config.telescope_theme then
