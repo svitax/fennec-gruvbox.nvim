@@ -391,6 +391,10 @@ function M.setup(config)
     LightBulbFloatWin = { bg = c.bg_float, fg = c.milk },
     LightBulbVirtualText = { fg = c.milk },
     -- END lightbulb.nvim
+
+    -- START leap.nvim
+    LeapBackdrop = { fg = c.comment },
+    -- END leap.nvim
   }
 
   if config.telescope_theme then
