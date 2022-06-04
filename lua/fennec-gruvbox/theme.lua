@@ -394,6 +394,7 @@ function M.setup(config)
 
     -- START leap.nvim
     LeapBackdrop = { fg = c.comment },
+    LeapMatch = { fg = c.milk },
     -- END leap.nvim
   }
 
