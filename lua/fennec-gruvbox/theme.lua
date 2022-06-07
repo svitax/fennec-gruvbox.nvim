@@ -179,6 +179,14 @@ function M.setup(config)
     markdownOrderedListMarker = { fg = c.orange },
     markdownRule = { fg = c.comment },
     markdownUrl = { fg = c.soft_green, style = "underline" },
+    markdownBoldDelimiter = { fg = c.comment },
+    markdownItalicDelimiter = { fg = c.comment },
+    markdownBoldItalic = { fg = c.red, gui = "bold, italic" },
+    markdownBoldItalicDelimiter = { fg = c.comment },
+    markdownBlockQuote = { fg = c.comment },
+    markdownURL = { fg = c.magenta },
+    markdownInlineURL = { fg = c.blue_gray },
+    markdownUrlTitle = { fg = c.blue_gray },
 
     phpInclude = { fg = c.magenta },
     phpClass = { fg = c.soft_yellow },
@@ -396,6 +404,27 @@ function M.setup(config)
     LeapBackdrop = { fg = c.comment },
     LeapMatch = { fg = c.milk },
     -- END leap.nvim
+
+    -- START vim-markdown
+    mkdHeading = { fg = c.comment, gui = "bold" },
+    mkdBold = { fg = c.comment, gui = "bold" },
+    mkdItalic = { fg = c.comment, gui = "italic" },
+    htmlBoldItalic = { fg = c.red, gui = "bold, italic" },
+    mkdBoldItalic = { fg = c.comment },
+    mkdCode = { fg = c.soft_yellow },
+    mkdCodeDelimiter = { fg = c.comment },
+    mkdCodeStart = { fg = c.comment },
+    mkdCodeEnd = { fg = c.comment },
+    mkdRule = { fg = c.orange },
+    mkdLink = { fg = c.magenta },
+    mkdURL = { fg = c.magenta },
+    mkdInlineURL = { fg = c.purple },
+    mkdID = { fg = c.light_yellow },
+    mkdLinkDef = { fg = c.orange },
+    mkdLinkDefTarget = { fg = c.orange },
+    mkdLinkTitle = { fg = c.orange },
+    mkdDelimiter = { fg = c.comment },
+    -- END vim-markdown
   }
 
   if config.telescope_theme then
