@@ -428,7 +428,7 @@ function M.setup(config)
     mkdCodeDelimiter = { fg = c.comment },
     mkdCodeStart = { fg = c.comment },
     mkdCodeEnd = { fg = c.comment },
-    mkdURL = { fg = c.magenta },
+    mkdURL = { fg = c.soft_green },
     mkdID = { fg = c.soft_yellow },
     mkdHeading = { fg = c.comment, gui = "bold" },
     mkdLink = { fg = c.magenta },
