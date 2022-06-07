@@ -420,7 +420,7 @@ function M.setup(config)
     -- mkdFootnote = {},
     mkdCode = { fg = c.soft_green },
     mkdListItem = { fg = c.red },
-    -- mkdListLine = {},
+    mkdListLine = { fg = c.comment },
     -- mkdNonListItemBlock = {},
     mkdRule = { fg = c.orange },
     mkdNonListItem = {},
