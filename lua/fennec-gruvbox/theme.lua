@@ -85,7 +85,7 @@ function M.setup(config)
     Terminal = { fg = c.foreground, bg = c.background },
     VisualNOS = { fg = c.medium_gray },
     WarningMsg = { fg = c.soft_yellow },
-    WildMenu = { fg = c.foreground, bg = c.bg_light },
+    WildMenu = { fg = c.background, bg = c.soft_yellow },
     EndOfBuffer = { fg = c.background },
 
     -- Tree Sitter
