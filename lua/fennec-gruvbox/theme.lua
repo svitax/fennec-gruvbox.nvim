@@ -64,7 +64,7 @@ function M.setup(config)
     ErrorMsg = { fg = c.red },
     VertSplit = { fg = c.bg_light },
     Folded = { fg = c.comment },
-    IncSearch = { fg = c.forest_green, bg = c.comment },
+    IncSearch = { fg = c.foreground, bg = c.bg_light },
     LineNr = { fg = c.medium_gray },
     MatchParen = { fg = c.background, bg = c.bright_yellow, style = "underline" },
     NonText = { fg = c.comment },
@@ -85,7 +85,7 @@ function M.setup(config)
     Terminal = { fg = c.foreground, bg = c.background },
     VisualNOS = { fg = c.medium_gray },
     WarningMsg = { fg = c.soft_yellow },
-    WildMenu = { fg = c.background, bg = c.blue_gray },
+    WildMenu = { fg = c.foreground, bg = c.bg_light },
     EndOfBuffer = { fg = c.background },
 
     -- Tree Sitter
