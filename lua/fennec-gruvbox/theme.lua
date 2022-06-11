@@ -66,7 +66,7 @@ function M.setup(config)
     Folded = { fg = c.comment },
     IncSearch = { fg = c.background, bg = c.soft_yellow },
     LineNr = { fg = c.medium_gray },
-    MatchParen = { fg = c.background, bg = c.bright_yellow, style = "underline" },
+    MatchParen = { fg = c.foreground, bg = c.comment, style = "underline" },
     NonText = { fg = c.comment },
     Pmenu = { fg = c.foreground, bg = c.bg_light },
     PmenuSel = { fg = c.background, bg = c.blue_gray },
