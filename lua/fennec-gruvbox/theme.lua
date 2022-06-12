@@ -436,6 +436,10 @@ function M.setup(config)
     mkdLink = { fg = c.magenta },
     mkdDelimiter = { fg = c.comment },
     -- END vim-markdown
+
+    -- START satellite
+    ScrollView = { bg = c.comment },
+    -- END satellite
   }
 
   if config.telescope_theme then
