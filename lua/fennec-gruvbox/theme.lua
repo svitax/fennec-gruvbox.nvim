@@ -438,7 +438,7 @@ function M.setup(config)
     -- END vim-markdown
 
     -- START satellite
-    ScrollView = { bg = c.line_bg },
+    ScrollView = { bg = c.medium_gray },
     -- END satellite
   }
 
