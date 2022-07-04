@@ -435,6 +435,7 @@ function M.setup(config)
     mkdHeading = { fg = c.comment, gui = "bold" },
     mkdLink = { fg = c.magenta },
     mkdDelimiter = { fg = c.comment },
+    mkdMath = { fg = c.soft_green },
     -- END vim-markdown
 
     -- START satellite
