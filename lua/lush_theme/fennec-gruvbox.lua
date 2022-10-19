@@ -948,6 +948,38 @@ local theme = lush(function()
         -- diffLine { fg = c.bg3 },
         -- diffIndexLine { fg = c.purple },
         -- END diffview
+
+        -- START navic
+        NavicIconsFile { fg = c.grey_fg2 },
+        NavicIconsModule { fg = c.yellow },
+        NavicIconsNamespace { fg = c.grey_fg2 },
+        NavicIconsPackage { fg = c.grey_fg2 },
+        NavicIconsClass { fg = c.orange },
+        NavicIconsMethod { fg = c.blue },
+        NavicIconsProperty { fg = c.green1 },
+        NavicIconsField { fg = c.green1 },
+        NavicIconsConstructor { fg = c.orange },
+        NavicIconsEnum { fg = c.orange },
+        NavicIconsInterface { fg = c.orange },
+        NavicIconsFunction { fg = c.blue },
+        NavicIconsVariable { fg = c.magenta },
+        NavicIconsConstant { fg = c.magenta },
+        NavicIconsString { fg = c.green },
+        NavicIconsNumber { fg = c.orange },
+        NavicIconsBoolean { fg = c.orange },
+        NavicIconsArray { fg = c.orange },
+        NavicIconsObject { fg = c.orange },
+        NavicIconsKey { fg = c.purple },
+        NavicIconsKeyword { fg = c.purple },
+        NavicIconsNull { fg = c.orange },
+        NavicIconsEnumMember { fg = c.green1 },
+        NavicIconsStruct { fg = c.orange },
+        NavicIconsEvent { fg = c.orange },
+        NavicIconsOperator { fg = c.grey_fg2 },
+        NavicIconsTypeParameter { fg = c.green1 },
+        NavicText { fg = c.grey_fg2 },
+        NavicSeparator { fg = c.grey_fg2 },
+        -- END navic
     }
 end)
 
