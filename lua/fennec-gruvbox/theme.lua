@@ -441,6 +441,38 @@ function M.setup(config)
     -- START satellite
     ScrollView = { bg = c.medium_gray },
     -- END satellite
+
+    -- START navic
+    NavicIconsFile = { fg = c.comment },
+    NavicIconsModule = { fg = c.soft_yellow },
+    NavicIconsNamespace = { fg = c.comment },
+    NavicIconsPackage = { fg = c.comment },
+    NavicIconsClass = { fg = c.orange },
+    NavicIconsMethod = { fg = c.blue_gray },
+    NavicIconsProperty = { fg = c.clean_green },
+    NavicIconsField = { fg = c.clean_green },
+    NavicIconsConstructor = { fg = c.orange },
+    NavicIconsEnum = { fg = c.orange },
+    NavicIconsInterface = { fg = c.orange },
+    NavicIconsFunction = { fg = c.blue_gray },
+    NavicIconsVariable = { fg = c.pink },
+    NavicIconsConstant = { fg = c.pink },
+    NavicIconsString = { fg = c.clean_green },
+    NavicIconsNumber = { fg = c.orange },
+    NavicIconsBoolean = { fg = c.orange },
+    NavicIconsArray = { fg = c.orange },
+    NavicIconsObject = { fg = c.orange },
+    NavicIconsKey = { fg = c.magenta },
+    NavicIconsKeyword = { fg = c.magenta },
+    NavicIconsNull = { fg = c.orange },
+    NavicIconsEnumMember = { fg = c.clean_green },
+    NavicIconsStruct = { fg = c.orange },
+    NavicIconsEvent = { fg = c.orange },
+    NavicIconsOperator = { fg = c.comment },
+    NavicIconsTypeParameter = { fg = c.clean_green },
+    NavicText = { fg = c.comment },
+    NavicSeparator = { fg = c.comment },
+    -- END navic
   }
 
   if config.telescope_theme then
