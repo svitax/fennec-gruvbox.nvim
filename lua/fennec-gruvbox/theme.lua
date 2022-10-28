@@ -475,6 +475,12 @@ function M.setup(config)
     -- END navic
 
     NvimHeadbandFilename = { fg = c.comment },
+    NvimHeadbandPath = { fg = c.comment },
+    NvimHeadbandSeparator = { fg = c.comment },
+    NvimHeadbandLocSeparator = { fg = c.comment },
+    NvimHeadbandLocText = { fg = c.comment },
+    NvimHeadbandUnsavedBuf = { fg = c.comment },
+    NvimHeadbandEmptyLocSymbol = { fg = c.comment },
   }
 
   if config.telescope_theme then
