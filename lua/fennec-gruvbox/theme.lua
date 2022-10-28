@@ -473,6 +473,8 @@ function M.setup(config)
     NavicText = { fg = c.comment },
     NavicSeparator = { fg = c.comment },
     -- END navic
+
+    NvimHeadbandFilename = { fg = c.comment },
   }
 
   if config.telescope_theme then
